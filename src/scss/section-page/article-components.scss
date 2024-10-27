@@ -1,0 +1,327 @@
+.nav-article {
+	display: flex;
+	align-items: center;
+	font-size: 15px;
+	line-height: 1.4;
+
+	// .nav-article__list_color-grass
+	&_color-grass {
+		.nav-article__item {
+			&._active {
+				background-color: var(--grass);
+			}
+		}
+		.nav-article__link {
+			color: var(--grass-dark);
+		}
+	}
+	// .nav-article__list_color-marine
+	&_color-marine {
+		.nav-article__item {
+			&._active {
+				background-color: var(--marine);
+			}
+		}
+		.nav-article__link {
+			color: var(--marine-dark);
+		}
+	}
+	// .nav-article__listcolor-pink
+	&_color-pink {
+		.nav-article__item {
+			&._active {
+				background-color: var(--pink);
+			}
+		}
+		.nav-article__link {
+			color: var(--pink-dark);
+		}
+	}
+	&_color-pale {
+		.nav-article__item {
+			&._active {
+				background-color: var(--pale);
+			}
+		}
+		.nav-article__link {
+			color: var(--tangerine-dark);
+		}
+	}
+	&_color-tangerine {
+		.nav-article__item {
+			&._active {
+				background-color: var(--tangerine);
+			}
+		}
+		.nav-article__link {
+			color: var(--turquoise-dark);
+		}
+	}
+	// .nav-article__item
+
+	&__item {
+		&:not(:last-child) {
+			margin-right: 10px;
+		}
+
+		&._active {
+			color: var(--black);
+			font-weight: 500;
+			border-radius: 20px;
+			margin-right: 16px;
+			.nav-article__link {
+				padding: 8px 18px;
+				color: var(--black);
+			}
+		}
+	}
+
+	// .nav-article__link
+
+	&__link {
+		display: inline-block;
+		border-radius: 20px;
+	}
+}
+
+.description-article {
+	color: var(--gray70);
+	max-width: 480px;
+	@media (max-width: $mobile) {
+		max-width: 100%;
+	}
+}
+
+.footer-article {
+	font-size: 15px;
+	line-height: 1.4;
+	color: var(--gray35);
+	display: flex;
+	column-gap: 24px;
+	// .footer-article__date
+	&__time-read,
+	&__date {
+		display: flex;
+		align-items: center;
+		column-gap: 8px;
+		&::before {
+			content: "";
+			width: 15px;
+			height: 16px;
+			background-repeat: no-repeat;
+
+			background-size: 15px 16px;
+		}
+	}
+
+	&__date {
+		&::before {
+			background-image: url("../img/icons/dateIcon.svg");
+		}
+	}
+
+	&__time-read {
+		&::before {
+			background-image: url("../img/icons/timeIcon.svg");
+		}
+	}
+}
+
+.img-block {
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		background-repeat: no-repeat;
+		background-size: cover;
+		z-index: 1;
+		width: 180px;
+		height: 180px;
+		@media (max-width: $tablet) {
+			width: 120px;
+			height: 120px;
+		}
+		@media (max-width: $mobile) {
+			width: 104px;
+			height: 104px;
+		}
+	}
+	img {
+		height: 100%;
+		width: 100%;
+		max-width: 100%;
+		mask-size: 100% 100%;
+		mask-repeat: no-repeat;
+		object-fit: cover;
+	}
+}
+
+.sticker-mask-two {
+	img {
+		mask-image: url("../img/masks/section-articles-mask/mask-two-desktop.svg");
+
+		@media (max-width: $tablet) {
+			mask-image: url("../img/masks/section-articles-mask/mask-two-tablet.svg");
+		}
+
+		@media (max-width: $mobile) {
+			mask-image: url("../img/masks/section-articles-mask/mask-two-mobile.svg");
+		}
+	}
+	&::before {
+		content: "";
+		background-image: url("../img/sticker/fashion.svg");
+		top: -48px;
+		left: -36px;
+		@media (max-width: $tablet) {
+			left: auto;
+			top: 8px;
+			right: 8px;
+			width: 104px;
+			height: 104px;
+		}
+		@media (max-width: $mobile) {
+			top: 10px;
+			left: 9px;
+			right: auto;
+			width: 120px;
+			height: 120px;
+		}
+	}
+}
+.sticker-mask-three {
+	img {
+		mask-image: url("../img/masks/section-articles-mask/mask-three-desktop.svg");
+		@media (max-width: $tablet) {
+			mask-image: url("../img/masks/section-articles-mask/mask-three-tablet.svg");
+		}
+		@media (max-width: $mobile) {
+			mask-image: url("../img/masks/section-articles-mask/mask-three-mobile.svg");
+		}
+		@media (max-width: $mobileSmall) {
+			object-position: -50px 0;
+		}
+	}
+	&::before {
+		content: "";
+		background-image: url("../img/sticker/diseno.svg");
+		right: -36px;
+		top: -48px;
+		transition: all 0.3s ease 0s;
+		@media (max-width: $tablet) {
+			top: 8px;
+			right: 8px;
+			width: 104px;
+			height: 104px;
+		}
+		@media (max-width: $mobile) {
+			top: 8px;
+			width: 120px;
+			height: 120px;
+		}
+	}
+}
+.sticker-mask-four {
+	img {
+		mask-image: url("../img/masks/section-articles-mask/mask-four-desktop.svg");
+		@media (max-width: $tablet) {
+			mask-image: url("../img/masks/section-articles-mask/mask-four-tablet.svg");
+		}
+		@media (max-width: $mobile) {
+			mask-image: url("../img/masks/section-articles-mask/mask-four-mobile.svg");
+		}
+		@media (max-width: $mobileSmall) {
+			object-position: -111px -5px;
+		}
+	}
+	&::before {
+		content: "";
+		background-image: url("../img/sticker/diseno.svg");
+		right: -36px;
+		top: -48px;
+		@media (max-width: $tablet) {
+			top: 8px;
+			right: 8px;
+		}
+		@media (max-width: $mobile) {
+			top: 8px;
+			left: 11px;
+			width: 120px;
+			height: 120px;
+		}
+	}
+}
+.sticker-mask-five {
+	@media (max-width: $mobile) {
+	}
+	img {
+		mask-image: url("../img/masks/section-articles-mask/mask-five-desktop.svg");
+		@media (max-width: $tablet) {
+			mask-image: url("../img/masks/section-articles-mask/mask-five-tablet.svg");
+		}
+		@media (max-width: $mobile) {
+			mask-image: url("../img/masks/section-articles-mask/mask-five-mobile.svg");
+		}
+		@media (max-width: $mobileSmall) {
+			object-position: -111px 0;
+		}
+	}
+	&::before {
+		content: "";
+		background-image: url("../img/sticker/marketing.svg");
+		background-position: center;
+
+		width: 270px;
+		height: 148px;
+		left: -55px;
+		top: -49px;
+		@media (max-width: $tablet) {
+			top: 8px;
+			width: 162px;
+			height: 93px;
+			left: auto;
+			right: -1px;
+			transform: rotate(15deg);
+		}
+		@media (max-width: $mobile) {
+			top: 6px;
+			right: 0;
+			width: 174px;
+			height: 100px;
+		}
+	}
+}
+.sticker-mask-six {
+	img {
+		mask-image: url("../img/masks/section-articles-mask/mask-six-desktop.svg");
+		@media (max-width: $tablet) {
+			mask-image: url("../img/masks/section-articles-mask/mask-six-tablet.svg");
+		}
+		@media (max-width: $mobile) {
+			mask-image: url("../img/masks/section-articles-mask/mask-six-mobile.svg");
+		}
+		@media (max-width: $mobileSmall) {
+			object-position: -14px -4px;
+		}
+	}
+	&::before {
+		content: "";
+		background-image: url("../img/sticker/Software.svg");
+		right: -39px;
+		top: -48px;
+		@media (max-width: $tablet) {
+			top: 8px;
+			right: 8px;
+			width: 104px;
+			height: 104px;
+		}
+		@media (max-width: $mobile) {
+			top: 8px;
+			left: 8px;
+			right: auto;
+			width: 120px;
+			height: 120px;
+		}
+	}
+}

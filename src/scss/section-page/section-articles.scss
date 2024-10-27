@@ -1,0 +1,258 @@
+.section-articles {
+	padding-top: 150px;
+	padding-bottom: 136px;
+
+	@media (max-width: $tablet) {
+		padding-top: 159px;
+		padding-bottom: 104px;
+	}
+	@media (max-width: $mobile) {
+		padding-top: 145px;
+	}
+	// .section-articles_py
+
+	&_py {
+		padding-top: 136px;
+		padding-bottom: 117px;
+		@media (max-width: $tablet) {
+			padding-top: 98px;
+			padding-bottom: 160px;
+		}
+		@media (max-width: $mobile) {
+			padding-bottom: 64px;
+			padding-top: 102px;
+		}
+	}
+	// .section-articles__container
+
+	&__container {
+		display: flex;
+		column-gap: 40px;
+		@media (max-width: $tablet) {
+			column-gap: 24px;
+		}
+		@media (max-width: $mobile) {
+			flex-direction: column;
+			row-gap: 104px;
+		}
+	}
+
+	// .section-articles__item
+
+	&__item {
+		flex: 0 1 50%;
+	}
+}
+.article-item {
+	row-gap: 32px;
+	display: flex;
+	flex-direction: column;
+
+	@media (max-width: $tablet) {
+		row-gap: 24px;
+	}
+
+	// .article-item__link-img
+	&__link-img {
+		@media (max-width: $tablet) {
+			height: auto;
+			flex: 1 1 25%;
+		}
+	}
+	// .article-item__img
+
+	&__img {
+		display: flex;
+		img {
+			height: 328px;
+			@media (max-width: $tablet) {
+				height: auto;
+			}
+
+			@media (max-width: $mobile) {
+				height: 352px;
+			}
+		}
+	}
+
+	// .article-item__contentn
+
+	&__contentn {
+		@media (max-width: $tablet) {
+			flex: 0 1 75%;
+		}
+	}
+
+	// .article-item__header
+
+	&__header {
+	}
+
+	// .article-item__nav
+	&__description,
+	&__nav {
+		margin-bottom: 18px;
+		@media (max-width: $tablet) {
+			margin-bottom: 16px;
+		}
+	}
+
+	// .article-item__list
+
+	&__list {
+	}
+
+	// .article-item__title
+
+	&__title {
+		margin-bottom: 14px;
+	}
+
+	// .article-item__description
+
+	&__description {
+	}
+}
+
+.section-wide-article {
+	position: relative;
+
+	// .section-wide-article__container
+
+	&__container {
+	}
+
+	// .section-wide-article__link-img
+
+	&__link-img {
+		display: block;
+		margin-bottom: 48px;
+		@media (max-width: $tablet) {
+			margin-bottom: 24px;
+		}
+		@media (max-width: $mobile) {
+			margin-bottom: 18px;
+		}
+		img {
+			height: 520px;
+			@media (max-width: $tablet) {
+				height: 320px;
+			}
+			@media (max-width: $mobile) {
+				height: 352px;
+			}
+		}
+	}
+
+	// .section-wide-article__article
+
+	&__article {
+	}
+
+	// .section-wide-article__header
+
+	&__header {
+		display: flex;
+
+		column-gap: 19px;
+		margin-bottom: 8px;
+		@media (max-width: $mobile) {
+			flex-direction: column;
+			align-items: flex-start;
+			row-gap: 16px;
+			margin-bottom: 16px;
+		}
+	}
+
+	// .section-wide-article__nav
+
+	&__nav {
+		flex-direction: column;
+		flex: 0 0 376px;
+		transform: translate(0px, 10px);
+
+		@media (max-width: $tablet) {
+			flex: 0 0 219px;
+			transform: translate(0px, 4px);
+		}
+		@media (max-width: $mobile) {
+			transform: translate(0px, 0px);
+			flex: none;
+		}
+	}
+
+	// .section-wide-article__list
+
+	&__list {
+		width: 100%;
+		display: grid;
+		grid-template-columns: auto auto;
+		grid-template-rows: auto auto;
+		justify-items: end;
+		justify-content: end;
+		row-gap: 12px;
+		._active {
+			grid-column: 1/4;
+			margin-right: 0;
+		}
+
+		@media (max-width: $mobile) {
+			display: flex;
+			._active {
+				margin-right: 16px;
+			}
+		}
+	}
+
+	// .section-wide-article__title
+
+	&__title {
+		max-width: 862px;
+
+		@media (max-width: $mobile) {
+			font-size: 24px;
+		}
+	}
+	// .section-wide-article
+	&__body {
+		display: flex;
+		flex-direction: row-reverse;
+		column-gap: 19px;
+		@media (max-width: $tablet) {
+			flex: 0 1 75%;
+		}
+		@media (max-width: $mobile) {
+			flex-direction: column;
+			row-gap: 16px;
+		}
+	}
+	// .section-wide-article__description
+
+	&__description {
+		max-width: 862px;
+	}
+
+	// .section-wide-article__footer
+
+	&__footer {
+		transform: translate(0px, 18px);
+
+		flex: 0 0 376px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		row-gap: 8px;
+		@media (max-width: $tablet) {
+			flex: 0 0 219px;
+		}
+		@media (max-width: $mobile) {
+			transform: translate(0px, 0px);
+			flex-direction: row;
+			flex: none;
+		}
+	}
+	time,
+	span {
+		flex-direction: row-reverse;
+	}
+}
