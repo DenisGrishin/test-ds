@@ -11,8 +11,12 @@
 			width: 100%;
 			background-color: var(--white);
 			display: block;
+
 			@media (max-width: $tablet) {
 				height: 135px;
+			}
+			@media (max-width: $mobile) {
+				height: 127px;
 			}
 		}
 	}
@@ -54,6 +58,7 @@
 
 	&__logo {
 		order: 1;
+		height: 40px;
 		svg {
 			width: 108px;
 			height: 40px;
@@ -63,6 +68,7 @@
 			flex: 0 1 50%;
 		}
 		@media (max-width: $mobile) {
+			height: 48px;
 			svg {
 				width: 130px;
 				height: 48px;
