@@ -61,7 +61,7 @@
 			transform: rotate(2deg) translate(-100px, 32px);
 		}
 		@media (max-width: $tablet) {
-			transform: rotate(3deg) translate(-100px, 46px);
+			transform: rotate(3deg) translate(-100px, 46px) !important;
 		}
 
 		@media (max-width: $mobile) {
