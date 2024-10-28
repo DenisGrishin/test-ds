@@ -1,5 +1,6 @@
+@use "../main" as *;
 .section-articles {
-	padding-top: 150px;
+	padding-top: 153px;
 	padding-bottom: 136px;
 
 	@media (max-width: $tablet) {
@@ -7,7 +8,7 @@
 		padding-bottom: 104px;
 	}
 	@media (max-width: $mobile) {
-		padding-top: 145px;
+		padding-top: 147px;
 	}
 	// .section-articles_py
 
@@ -15,7 +16,7 @@
 		padding-top: 136px;
 		padding-bottom: 117px;
 		@media (max-width: $tablet) {
-			padding-top: 98px;
+			padding-top: 89px;
 			padding-bottom: 160px;
 		}
 		@media (max-width: $mobile) {
@@ -51,7 +52,9 @@
 	@media (max-width: $tablet) {
 		row-gap: 24px;
 	}
-
+	@media (max-width: $mobile) {
+		row-gap: 18px;
+	}
 	// .article-item__link-img
 	&__link-img {
 		@media (max-width: $tablet) {
@@ -93,7 +96,7 @@
 	&__nav {
 		margin-bottom: 18px;
 		@media (max-width: $tablet) {
-			margin-bottom: 16px;
+			margin-bottom: 19px;
 		}
 	}
 

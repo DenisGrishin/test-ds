@@ -1,3 +1,4 @@
+@use "main" as *;
 .header {
 	background-color: var(--whiteTR90);
 	font-size: 15px;
@@ -10,8 +11,12 @@
 			width: 100%;
 			background-color: var(--white);
 			display: block;
+
 			@media (max-width: $tablet) {
 				height: 135px;
+			}
+			@media (max-width: $mobile) {
+				height: 127px;
 			}
 		}
 	}
@@ -53,6 +58,7 @@
 
 	&__logo {
 		order: 1;
+		height: 40px;
 		svg {
 			width: 108px;
 			height: 40px;
@@ -62,6 +68,7 @@
 			flex: 0 1 50%;
 		}
 		@media (max-width: $mobile) {
+			height: 48px;
 			svg {
 				width: 130px;
 				height: 48px;
@@ -142,6 +149,7 @@
 	// .nav__item
 
 	&__item {
+		border-radius: 20px;
 		&:not(:last-child) {
 			margin-right: 10px;
 		}
@@ -155,23 +163,7 @@
 				margin-right: 8px;
 			}
 		}
-	}
 
-	// .nav__link
-
-	&__link {
-		border: 1.2px solid var(--gray15);
-		border-radius: 20px;
-		padding: 8px 18px;
-		font-weight: 500;
-		text-wrap: nowrap;
-		display: inline-block;
-		transition: background-color 0.3s ease 0s;
-		@media (any-hover: hover) {
-			&:hover {
-				border: 1px solid transparent;
-			}
-		}
 		&:nth-child(1) {
 			@media (any-hover: hover) {
 				&:hover {
@@ -212,6 +204,23 @@
 				&:hover {
 					background-color: var(--mint);
 				}
+			}
+		}
+	}
+
+	// .nav__link
+
+	&__link {
+		border: 1.2px solid var(--gray15);
+		border-radius: 20px;
+		padding: 8px 18px;
+		font-weight: 500;
+		text-wrap: nowrap;
+		display: inline-block;
+		transition: background-color 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				border: 1px solid transparent;
 			}
 		}
 	}

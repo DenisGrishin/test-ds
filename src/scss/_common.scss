@@ -1,3 +1,5 @@
+@use "main" as *;
+
 .block-input {
 	position: relative;
 	&::before {

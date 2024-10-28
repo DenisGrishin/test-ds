@@ -1,3 +1,4 @@
+@use "../main" as *;
 .nav-article {
 	display: flex;
 	align-items: center;
@@ -271,7 +272,7 @@
 		content: "";
 		background-image: url("../img/sticker/marketing.svg");
 		background-position: center;
-
+		transition: all 0.4s ease 0s;
 		width: 270px;
 		height: 148px;
 		left: -55px;

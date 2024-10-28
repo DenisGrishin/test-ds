@@ -9,7 +9,7 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"dev": "gulp && webpack serve --progress -c config/webpack.dev.js",
-		"build": "gulp build --build",
+		"build": "gulp build --build --nowebp",
 		"sprite": "gulp sprite",
 		"fonts": "gulp fonts --rewrite",
 		"deploy": "gulp deployFTP --build",
