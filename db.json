@@ -1,6 +1,6 @@
 {
   "menu": {
-    "logo": "/img/logo.jpg",
+    "logo": "../../assets/img/icons/logoIcon.svg",
     "header": [
       {
         "label": "Diseño",

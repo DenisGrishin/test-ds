@@ -8,11 +8,11 @@
 @use "section-page/article-components";
 
 // Подключение стилей отдельных блоков
-@use "header";
+@use "../../components/Header/header";
 @use "decor";
 @use "section-page/section-banner";
 @use "running-string";
 @use "section-page/section-articles";
 @use "section-page/section-webinars";
 @use "section-page/section-subscribe";
-@use "footer";
+@use "../../components/Footer/footer";

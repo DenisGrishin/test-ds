@@ -31,12 +31,13 @@ module.exports = {
     node: true,
   },
   rules: {
-    // "react/jsx-filename-extension": [1, { extensions: [".jsx", ".tsx"] }],
-    // "react/prop-types": "off",
-    // "import/no-unresolved": "off",
-    // "react/react-in-jsx-scope": "off",
-    // "jsx-a11y/anchor-is-valid": "off",
-    skipJSXText: true,
+    "react/jsx-filename-extension": [1, { extensions: [".jsx", ".tsx"] }],
+    "react/prop-types": "off",
+    "import/no-unresolved": "off",
+    "react/react-in-jsx-scope": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "no-irregular-whitespace": ["error", { skipJSXText: true }],
+    "react/function-component-definition": "off",
     // "@typescript-eslint/explicit-module-boundary-types": "off", // Отключаем обязательность типов для функций
     // "@typescript-eslint/no-explicit-any": "off", // Отключаем ошибку для использования `any` типа
     // "prettier/prettier": "error", // Это правило заставит ESLint показывать ошибку, если форматирование Prettier нарушено

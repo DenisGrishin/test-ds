@@ -1,27 +1,14 @@
-import React, { ReactElement, useEffect, useState } from "react";
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
-import { getMenu } from "../api/api";
-type layoutProps = {
+import React, { ReactElement } from "react";
+import Footer from "../components/Footer/Footer.tsx";
+import ContainerHeader from "../containers/ContainerHeader.tsx";
+
+type LayoutProps = {
   children: ReactElement;
 };
-const Layout: React.FC<layoutProps> = ({ children }) => {
-  const [a, setA] = useState<any>();
-
-  useEffect(() => {
-    getMenu()
-      .then((data) => {
-        debugger;
-        setA(data);
-      })
-      .catch((error) => {
-        // Обрабатываем ошибку, если запрос не удался
-        console.error(error);
-      });
-  }, []);
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="wrapper">
-      <Header />
+      <ContainerHeader />
       <main> {children}</main>
       <Footer />
     </div>

@@ -1,9 +1,9 @@
-import Layout from "./layout/Layout";
+import Layout from "./layout/Layout.tsx";
 
 function App() {
   return (
     <Layout>
-      <div></div>
+      <div>s</div>
     </Layout>
   );
 }
