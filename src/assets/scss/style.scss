@@ -1,0 +1,18 @@
+// @use "base/mixins";
+@use "main";
+
+@use "fonts/fonts";
+@use "base/null";
+// Подключение стилей общих элементов проекта
+@use "common";
+@use "section-page/article-components";
+
+// Подключение стилей отдельных блоков
+@use "header";
+@use "decor";
+@use "section-page/section-banner";
+@use "running-string";
+@use "section-page/section-articles";
+@use "section-page/section-webinars";
+@use "section-page/section-subscribe";
+@use "footer";
