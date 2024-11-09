@@ -29,19 +29,6 @@
 	// .section-banner__img
 
 	&__img {
-		&::before {
-			top: 0;
-			right: 0;
-			background-image: url("../img/sticker/gaming.svg");
-			@media (max-width: $tablet) {
-				top: 7px;
-				right: 5px;
-			}
-			@media (max-width: $mobile) {
-				top: 8px;
-				right: 8px;
-			}
-		}
 	}
 
 	// .section-banner__block

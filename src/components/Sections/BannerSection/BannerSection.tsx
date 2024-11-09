@@ -20,7 +20,11 @@ const BannerSection: React.FC<PropsBannerSection> = ({ mainData }) => {
           key={Math.random().toString(36).slice(2, 9)}
           className="section-banner__container decor-line-top "
         >
-          <WrapperImg classNameBlock="content-block" shapeMask={it.img.shape}>
+          <WrapperImg
+            classNameBlock="content-block"
+            shapeMask={it.img.shape}
+            stamp={it.stamp}
+          >
             <img
               loading="lazy"
               src={it.img.url}

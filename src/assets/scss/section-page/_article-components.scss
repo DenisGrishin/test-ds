@@ -257,22 +257,6 @@
 			object-position: -111px -5px;
 		}
 	}
-	&::before {
-		content: "";
-		background-image: url("../img/sticker/diseno.svg");
-		right: -36px;
-		top: -48px;
-		@media (max-width: $tablet) {
-			top: 8px;
-			right: 8px;
-		}
-		@media (max-width: $mobile) {
-			top: 8px;
-			left: 11px;
-			width: 120px;
-			height: 120px;
-		}
-	}
 }
 .sticker-mask-five {
 	@media (max-width: $mobile) {
@@ -345,5 +329,46 @@
 			width: 120px;
 			height: 120px;
 		}
+	}
+}
+
+.circle {
+	&::before {
+		content: "";
+		position: absolute;
+		background-repeat: no-repeat;
+		background-size: cover;
+		z-index: 1;
+		width: 180px;
+		height: 180px;
+		@media (max-width: $tablet) {
+			width: 120px;
+			height: 120px;
+		}
+		@media (max-width: $mobile) {
+			width: 104px;
+			height: 104px;
+		}
+	}
+}
+
+.circle {
+	&::before {
+		top: 0;
+		right: 0;
+		background-image: url("../img/sticker/gaming.svg");
+	}
+}
+
+.top-right {
+	top: 0;
+	right: 0;
+	@media (max-width: $tablet) {
+		top: 7px;
+		right: 5px;
+	}
+	@media (max-width: $mobile) {
+		top: 8px;
+		right: 8px;
 	}
 }
