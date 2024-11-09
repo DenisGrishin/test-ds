@@ -10,7 +10,7 @@
 // Подключение стилей отдельных блоков
 @use "../../components/Header/header";
 @use "decor";
-@use "section-page/section-banner";
+@use "../../components/Sections/BannerSection/section-banner";
 @use "running-string";
 @use "section-page/section-articles";
 @use "section-page/section-webinars";

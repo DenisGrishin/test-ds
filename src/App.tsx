@@ -1,11 +1,12 @@
-import Layout from "./layout/Layout.tsx";
+import SectionsContainer from './containers/SectionContainer.tsx'
+import Layout from './layout/Layout.tsx'
 
 function App() {
   return (
     <Layout>
-      <div>s</div>
+      <SectionsContainer />
     </Layout>
-  );
+  )
 }
 
-export default App;
+export default App

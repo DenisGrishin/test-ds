@@ -1,4 +1,4 @@
 export interface DataApi {
-  logo: string
+  logo?: string
   nav: { [key: string]: string }[]
 }
