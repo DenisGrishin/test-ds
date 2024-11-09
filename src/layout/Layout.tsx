@@ -1,17 +1,17 @@
-import React, { ReactElement } from "react";
-import Footer from "../components/Footer/Footer.tsx";
-import ContainerHeader from "../containers/ContainerHeader.tsx";
+import React, { ReactElement } from 'react'
+import Footer from '../components/Footer/Footer.tsx'
+import HeaderContainer from '../containers/HeaderContainer.tsx'
 
 type LayoutProps = {
-  children: ReactElement;
-};
+  children: ReactElement
+}
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="wrapper">
-      <ContainerHeader />
+      <HeaderContainer />
       <main> {children}</main>
       <Footer />
     </div>
-  );
-};
-export default Layout;
+  )
+}
+export default Layout
