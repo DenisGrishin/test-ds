@@ -2,14 +2,13 @@ import React from 'react'
 import BannerSection from './BannerSection/BannerSection.tsx'
 import { TypeContetnDataApi } from './typeSections'
 
-interface SectionsDataApi {
+interface PropsSectionsDataApi {
   data: { main: TypeContetnDataApi }
 }
-const Sections: React.FC<SectionsDataApi> = ({ data }) => {
-  debugger
+const Sections: React.FC<PropsSectionsDataApi> = ({ data }) => {
   return (
     <div>
-      <BannerSection />
+      <BannerSection mainData={data.main} />
     </div>
   )
 }

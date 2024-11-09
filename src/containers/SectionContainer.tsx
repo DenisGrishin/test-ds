@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import Sections from '../components/Sections/Sections'
+
 import { getSectionsApi } from '../api/api'
+import Sections from '../components/Sections/Sections.tsx'
 
 const SectionsContainer: React.FC = () => {
   const [data, setData] = useState()

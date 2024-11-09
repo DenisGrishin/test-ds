@@ -1,8 +1,9 @@
 export interface TypeContetnDataApi {
-  data: { items: TypeItems; ticker: TypeTicker }
+  items: TypeItems[]
+  ticker: TypeTicker
 }
 
-interface TypeItems {
+export interface TypeItems {
   accent: string
   browseText: string
   date: string
@@ -21,7 +22,7 @@ interface TypeItems {
   text: string
   title: string
 }
-interface TypeTicker {
+export interface TypeTicker {
   color: string
   text: string
 }

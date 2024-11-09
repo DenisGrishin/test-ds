@@ -8,7 +8,10 @@ const NavHeader: React.FC<PropsNavHeader> = ({ navList }) => {
     <nav className="header__nav nav">
       <ul className="nav__list">
         {navList.map((item) => (
-          <li className="nav__item">
+          <li
+            key={Math.random().toString(36).slice(2, 9)}
+            className="nav__item"
+          >
             <a href={item.link} key={item.label} className="nav__link">
               {item.label}
             </a>
