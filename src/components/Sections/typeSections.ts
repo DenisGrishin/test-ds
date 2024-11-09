@@ -5,7 +5,7 @@ export interface TypeContetnDataApi {
 
 export interface TypeItems {
   accent: string
-  browseText: string
+  ['browse-text']: string
   date: string
   duration: number
   img: {

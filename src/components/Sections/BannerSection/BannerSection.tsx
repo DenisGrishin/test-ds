@@ -1,6 +1,10 @@
 import React from 'react'
 import HeaderArticleItem from '../../ArticleItem/HeaderArticleItem.tsx'
 import { TypeContetnDataApi } from '../typeSections'
+import FootreArticleItem from '../../ArticleItem/FootreArticleItem.tsx'
+import Button from '../../Button/Button.tsx'
+
+import WrapperImg from '../../WrapperImg/WrapperImg.tsx'
 
 interface PropsBannerSection {
   mainData: TypeContetnDataApi
@@ -16,49 +20,35 @@ const BannerSection: React.FC<PropsBannerSection> = ({ mainData }) => {
           key={Math.random().toString(36).slice(2, 9)}
           className="section-banner__container decor-line-top "
         >
-          <picture className="section-banner__img img-block">
-            <source
-              srcSet="img/section-banner/section-banner-mobile-img.webp"
-              media="(max-width: 767.98px)"
-            />
-            <source
-              srcSet="img/section-banner/section-banner-tablet-img.webp"
-              media="(max-width: 1279.98px)"
-            />
+          <WrapperImg classNameBlock="content-block" shapeMask={it.img.shape}>
             <img
               loading="lazy"
-              src="img/section-banner/section-banner-img.webp"
+              src={it.img.url}
               width="480"
               height="560"
               alt="Девушка с ноутбуком изучает профессию концепт-художника."
             />
-          </picture>
+          </WrapperImg>
           <article className="section-banner__block content-block">
             <HeaderArticleItem
               title={it.title}
               tags={it.tags}
               accent={it.accent}
-              h1Tag="h2"
+              colorTextTag="color-grass"
+              h1OrH2Tag="h1"
               classNameBlock="content-block"
             />
             <div className="content-block__body">
               <p className="content-block__description  description-article">
-                ¡Es posible unir la pasión por los dos universos! ¿Habías
-                escuchado este término antes? Si no te suena de nada, no te
-                sientas mal, el concepto es nuevo. ¡Nosotros te lo explicamos!
+                {it.text}
               </p>
-              <footer className="content-block__footer  footer-article">
-                <time className="footer-article__date" dateTime="2022-06-02">
-                  <span>2 de junio de 2022</span>
-                </time>
-                <span className="footer-article__time-read">
-                  <span>10 min</span>
-                </span>
-              </footer>
+              <FootreArticleItem date={it.date} duration={it.duration} />
             </div>
-            <button type="button" className="content-block__btn btn-grass">
-              <span>Leer el artículo</span>
-            </button>
+            <Button
+              text={it['browse-text']}
+              colorBtn="btn-grass"
+              classNameBlock="content-block"
+            />
           </article>
         </div>
       ))}

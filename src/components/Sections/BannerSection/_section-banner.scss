@@ -29,28 +29,6 @@
 	// .section-banner__img
 
 	&__img {
-		flex: 0 1 480px;
-		@media (max-width: $tablet) {
-			flex: none;
-		}
-		@media (max-width: $mobile) {
-		}
-		img {
-			height: 560px;
-
-			mask-image: url("../img/masks/section-banner-mask/mask-one-deskrop.svg");
-			object-position: bottom;
-			mask-position: bottom;
-			@media (max-width: $tablet) {
-				mask-image: url("../img/masks/section-banner-mask/mask-one-tablet.svg");
-				height: 320px;
-			}
-			@media (max-width: $mobile) {
-				mask-image: url("../img/masks/section-banner-mask/mask-one-mobile.svg");
-				height: 352px;
-				width: 304px;
-			}
-		}
 		&::before {
 			top: 0;
 			right: 0;

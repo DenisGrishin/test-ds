@@ -5,7 +5,8 @@ interface PropsHeaderArticle {
   title: string
   classNameBlock: string
   accent: string
-  h1Tag: 'h1' | 'h2'
+  h1OrH2Tag?: 'h1' | 'h2'
+  colorTextTag: string
 }
 
 const HeaderArticleItem: React.FC<PropsHeaderArticle> = ({
@@ -13,12 +14,15 @@ const HeaderArticleItem: React.FC<PropsHeaderArticle> = ({
   tags,
   title,
   accent,
-  h1Tag,
+  h1OrH2Tag = 'h2',
+  colorTextTag,
 }) => {
   return (
     <header className={`${classNameBlock}__header `}>
-      <nav className={`${classNameBlock}__nav nav-article`}>
-        <ul className={`${classNameBlock}__list nav-article`}>
+      <nav className={`${classNameBlock}__nav `}>
+        <ul
+          className={`${classNameBlock}__list nav-article nav-article_${colorTextTag}`}
+        >
           {tags.map((tag, indx) => {
             if (indx === 0) {
               return (
@@ -43,7 +47,7 @@ const HeaderArticleItem: React.FC<PropsHeaderArticle> = ({
           })}
         </ul>
       </nav>
-      {h1Tag == 'h1' ? (
+      {h1OrH2Tag === 'h1' ? (
         <h1 className={`${classNameBlock}__title big-title`}>{title}</h1>
       ) : (
         <h2 className={`${classNameBlock}__title big-title`}>{title}</h2>

@@ -7,11 +7,6 @@
 
 	// .nav-article__list_color-grass
 	&_color-grass {
-		.nav-article__item {
-			&._active {
-				background-color: var(--grass);
-			}
-		}
 		.nav-article__link {
 			color: var(--grass-dark);
 		}
@@ -157,7 +152,33 @@
 		object-fit: cover;
 	}
 }
-
+.arch {
+	flex: 0 1 480px;
+	@media (max-width: $tablet) {
+		flex: none;
+		max-width: 704px;
+		width: 100%;
+	}
+	@media (max-width: $mobile) {
+		max-width: 304px;
+	}
+	img {
+		height: 560px;
+		mask-image: url("../img/masks/section-banner-mask/mask-one-deskrop.svg");
+		object-position: bottom;
+		mask-position: bottom;
+		@media (max-width: $tablet) {
+			mask-image: url("../img/masks/section-banner-mask/mask-one-tablet.svg");
+			height: 320px;
+			object-position: 50%;
+		}
+		@media (max-width: $mobile) {
+			mask-image: url("../img/masks/section-banner-mask/mask-one-mobile.svg");
+			height: 352px;
+			width: 304px;
+		}
+	}
+}
 .sticker-mask-two {
 	img {
 		mask-image: url("../img/masks/section-articles-mask/mask-two-desktop.svg");
