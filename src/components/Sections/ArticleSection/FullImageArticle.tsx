@@ -24,6 +24,7 @@ const FullImageArticle: React.FC<PropsFullImageArticle> = ({ article }) => {
             tags={tags}
             accent={accent}
             classNameBlock="section-wide-article"
+            sizetitle="big-title"
           />
           <div className="section-wide-article__body">
             <p className="section-wide-article__description description-article">

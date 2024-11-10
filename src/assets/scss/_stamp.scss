@@ -55,6 +55,15 @@
 			height: 120px;
 		}
 	}
+	@media (any-hover: hover) {
+		.section-wide-article:hover &,
+		.article-item:hover & {
+			&::before {
+				transform: scale(1);
+				animation: 3s scale linear;
+			}
+		}
+	}
 }
 .cookie {
 	&::before {
@@ -77,6 +86,15 @@
 			}
 		}
 	}
+	@media (any-hover: hover) {
+		.section-wide-article:hover &,
+		.article-item:hover & {
+			&::before {
+				transform: rotate(180deg);
+				animation: 5s rotation linear;
+			}
+		}
+	}
 }
 .signboard {
 	&::before {
@@ -96,13 +114,21 @@
 			height: 100px;
 		}
 	}
+	@media (any-hover: hover) {
+		.section-wide-article:hover &,
+		.article-item:hover & {
+			&::before {
+				transform: rotate(15deg) translate(0px, 0px);
+				animation: 1s translateAnimate linear;
+			}
+		}
+	}
 }
 .donut {
 	&::before {
 		content: "";
 		background-image: url("../img/sticker/Software.svg");
-		// right: -39px;
-		// top: -48px;
+
 		@media (max-width: $tablet) {
 			top: 8px;
 			right: 8px;
@@ -115,6 +141,15 @@
 			right: auto;
 			width: 120px;
 			height: 120px;
+		}
+	}
+	@media (any-hover: hover) {
+		.section-wide-article:hover &,
+		.article-item:hover & {
+			&::before {
+				transform: rotate(180deg);
+				animation: 5s rotation linear;
+			}
 		}
 	}
 }
@@ -198,5 +233,43 @@
 			left: 9px;
 			right: auto;
 		}
+	}
+}
+// Анимация стикров ==========================================================================================================================================================================================================================
+
+@keyframes rotation {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+@keyframes scale {
+	0% {
+		transform: scale(1);
+	}
+	25% {
+		transform: scale(1.2);
+	}
+	50% {
+		transform: scale(1);
+	}
+	75% {
+		transform: scale(1.2);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+@keyframes translateAnimate {
+	0% {
+		transform: rotate(-40deg) translate(0px, 0px);
+	}
+	50% {
+		transform: rotate(-20deg) translate(0px, 40px);
+	}
+	100% {
+		transform: rotate(15deg) translate(0px, 0px);
 	}
 }

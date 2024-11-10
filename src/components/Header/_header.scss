@@ -58,28 +58,25 @@
 
 	&__logo {
 		order: 1;
-		height: 40px;
-		svg {
+
+		& img {
+			filter: grayscale(100%) brightness(0%);
 			width: 108px;
 			height: 40px;
+			transition: all 0.3s ease 0s;
+			@media (any-hover: hover) {
+				&:hover {
+					filter: grayscale(0%) brightness(100%);
+				}
+			}
 		}
-
 		@media (max-width: $tablet) {
 			flex: 0 1 50%;
 		}
 		@media (max-width: $mobile) {
-			height: 48px;
-			svg {
+			img {
 				width: 130px;
 				height: 48px;
-			}
-		}
-		path {
-			transition: all 0.3s ease 0s;
-		}
-		@media (any-hover: hover) {
-			&:hover path {
-				fill: var(--pink-dark);
 			}
 		}
 	}

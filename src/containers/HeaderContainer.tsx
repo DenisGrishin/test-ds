@@ -7,6 +7,7 @@ import useScrollHeader from '../hooks/useScrollHeader.tsx'
 const HeaderContainer: React.FC = () => {
   const [data, setData] = useState<DataApi>({ nav: [], logo: '' })
   const isScroll = useScrollHeader()
+
   useEffect(() => {
     getMenuApi().then((res) => setData({ nav: res.header, logo: res.logo }))
   }, [])

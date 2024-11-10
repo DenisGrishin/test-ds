@@ -1,7 +1,7 @@
 // @use "base/mixins";
 @use "main";
 
-@use "fonts/fonts";
+@use "./fonts/fonts";
 @use "base/null";
 // Подключение стилей общих элементов проекта
 @use "common";

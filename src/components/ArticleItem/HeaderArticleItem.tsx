@@ -6,6 +6,7 @@ interface PropsHeaderArticle {
   classNameBlock: string
   accent: string
   h1OrH2Tag?: 'h1' | 'h2'
+  sizetitle?: 'big-title' | 'middle-title'
 }
 
 const HeaderArticleItem: React.FC<PropsHeaderArticle> = ({
@@ -14,6 +15,7 @@ const HeaderArticleItem: React.FC<PropsHeaderArticle> = ({
   title,
   accent,
   h1OrH2Tag = 'h2',
+  sizetitle = 'middle-title',
 }) => {
   return (
     <header className={`${classNameBlock}__header `}>
@@ -47,7 +49,7 @@ const HeaderArticleItem: React.FC<PropsHeaderArticle> = ({
       {h1OrH2Tag === 'h1' ? (
         <h1 className={`${classNameBlock}__title big-title`}>{title}</h1>
       ) : (
-        <h2 className={`${classNameBlock}__title big-title`}>{title}</h2>
+        <h2 className={`${classNameBlock}__title ${sizetitle}`}>{title}</h2>
       )}
     </header>
   )

@@ -18,7 +18,6 @@ const CompactArticle: React.FC<PropsCompactArticle> = ({ article }) => {
           classNameBlock="article-item"
           propImg={img}
           stamp={stamp}
-          //  animateClassName='_animate-scale'
         />
       </a>
       <div className="article-item__contentn">
