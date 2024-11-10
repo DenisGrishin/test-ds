@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useLayoutEffect, useState } from 'react'
 
 const useScrollHeader = () => {
   const [isScroll, setIsScroll] = useState('')
   const [lastScroll, setLastScroll] = useState(0)
-  useEffect(() => {
+  useLayoutEffect(() => {
     const handleScroll = () => {
       const currnetScroll = window.scrollY
       if (lastScroll < currnetScroll) {

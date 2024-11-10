@@ -13,9 +13,17 @@ const Sections: React.FC<PropsSectionsDataApi> = ({ data }) => {
   return (
     <>
       <BannerSection itemsData={data.main.items} />
-      <RunningString ticker={data.main.ticker} AddClassName="article" />
+      <RunningString
+        ticker={data.main.ticker}
+        AddClassName="article"
+        numRepeatWord={11}
+      />
       <ArticleSection itemsData={data.content.items} />
-      <RunningString ticker={data.content.ticker} AddClassName="webinars" />
+      <RunningString
+        ticker={data.content.ticker}
+        AddClassName="webinars"
+        numRepeatWord={20}
+      />
     </>
   )
 }

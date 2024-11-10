@@ -60,7 +60,7 @@
 		.article-item:hover & {
 			&::before {
 				transform: scale(1);
-				animation: 3s scale linear;
+				animation: 3s scale reverse ease-out;
 			}
 		}
 	}
