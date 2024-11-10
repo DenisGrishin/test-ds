@@ -4,7 +4,7 @@ import { TypeContetnDataApi } from '../typeSections'
 import FootreArticleItem from '../../ArticleItem/FootreArticleItem.tsx'
 import Button from '../../Button/Button.tsx'
 
-import WrapperImg from '../../WrapperImg/WrapperImg.tsx'
+import ImgContainer from '../../../containers/ImgContainer.tsx'
 
 interface PropsBannerSection {
   mainData: TypeContetnDataApi
@@ -20,19 +20,11 @@ const BannerSection: React.FC<PropsBannerSection> = ({ mainData }) => {
           key={Math.random().toString(36).slice(2, 9)}
           className="section-banner__container decor-line-top "
         >
-          <WrapperImg
+          <ImgContainer
             classNameBlock="content-block"
-            shapeMask={it.img.shape}
+            propImg={it.img}
             stamp={it.stamp}
-          >
-            <img
-              loading="lazy"
-              src={it.img.url}
-              width="480"
-              height="560"
-              alt="Девушка с ноутбуком изучает профессию концепт-художника."
-            />
-          </WrapperImg>
+          />
           <article className="section-banner__block content-block">
             <HeaderArticleItem
               title={it.title}

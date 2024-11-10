@@ -11,6 +11,8 @@ const HeaderContainer: React.FC = () => {
     getMenuApi().then((res) => setData({ nav: res.header, logo: res.logo }))
   }, [])
 
+  if (!data) return undefined
+
   return <Header data={data} />
 }
 

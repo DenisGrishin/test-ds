@@ -18,7 +18,7 @@ const WrapperImg: React.FC<PropsWrapperImg> = ({
 }) => {
   return (
     <div
-      className={`${stamp.position} ${shapeMask} ${stamp.type}  ${classNameBlock}__img img-block circle`}
+      className={`${stamp.position} ${shapeMask} ${stamp.type}  ${classNameBlock}__img img-block `}
     >
       {children}
     </div>
