@@ -21,7 +21,7 @@
 
 		white-space: nowrap;
 		flex-shrink: 0;
-		animation: running-string 5s linear infinite;
+		animation: running-string 1s linear infinite;
 		display: flex;
 		align-items: center;
 		line-height: 1.2;
@@ -35,11 +35,14 @@
 			height: 41px;
 			padding-right: 98px;
 		}
+		.start-animation & {
+			animation: running-string 1s linear infinite;
+		}
 	}
 }
 @keyframes running-string {
 	0% {
-		transform: translateZ(0);
+		transform: translate3d(0%, 0, 0);
 	}
 	to {
 		transform: translate3d(-100%, 0, 0);

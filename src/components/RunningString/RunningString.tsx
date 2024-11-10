@@ -5,15 +5,19 @@ interface PropsRunningString {
   ticker: TypeTicker
   AddClassName: string
   numRepeatWord: number
+  isLoaded: boolean
 }
 
 const RunningString: React.FC<PropsRunningString> = ({
   ticker,
   AddClassName,
   numRepeatWord,
+  isLoaded,
 }) => {
   return (
-    <div className={`running-string ${AddClassName}`}>
+    <div
+      className={`running-string ${isLoaded ? 'start-animation' : ''}    ${AddClassName}`}
+    >
       <div
         className="running-string__wrapper"
         style={{ backgroundColor: ticker.color }}
