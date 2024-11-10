@@ -1,16 +1,17 @@
 import React from 'react'
 
 import NavHeader from './NavHeader.tsx'
-import { DataApi } from '../../types/index'
+import { DataApi } from './typeHeader'
 import HeaderRightBlock from './HeaderRightBlock.tsx'
 
 interface PropsHeader {
   data: DataApi
+  isScroll: string
 }
 
-const Header: React.FC<PropsHeader> = ({ data }) => {
+const Header: React.FC<PropsHeader> = ({ data, isScroll }) => {
   return (
-    <header data-scroll-show className="header">
+    <header className={`header ${isScroll}`}>
       <div className="header__container">
         <a href="#" className="header__logo">
           <img src={data.logo} alt="Лого сайта" />

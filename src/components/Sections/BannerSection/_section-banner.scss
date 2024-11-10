@@ -13,6 +13,9 @@
 	// .section-banner__container
 
 	&__container {
+	}
+	// .section-banner__wpapper
+	&__wpapper {
 		display: flex;
 		align-items: center;
 		column-gap: 40px;
@@ -25,7 +28,6 @@
 			row-gap: 18px;
 		}
 	}
-
 	// .section-banner__img
 
 	&__img {

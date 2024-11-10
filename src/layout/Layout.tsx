@@ -9,7 +9,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="wrapper">
       <HeaderContainer />
-      <main> {children}</main>
+      <main className="page"> {children}</main>
       <Footer />
     </div>
   )

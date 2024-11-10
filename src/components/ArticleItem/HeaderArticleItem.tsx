@@ -6,7 +6,6 @@ interface PropsHeaderArticle {
   classNameBlock: string
   accent: string
   h1OrH2Tag?: 'h1' | 'h2'
-  colorTextTag: string
 }
 
 const HeaderArticleItem: React.FC<PropsHeaderArticle> = ({
@@ -15,14 +14,11 @@ const HeaderArticleItem: React.FC<PropsHeaderArticle> = ({
   title,
   accent,
   h1OrH2Tag = 'h2',
-  colorTextTag,
 }) => {
   return (
     <header className={`${classNameBlock}__header `}>
       <nav className={`${classNameBlock}__nav `}>
-        <ul
-          className={`${classNameBlock}__list nav-article nav-article_${colorTextTag}`}
-        >
+        <ul className={`${classNameBlock}__list nav-article `}>
           {tags.map((tag, indx) => {
             if (indx === 0) {
               return (
@@ -40,6 +36,7 @@ const HeaderArticleItem: React.FC<PropsHeaderArticle> = ({
               <li
                 key={Math.random().toString(36).slice(2, 9)}
                 className="nav-article__item "
+                style={{ color: accent }}
               >
                 <span className="nav-article__link">{tag}</span>
               </li>

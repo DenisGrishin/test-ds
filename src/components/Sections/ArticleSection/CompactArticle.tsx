@@ -26,7 +26,6 @@ const CompactArticle: React.FC<PropsCompactArticle> = ({ article }) => {
           title={title}
           tags={tags}
           accent={accent}
-          colorTextTag="color-marine"
           classNameBlock="article-item"
         />
         <p className="article-item__description description-article">{text}</p>

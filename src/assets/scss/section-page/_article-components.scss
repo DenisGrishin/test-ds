@@ -128,26 +128,16 @@
 		grid-column: auto;
 	}
 }
-.img-block {
+
+// Маски ========================================================================================================================================================================================================================================================================================================================================================================
+.arch,
+.corner-squared-cloud,
+.semi-squared-cloud,
+.corner-squared-rounded,
+.semi-squared-rounded,
+.cloud {
 	position: relative;
 
-	&::before {
-		content: "";
-		position: absolute;
-		background-repeat: no-repeat;
-		background-size: cover;
-		z-index: 1;
-		width: 180px;
-		height: 180px;
-		@media (max-width: $tablet) {
-			width: 120px;
-			height: 120px;
-		}
-		@media (max-width: $mobile) {
-			width: 104px;
-			height: 104px;
-		}
-	}
 	img {
 		height: 100%;
 		width: 100%;
@@ -157,6 +147,7 @@
 		object-fit: cover;
 	}
 }
+
 .arch {
 	img {
 		height: 560px;
@@ -242,180 +233,6 @@
 		}
 		@media (max-width: $mobileSmall) {
 			object-position: -111px -5px;
-		}
-	}
-}
-
-.donut,
-.signboard,
-.cookie,
-.star,
-.circle {
-	&::before {
-		content: "";
-		position: absolute;
-		background-repeat: no-repeat;
-		background-size: cover;
-		z-index: 1;
-		transition: all 0.3s ease 0s;
-		width: 180px;
-		height: 180px;
-		@media (max-width: $tablet) {
-			width: 120px;
-			height: 120px;
-		}
-		@media (max-width: $mobile) {
-			width: 104px;
-			height: 104px;
-		}
-	}
-}
-
-.circle {
-	&::before {
-		top: 0;
-		right: 0;
-		background-image: url("../img/sticker/gaming.svg");
-	}
-}
-.star {
-	&::before {
-		background-image: url("../img/sticker/fashion.svg");
-
-		@media (max-width: $tablet) {
-			width: 104px;
-			height: 104px;
-		}
-		@media (max-width: $mobile) {
-			width: 120px;
-			height: 120px;
-		}
-	}
-}
-.cookie {
-	&::before {
-		background-image: url("../img/sticker/diseno.svg");
-
-		@media (max-width: $tablet) {
-			width: 104px;
-			height: 104px;
-		}
-		@media (max-width: $mobile) {
-			width: 120px;
-			height: 120px;
-		}
-	}
-}
-.signboard {
-	&::before {
-		background-image: url("../img/sticker/marketing.svg");
-		background-position: center;
-
-		width: 270px;
-		height: 148px;
-
-		@media (max-width: $tablet) {
-			width: 162px;
-			height: 93px;
-			transform: rotate(15deg);
-		}
-		@media (max-width: $mobile) {
-			width: 174px;
-			height: 100px;
-		}
-	}
-}
-.donut {
-	&::before {
-		content: "";
-		background-image: url("../img/sticker/Software.svg");
-		// right: -39px;
-		// top: -48px;
-		@media (max-width: $tablet) {
-			top: 8px;
-			right: 8px;
-			width: 104px;
-			height: 104px;
-		}
-		@media (max-width: $mobile) {
-			top: 8px;
-			left: 8px;
-			right: auto;
-			width: 120px;
-			height: 120px;
-		}
-	}
-}
-.top-right {
-	&.donut {
-		&::before {
-			right: -39px;
-			top: -48px;
-			@media (max-width: $tablet) {
-				top: 8px;
-				right: 8px;
-			}
-			@media (max-width: $mobile) {
-				top: 8px;
-				left: 8px;
-				right: auto;
-			}
-		}
-	}
-	&.cookie {
-		&::before {
-			right: -36px;
-			top: -48px;
-			@media (max-width: $tablet) {
-				top: 8px;
-				right: 8px;
-			}
-			@media (max-width: $mobile) {
-				top: 8px;
-			}
-		}
-	}
-	&::before {
-		top: 0;
-		right: 0;
-		@media (max-width: $tablet) {
-			top: 7px;
-			right: 5px;
-		}
-		@media (max-width: $mobile) {
-			top: 8px;
-			right: 8px;
-		}
-	}
-}
-.top-left {
-	&.signboard {
-		&::before {
-			left: -55px;
-			top: -49px;
-			@media (max-width: $tablet) {
-				top: 8px;
-				left: auto;
-				right: -1px;
-			}
-			@media (max-width: $mobile) {
-				top: 6px;
-				right: 0;
-			}
-		}
-	}
-	&::before {
-		top: -48px;
-		left: -36px;
-		@media (max-width: $tablet) {
-			left: auto;
-			top: 8px;
-			right: 8px;
-		}
-		@media (max-width: $mobile) {
-			top: 10px;
-			left: 9px;
-			right: auto;
 		}
 	}
 }
