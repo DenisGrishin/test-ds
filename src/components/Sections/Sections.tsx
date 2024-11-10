@@ -2,15 +2,20 @@ import React from 'react'
 import BannerSection from './BannerSection/BannerSection.tsx'
 import { TypeContetnDataApi } from './typeSections'
 import RunningString from '../RunningString/RunningString.tsx'
+import ArticleSection from './ArticleSection/ArticleSection.tsx'
 
 interface PropsSectionsDataApi {
-  data: { main: TypeContetnDataApi }
+  data: { main: TypeContetnDataApi; content: TypeContetnDataApi }
 }
 const Sections: React.FC<PropsSectionsDataApi> = ({ data }) => {
+  console.log(data)
+
   return (
     <>
-      <BannerSection mainData={data.main} />
+      <BannerSection itemsData={data.main.items} />
       <RunningString ticker={data.main.ticker} AddClassName="article" />
+      <ArticleSection itemsData={data.content.items} />
+      <RunningString ticker={data.content.ticker} AddClassName="webinars" />
     </>
   )
 }

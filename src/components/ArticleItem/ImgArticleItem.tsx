@@ -6,7 +6,7 @@ interface PropsImgArticleItem {
 }
 
 const ImgArticleItem: React.FC<PropsImgArticleItem> = ({ textAlt, srcImg }) => {
-  return <img src={srcImg} alt={textAlt} />
+  return <img loading="lazy" src={srcImg} alt={textAlt} />
 }
 
 export default ImgArticleItem

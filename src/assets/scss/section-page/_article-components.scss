@@ -122,7 +122,12 @@
 		}
 	}
 }
-
+.full-image {
+	grid-column: 1/3;
+	@media (max-width: $mobile) {
+		grid-column: auto;
+	}
+}
 .img-block {
 	position: relative;
 
@@ -153,15 +158,6 @@
 	}
 }
 .arch {
-	flex: 0 1 480px;
-	@media (max-width: $tablet) {
-		flex: none;
-		max-width: 704px;
-		width: 100%;
-	}
-	@media (max-width: $mobile) {
-		max-width: 304px;
-	}
 	img {
 		height: 560px;
 		mask-image: url("../img/masks/section-banner-mask/mask-one-deskrop.svg");
@@ -179,7 +175,7 @@
 		}
 	}
 }
-.sticker-mask-two {
+.semi-squared-rounded {
 	img {
 		mask-image: url("../img/masks/section-articles-mask/mask-two-desktop.svg");
 
@@ -191,28 +187,8 @@
 			mask-image: url("../img/masks/section-articles-mask/mask-two-mobile.svg");
 		}
 	}
-	&::before {
-		content: "";
-		background-image: url("../img/sticker/fashion.svg");
-		top: -48px;
-		left: -36px;
-		@media (max-width: $tablet) {
-			left: auto;
-			top: 8px;
-			right: 8px;
-			width: 104px;
-			height: 104px;
-		}
-		@media (max-width: $mobile) {
-			top: 10px;
-			left: 9px;
-			right: auto;
-			width: 120px;
-			height: 120px;
-		}
-	}
 }
-.sticker-mask-three {
+.semi-squared-cloud {
 	img {
 		mask-image: url("../img/masks/section-articles-mask/mask-three-desktop.svg");
 		@media (max-width: $tablet) {
@@ -225,26 +201,37 @@
 			object-position: -50px 0;
 		}
 	}
-	&::before {
-		content: "";
-		background-image: url("../img/sticker/diseno.svg");
-		right: -36px;
-		top: -48px;
-		transition: all 0.3s ease 0s;
+}
+.corner-squared-cloud {
+	img {
+		mask-image: url("../img/masks/section-articles-mask/mask-five-desktop.svg");
 		@media (max-width: $tablet) {
-			top: 8px;
-			right: 8px;
-			width: 104px;
-			height: 104px;
+			mask-image: url("../img/masks/section-articles-mask/mask-five-tablet.svg");
 		}
 		@media (max-width: $mobile) {
-			top: 8px;
-			width: 120px;
-			height: 120px;
+			mask-image: url("../img/masks/section-articles-mask/mask-five-mobile.svg");
+		}
+		@media (max-width: $mobileSmall) {
+			object-position: -111px 0;
 		}
 	}
 }
-.sticker-mask-four {
+
+.corner-squared-rounded {
+	img {
+		mask-image: url("../img/masks/section-articles-mask/mask-six-desktop.svg");
+		@media (max-width: $tablet) {
+			mask-image: url("../img/masks/section-articles-mask/mask-six-tablet.svg");
+		}
+		@media (max-width: $mobile) {
+			mask-image: url("../img/masks/section-articles-mask/mask-six-mobile.svg");
+		}
+		@media (max-width: $mobileSmall) {
+			object-position: -14px -4px;
+		}
+	}
+}
+.cloud {
 	img {
 		mask-image: url("../img/masks/section-articles-mask/mask-four-desktop.svg");
 		@media (max-width: $tablet) {
@@ -258,80 +245,11 @@
 		}
 	}
 }
-.sticker-mask-five {
-	@media (max-width: $mobile) {
-	}
-	img {
-		mask-image: url("../img/masks/section-articles-mask/mask-five-desktop.svg");
-		@media (max-width: $tablet) {
-			mask-image: url("../img/masks/section-articles-mask/mask-five-tablet.svg");
-		}
-		@media (max-width: $mobile) {
-			mask-image: url("../img/masks/section-articles-mask/mask-five-mobile.svg");
-		}
-		@media (max-width: $mobileSmall) {
-			object-position: -111px 0;
-		}
-	}
-	&::before {
-		content: "";
-		background-image: url("../img/sticker/marketing.svg");
-		background-position: center;
-		transition: all 0.4s ease 0s;
-		width: 270px;
-		height: 148px;
-		left: -55px;
-		top: -49px;
-		@media (max-width: $tablet) {
-			top: 8px;
-			width: 162px;
-			height: 93px;
-			left: auto;
-			right: -1px;
-			transform: rotate(15deg);
-		}
-		@media (max-width: $mobile) {
-			top: 6px;
-			right: 0;
-			width: 174px;
-			height: 100px;
-		}
-	}
-}
-.sticker-mask-six {
-	img {
-		mask-image: url("../img/masks/section-articles-mask/mask-six-desktop.svg");
-		@media (max-width: $tablet) {
-			mask-image: url("../img/masks/section-articles-mask/mask-six-tablet.svg");
-		}
-		@media (max-width: $mobile) {
-			mask-image: url("../img/masks/section-articles-mask/mask-six-mobile.svg");
-		}
-		@media (max-width: $mobileSmall) {
-			object-position: -14px -4px;
-		}
-	}
-	&::before {
-		content: "";
-		background-image: url("../img/sticker/Software.svg");
-		right: -39px;
-		top: -48px;
-		@media (max-width: $tablet) {
-			top: 8px;
-			right: 8px;
-			width: 104px;
-			height: 104px;
-		}
-		@media (max-width: $mobile) {
-			top: 8px;
-			left: 8px;
-			right: auto;
-			width: 120px;
-			height: 120px;
-		}
-	}
-}
 
+.donut,
+.signboard,
+.cookie,
+.star,
 .circle {
 	&::before {
 		content: "";
@@ -339,6 +257,7 @@
 		background-repeat: no-repeat;
 		background-size: cover;
 		z-index: 1;
+		transition: all 0.3s ease 0s;
 		width: 180px;
 		height: 180px;
 		@media (max-width: $tablet) {
@@ -359,16 +278,144 @@
 		background-image: url("../img/sticker/gaming.svg");
 	}
 }
+.star {
+	&::before {
+		background-image: url("../img/sticker/fashion.svg");
 
-.top-right {
-	top: 0;
-	right: 0;
-	@media (max-width: $tablet) {
-		top: 7px;
-		right: 5px;
+		@media (max-width: $tablet) {
+			width: 104px;
+			height: 104px;
+		}
+		@media (max-width: $mobile) {
+			width: 120px;
+			height: 120px;
+		}
 	}
-	@media (max-width: $mobile) {
-		top: 8px;
-		right: 8px;
+}
+.cookie {
+	&::before {
+		background-image: url("../img/sticker/diseno.svg");
+
+		@media (max-width: $tablet) {
+			width: 104px;
+			height: 104px;
+		}
+		@media (max-width: $mobile) {
+			width: 120px;
+			height: 120px;
+		}
+	}
+}
+.signboard {
+	&::before {
+		background-image: url("../img/sticker/marketing.svg");
+		background-position: center;
+
+		width: 270px;
+		height: 148px;
+
+		@media (max-width: $tablet) {
+			width: 162px;
+			height: 93px;
+			transform: rotate(15deg);
+		}
+		@media (max-width: $mobile) {
+			width: 174px;
+			height: 100px;
+		}
+	}
+}
+.donut {
+	&::before {
+		content: "";
+		background-image: url("../img/sticker/Software.svg");
+		// right: -39px;
+		// top: -48px;
+		@media (max-width: $tablet) {
+			top: 8px;
+			right: 8px;
+			width: 104px;
+			height: 104px;
+		}
+		@media (max-width: $mobile) {
+			top: 8px;
+			left: 8px;
+			right: auto;
+			width: 120px;
+			height: 120px;
+		}
+	}
+}
+.top-right {
+	&.donut {
+		&::before {
+			right: -39px;
+			top: -48px;
+			@media (max-width: $tablet) {
+				top: 8px;
+				right: 8px;
+			}
+			@media (max-width: $mobile) {
+				top: 8px;
+				left: 8px;
+				right: auto;
+			}
+		}
+	}
+	&.cookie {
+		&::before {
+			right: -36px;
+			top: -48px;
+			@media (max-width: $tablet) {
+				top: 8px;
+				right: 8px;
+			}
+			@media (max-width: $mobile) {
+				top: 8px;
+			}
+		}
+	}
+	&::before {
+		top: 0;
+		right: 0;
+		@media (max-width: $tablet) {
+			top: 7px;
+			right: 5px;
+		}
+		@media (max-width: $mobile) {
+			top: 8px;
+			right: 8px;
+		}
+	}
+}
+.top-left {
+	&.signboard {
+		&::before {
+			left: -55px;
+			top: -49px;
+			@media (max-width: $tablet) {
+				top: 8px;
+				left: auto;
+				right: -1px;
+			}
+			@media (max-width: $mobile) {
+				top: 6px;
+				right: 0;
+			}
+		}
+	}
+	&::before {
+		top: -48px;
+		left: -36px;
+		@media (max-width: $tablet) {
+			left: auto;
+			top: 8px;
+			right: 8px;
+		}
+		@media (max-width: $mobile) {
+			top: 10px;
+			left: 9px;
+			right: auto;
+		}
 	}
 }

@@ -1,40 +1,45 @@
-@use "../main" as *;
+@use "../../../assets/scss/_main.scss" as *;
 .section-articles {
 	padding-top: 153px;
-	padding-bottom: 136px;
-
+	// padding-bottom: 136px;
+	padding-bottom: 117px;
 	@media (max-width: $tablet) {
 		padding-top: 159px;
-		padding-bottom: 104px;
+		padding-bottom: 160px;
+		// padding-bottom: 104px;
 	}
 	@media (max-width: $mobile) {
 		padding-top: 147px;
+		padding-bottom: 64px;
 	}
 	// .section-articles_py
 
-	&_py {
-		padding-top: 136px;
-		padding-bottom: 117px;
-		@media (max-width: $tablet) {
-			padding-top: 89px;
-			padding-bottom: 160px;
-		}
-		@media (max-width: $mobile) {
-			padding-bottom: 64px;
-			padding-top: 102px;
-		}
-	}
+	// &_py {
+	// 	padding-top: 136px;
+	// padding-bottom: 117px;
+	// 	@media (max-width: $tablet) {
+	// 		padding-top: 89px;
+	// padding-bottom: 160px;
+	// 	}
+	// 	@media (max-width: $mobile) {
+	// 		padding-top: 102px;
+	// padding-bottom: 64px;
+	// 	}
+	// }
 	// .section-articles__container
 
 	&__container {
-		display: flex;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		row-gap: 136px;
 		column-gap: 40px;
 		@media (max-width: $tablet) {
 			column-gap: 24px;
 		}
 		@media (max-width: $mobile) {
-			flex-direction: column;
-			row-gap: 104px;
+			grid-template-columns: 1fr;
+			// flex-direction: column;
+			// row-gap: 104px;
 		}
 	}
 
@@ -127,7 +132,7 @@
 
 	// .section-wide-article__link-img
 
-	&__link-img {
+	&__img {
 		display: block;
 		margin-bottom: 48px;
 		@media (max-width: $tablet) {

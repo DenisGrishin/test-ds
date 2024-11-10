@@ -4,6 +4,7 @@ import ImgArticleItem from '../components/ArticleItem/ImgArticleItem.tsx'
 
 interface PropsWrapperImg {
   classNameBlock: string
+
   propImg: {
     url: string
     shape: string

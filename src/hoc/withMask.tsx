@@ -20,7 +20,7 @@ const withMask = (
 
     return (
       <div
-        className={`${propImg.shape} ${stamp.position} ${classNameBlock}__img img-block`}
+        className={`${propImg.shape} ${stamp.type} ${stamp.position} ${classNameBlock}__img img-block`}
       >
         <WrappedComponent srcImg={propImg.url} textAlt={stamp.word} />
       </div>

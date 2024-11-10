@@ -1,27 +1,25 @@
 import React from 'react'
 import HeaderArticleItem from '../../ArticleItem/HeaderArticleItem.tsx'
-import { TypeContetnDataApi } from '../typeSections'
+import { TypeItems } from '../typeSections'
 import FootreArticleItem from '../../ArticleItem/FootreArticleItem.tsx'
 import Button from '../../Button/Button.tsx'
 
 import ImgContainer from '../../../containers/ImgContainer.tsx'
 
 interface PropsBannerSection {
-  mainData: TypeContetnDataApi
+  itemsData: TypeItems[]
 }
 
-const BannerSection: React.FC<PropsBannerSection> = ({ mainData }) => {
-  console.log(mainData.items[0])
-
+const BannerSection: React.FC<PropsBannerSection> = ({ itemsData }) => {
   return (
     <div className="section-banner">
-      {mainData.items.map((it) => (
+      {itemsData.map((it) => (
         <div
           key={Math.random().toString(36).slice(2, 9)}
           className="section-banner__container decor-line-top "
         >
           <ImgContainer
-            classNameBlock="content-block"
+            classNameBlock="section-banner"
             propImg={it.img}
             stamp={it.stamp}
           />
@@ -38,7 +36,11 @@ const BannerSection: React.FC<PropsBannerSection> = ({ mainData }) => {
               <p className="content-block__description  description-article">
                 {it.text}
               </p>
-              <FootreArticleItem date={it.date} duration={it.duration} />
+              <FootreArticleItem
+                classNameBlock="content-block"
+                date={it.date}
+                duration={it.duration}
+              />
             </div>
             <Button
               text={it['browse-text']}

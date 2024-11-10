@@ -29,6 +29,15 @@
 	// .section-banner__img
 
 	&__img {
+		flex: 0 1 480px;
+		@media (max-width: $tablet) {
+			flex: none;
+			max-width: 704px;
+			width: 100%;
+		}
+		@media (max-width: $mobile) {
+			max-width: 304px;
+		}
 	}
 
 	// .section-banner__block

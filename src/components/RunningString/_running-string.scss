@@ -31,22 +31,22 @@
 }
 
 .webinars-str-run {
-	height: 200px !important;
+	// height: 200px !important;
 
-	@media (max-width: $tablet) {
-		height: 127px !important;
-	}
-	&__wrapper {
-		@media (max-width: 1440px) {
-			transform: rotate(-2.9deg) translate(-100px, 19px);
-		}
-		@media (max-width: $tablet) {
-			transform: rotate(-2.9deg) translate(-100px, 43px) !important;
-		}
-		@media (max-width: $mobile) {
-			transform: rotate(-3.9deg) translate(-100px, 0px) !important;
-		}
-	}
+	// @media (max-width: $tablet) {
+	// 	height: 127px !important;
+	// }
+	// &__wrapper {
+	// 	@media (max-width: 1440px) {
+	// 		transform: rotate(-2.9deg) translate(-100px, 19px);
+	// 	}
+	// 	@media (max-width: $tablet) {
+	// 		transform: rotate(-2.9deg) translate(-100px, 43px) !important;
+	// 	}
+	// 	@media (max-width: $mobile) {
+	// 		transform: rotate(-3.9deg) translate(-100px, 0px) !important;
+	// 	}
+	// }
 }
 .subscribe-str-run {
 	height: 180px !important;
@@ -171,11 +171,16 @@
 		transform: translateX(calc(-100% - 58px));
 	}
 }
+.webinars,
 .article {
-	height: 223px;
 	position: relative;
 	z-index: 5;
 	width: 150vw;
+}
+.webinars,
+.article {
+	height: 223px;
+
 	transform: rotate(-2.9deg) translate(-100px, 31px);
 	@media (max-width: 1440px) {
 		transform: rotate(-3.9deg) translate(-100px, 29px);
@@ -194,5 +199,21 @@
 	}
 	@media (max-width: $mobile) {
 		height: 106px;
+	}
+}
+.webinars {
+	height: 200px;
+
+	@media (max-width: $tablet) {
+		height: 127px;
+	}
+	@media (max-width: 1440px) {
+		transform: rotate(-2.9deg) translate(-100px, 19px);
+	}
+	@media (max-width: $tablet) {
+		transform: rotate(-2.9deg) translate(-100px, 43px);
+	}
+	@media (max-width: $mobile) {
+		transform: rotate(-3.9deg) translate(-100px, 0px);
 	}
 }
