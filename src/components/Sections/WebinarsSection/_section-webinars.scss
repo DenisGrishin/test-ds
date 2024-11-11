@@ -1,4 +1,4 @@
-@use "../main" as *;
+@use "../../../assets/scss/_main.scss" as *;
 .section-webinars {
 	padding-top: 45px;
 	padding-bottom: 78px;
@@ -145,7 +145,6 @@
 		}
 
 		&:nth-child(1) {
-			background-color: var(--turquoise-dark);
 			@media (max-width: $tablet) {
 				min-height: 401px;
 			}
@@ -166,7 +165,6 @@
 			}
 		}
 		&:nth-child(2) {
-			background-color: var(--coral-dark);
 			@media (max-width: $tablet) {
 				min-height: 401px;
 			}
@@ -190,7 +188,6 @@
 			}
 		}
 		&:nth-child(3) {
-			background-color: var(--tangerine-dark);
 			@media (max-width: $tablet) {
 				min-height: 272px;
 			}

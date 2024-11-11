@@ -21,7 +21,7 @@
 
 		white-space: nowrap;
 		flex-shrink: 0;
-		animation: running-string 1s linear infinite;
+
 		display: flex;
 		align-items: center;
 		line-height: 1.2;
@@ -36,7 +36,7 @@
 			padding-right: 98px;
 		}
 		.start-animation & {
-			animation: running-string 1s linear infinite;
+			animation: running-string 5s linear infinite;
 		}
 	}
 }
