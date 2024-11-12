@@ -49,3 +49,11 @@ export interface TypeAuthorProposals {
   name: string
   position: string
 }
+export interface TypeSubscription {
+  ['agreement-text']: string
+  ['email-placeholder']: string
+  ['submit-text']: string
+  ticker: TypeTicker
+  text: string
+  title: string
+}

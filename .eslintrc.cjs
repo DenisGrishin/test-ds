@@ -39,6 +39,13 @@ module.exports = {
     'no-irregular-whitespace': ['error', { skipJSXText: true }],
     'react/function-component-definition': 'off',
     'react/require-default-props': ['off'],
+    'jsx-a11y/label-has-associated-control': 'off',
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
     // "@typescript-eslint/explicit-module-boundary-types": "off", // Отключаем обязательность типов для функций
     // "@typescript-eslint/no-explicit-any": "off", // Отключаем ошибку для использования `any` типа
     // "prettier/prettier": "error", // Это правило заставит ESLint показывать ошибку, если форматирование Prettier нарушено

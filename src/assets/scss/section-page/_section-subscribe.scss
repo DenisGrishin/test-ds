@@ -166,7 +166,7 @@
 	}
 	// .subscribe-form__input
 	&__wrapper-input,
-	&__submit,
+	&__btn,
 	& input {
 		flex: 0 1 280px;
 		@media (max-width: $tablet) {
@@ -179,7 +179,7 @@
 
 	// .subscribe-form__submit
 
-	&__submit {
+	&__btn {
 		font-weight: 700;
 	}
 

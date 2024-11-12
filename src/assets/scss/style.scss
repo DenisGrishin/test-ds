@@ -5,7 +5,8 @@
 @use "base/null";
 // Подключение стилей общих элементов проекта
 @use "common";
-@use "../../components/Button/button";
+@use "../../components/common/Button/button";
+@use "../../components/common/Input/input";
 @use "section-page/article-components";
 
 // Подключение стилей отдельных блоков

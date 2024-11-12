@@ -1,6 +1,6 @@
 import React from 'react'
 import { TypeProposals } from '../typeSections'
-import Button from '../../Button/Button.tsx'
+import Button from '../../common/Button/Button.tsx'
 import CardWebinars from './CardWebinars/CardWebinars.tsx'
 
 interface PropsWebinarsSection {

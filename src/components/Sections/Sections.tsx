@@ -1,16 +1,22 @@
 import React from 'react'
 import BannerSection from './BannerSection/BannerSection.tsx'
-import { TypeContetnDataApi, TypeProposals } from './typeSections'
+import {
+  TypeContetnDataApi,
+  TypeProposals,
+  TypeSubscription,
+} from './typeSections'
 
 import ArticleSection from './ArticleSection/ArticleSection.tsx'
 import RunningStringContainer from '../../containers/RunningStringContainer.tsx'
 import WebinarsSection from './WebinarsSection/WebinarsSection.tsx'
+import SubscribeSection from './SubscribeSection/SubscribeSection.tsx'
 
 interface PropsSectionsDataApi {
   data: {
     main: TypeContetnDataApi
     content: TypeContetnDataApi
     proposals: TypeProposals
+    subscription: TypeSubscription
   }
 }
 const Sections: React.FC<PropsSectionsDataApi> = ({ data }) => {
@@ -19,20 +25,33 @@ const Sections: React.FC<PropsSectionsDataApi> = ({ data }) => {
   return (
     <>
       <BannerSection itemsData={data.main.items} />
+
       <RunningStringContainer
         ticker={data.main.ticker}
         AddClassName="article"
         numRepeatWord={11}
       />
+
       <ArticleSection itemsData={data.content.items} />
+
       <RunningStringContainer
         ticker={data.content.ticker}
         AddClassName="webinars"
         numRepeatWord={20}
       />
+
       <WebinarsSection proposals={data.proposals} />
+
       <RunningStringContainer
         ticker={data.proposals.ticker}
+        AddClassName="webinars"
+        numRepeatWord={17}
+      />
+
+      <SubscribeSection subscription={data.subscription} />
+
+      <RunningStringContainer
+        ticker={data.subscription.ticker}
         AddClassName="webinars"
         numRepeatWord={17}
       />

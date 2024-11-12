@@ -75,6 +75,7 @@
 	// .nav-article__link
 
 	&__link {
+		filter: contrast(0.7);
 		display: inline-block;
 		border-radius: 20px;
 	}

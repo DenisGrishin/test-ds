@@ -3,7 +3,7 @@ const useIntlDateTimeFormat = (date: string) => {
   const newDate = new Date([arrDate[1], arrDate[0], arrDate[3]].join('.'))
 
   if (Number.isNaN(newDate.getTime())) {
-    return ''
+    return 'Неверный формат даты. Как дата должна выглядеть "дд.мм.гггг"'
   }
 
   const formatter = new Intl.DateTimeFormat('es', {
