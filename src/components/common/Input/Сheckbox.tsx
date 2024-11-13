@@ -1,16 +1,16 @@
 import React from 'react'
 
 interface PropsСheckbox {
-  agreementText: string
+  checkboxText: string
   name: string
 }
-const Сheckbox: React.FC<PropsСheckbox> = ({ agreementText, name }) => {
+const Сheckbox: React.FC<PropsСheckbox> = ({ checkboxText, name }) => {
   return (
     <div className="checkbox">
       <input type="checkbox" name={name} id="chk-сonfirmation" />
       <label htmlFor="chk-сonfirmation" className="checkbox__label">
         <span className="subscribe-form__сonfirmation-text">
-          {agreementText}
+          {checkboxText}
         </span>
       </label>
     </div>

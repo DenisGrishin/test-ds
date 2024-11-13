@@ -14,11 +14,8 @@ const WebinarsSection: React.FC<PropsWebinarsSection> = ({ proposals }) => {
       <div className="section-webinars__container">
         <h2 className="section-webinars__title">{title}</h2>
 
-        <Button
-          colorBtn="btn-purple"
-          text={proposals['browse-all-text']}
-          classNameBlock="section-webinars"
-        />
+        <Button colorBtn="btn-purple" text={proposals['browse-all-text']} />
+
         <div className="section-webinars__items item-card">
           {items.map((card) => (
             <CardWebinars

@@ -4,30 +4,32 @@ interface PropsInput {
   type: 'email' | 'text' | 'tel'
   emailPlaceholder: string
   value: string
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
   idInput?: string
   name: string
+  onBlur: (e: React.FocusEvent<HTMLInputElement>) => void
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 const Input: React.FC<PropsInput> = ({
   type,
   emailPlaceholder,
   value,
-  onChange,
   idInput = '',
   name,
+  onBlur,
+  onChange,
 }) => {
   return (
-    <div className="block-input">
-      <input
-        type={type}
-        placeholder={emailPlaceholder}
-        value={value}
-        id={idInput}
-        name={name}
-        onChange={(e) => onChange(e)}
-      />
-    </div>
+    <input
+      className="input"
+      type={type}
+      placeholder={emailPlaceholder}
+      value={value}
+      id={idInput}
+      onBlur={(e) => onBlur(e)}
+      name={name}
+      onChange={(e) => onChange(e)}
+    />
   )
 }
 

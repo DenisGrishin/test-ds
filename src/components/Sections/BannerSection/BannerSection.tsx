@@ -44,11 +44,7 @@ const BannerSection: React.FC<PropsBannerSection> = ({ itemsData }) => {
                       duration={it.duration}
                     />
                   </div>
-                  <Button
-                    text={it['browse-text']}
-                    colorBtn="btn-grass"
-                    classNameBlock="content-block"
-                  />
+                  <Button text={it['browse-text']} colorBtn="btn-grass" />
                 </article>
               </div>
             )

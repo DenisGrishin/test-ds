@@ -12,7 +12,7 @@ const NavHeader: React.FC<PropsNavHeader> = ({ navList }) => {
             key={Math.random().toString(36).slice(2, 9)}
             className="nav__item"
           >
-            <a href={item.link} key={item.label} className="nav__link">
+            <a href={item.url} key={item.label} className="nav__link">
               {item.label}
             </a>
           </li>

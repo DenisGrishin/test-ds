@@ -7,33 +7,55 @@ import Button from '../common/Button/Button.tsx'
 interface PropsMailFrom {
   emailPlaceholder: string
   submitText: string
-  agreementText?: string
+  checkboxText?: string
+  valueInput: string
+  validClass: string
+  onSubmit: (e: React.FormEvent<HTMLFormElement>) => void
+  onBlur: (e: React.FocusEvent<HTMLInputElement>) => void
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 const MailFrom: React.FC<PropsMailFrom> = ({
   emailPlaceholder,
   submitText,
-  agreementText = '',
+  checkboxText = '',
+  valueInput,
+  validClass,
+  onSubmit,
+  onBlur,
+
+  onChange,
 }) => {
   return (
-    <form className="section-subscribe__form subscribe-form">
+    <form
+      onSubmit={(e) => onSubmit(e)}
+      className="section-subscribe__form subscribe-form"
+    >
       <div className="subscribe-form__wrapper-input">
-        <Input
-          type="text"
-          name="email"
-          emailPlaceholder={emailPlaceholder}
-          onChange={() => true}
-          value=""
-        />
+        <div className={`subscribe-form__wrapper-input ${validClass}`}>
+          <Input
+            type="text"
+            name="email"
+            emailPlaceholder={emailPlaceholder}
+            value={valueInput}
+            onBlur={(e) => onBlur(e)}
+            onChange={(e) => onChange(e)}
+          />
+        </div>
+        {validClass && (
+          <div className="text-error">
+            Formato de email inválido, verifique
+            <br /> a ortografia
+          </div>
+        )}
       </div>
-      <Button
-        text={submitText}
-        isSubmit
-        colorBtn="btn-coral-dark"
-        classNameBlock="subscribe-form"
-      />
+
+      <Button text={submitText} isSubmit colorBtn="btn-coral-dark" />
+
       <div className="subscribe-form__checkbox">
-        <Сheckbox agreementText={agreementText} name="confirmations" />
+        {checkboxText && (
+          <Сheckbox checkboxText={checkboxText} name="confirmations" />
+        )}
       </div>
     </form>
   )

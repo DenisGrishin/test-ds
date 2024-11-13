@@ -174,7 +174,7 @@
 	}
 	// .content-block__btn
 
-	&__btn {
+	& button {
 		@media (max-width: $tablet) {
 			transform: translateX(11px);
 		}

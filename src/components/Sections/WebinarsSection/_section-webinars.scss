@@ -94,11 +94,13 @@
 
 	// .section-webinars__btn
 
-	&__btn {
+	& button {
 		flex: 0 1 280px;
 		align-self: flex-end;
 		padding: 17.5px 62px;
 		font-weight: 700;
+		position: relative;
+		z-index: 1;
 		@media (max-width: $mobile) {
 			order: 3;
 			flex: 1 1 100%;

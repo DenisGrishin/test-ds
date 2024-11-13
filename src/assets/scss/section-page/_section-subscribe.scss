@@ -144,6 +144,7 @@
 	// .section-subscribe__form
 
 	&__form {
+		position: relative;
 	}
 }
 
@@ -164,9 +165,10 @@
 
 	&__wrapper-input {
 	}
+
 	// .subscribe-form__input
 	&__wrapper-input,
-	&__btn,
+	& button,
 	& input {
 		flex: 0 1 280px;
 		@media (max-width: $tablet) {
@@ -179,7 +181,7 @@
 
 	// .subscribe-form__submit
 
-	&__btn {
+	& button {
 		font-weight: 700;
 	}
 

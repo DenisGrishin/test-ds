@@ -4,7 +4,7 @@ import ContentSubscribe from './ContentSubscribe.tsx'
 import imgDeskrop from '../../../assets/img/section-subscribe/subscribe-img.svg'
 import imgTablet from '../../../assets/img/section-subscribe/subscribe-tablet-img.svg'
 import imgMobile from '../../../assets/img/section-subscribe/subscribe-mobile-img.svg'
-import MailFrom from '../../MailForm/MailFrom.tsx'
+import MailFromContainer from '../../../containers/MailFromContainer.tsx'
 
 interface PropsSubscribeSection {
   subscription: TypeSubscription
@@ -27,10 +27,11 @@ const SubscribeSection: React.FC<PropsSubscribeSection> = ({
         <div className="section-subscribe__wrapper decor-subscribe">
           <div className="section-subscribe__content">
             <ContentSubscribe text={text} title={title} />
-            <MailFrom
+
+            <MailFromContainer
               emailPlaceholder={emailPlaceholder}
               submitText={submitText}
-              agreementText={agreementText}
+              checkboxText={agreementText}
             />
           </div>
           <picture className="section-subscribe__img">
