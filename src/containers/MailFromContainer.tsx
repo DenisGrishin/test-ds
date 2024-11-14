@@ -5,15 +5,22 @@ interface PropsMailFromContainer {
   emailPlaceholder: string
   submitText: string
   checkboxText?: string
+  classNameBlock: string
+  colorBtn: string
 }
 
 const MailFromContainer: React.FC<PropsMailFromContainer> = ({
   emailPlaceholder,
   submitText,
   checkboxText,
+  classNameBlock,
+  colorBtn,
 }) => {
-  const [valueInput, setValueInput] = useState('')
-  const [validClass, setValidClass] = useState('')
+  const [formData, setFormData] = useState({
+    email: '',
+    confirmations: false,
+  })
+  const [validateClass, setValidateClass] = useState('')
 
   function validateEmail(email: string) {
     const regExtEmail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,8})+$/
@@ -23,25 +30,33 @@ const MailFromContainer: React.FC<PropsMailFromContainer> = ({
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-  }
-  const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
-    const isValid = validateEmail(e.target.value)
 
-    if (!valueInput) {
-      setValidClass('')
-    } else if (isValid) {
-      setValidClass('_correct')
+    if (!formData.email && !formData.confirmations) {
+      setValidateClass('_error')
+    }
+  }
+
+  // валидаци по Blur
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+    const isValidate = validateEmail(e.target.value)
+
+    if (!formData.email) {
+      setValidateClass('')
+    } else if (isValidate) {
+      setValidateClass('_correct')
     } else {
-      setValidClass('_error')
+      setValidateClass('_error')
     }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setValueInput(e.target.value)
-    setValidClass(validateEmail(e.target.value) ? '_correct' : '')
+    const { value, name, type, checked } = e.target
+
+    setFormData({ ...formData, [name]: type === 'checkbox' ? checked : value })
+    if (type === 'text' || 'tel' || 'email') {
+      setValidateClass(validateEmail(value) ? '_correct' : '')
+    }
   }
-  // валидация почты возвращает true / false
-  console.log(validClass)
 
   return (
     <MailFrom
@@ -51,8 +66,10 @@ const MailFromContainer: React.FC<PropsMailFromContainer> = ({
       onSubmit={(e) => handleSubmit(e)}
       onBlur={(e) => handleBlur(e)}
       onChange={(e) => handleChange(e)}
-      valueInput={valueInput}
-      validClass={validClass}
+      valueInput={formData.email}
+      validClass={validateClass}
+      classNameBlock={classNameBlock}
+      colorBtn={colorBtn}
     />
   )
 }

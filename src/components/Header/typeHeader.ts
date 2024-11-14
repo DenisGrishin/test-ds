@@ -1,4 +1,8 @@
 export interface DataApi {
   logo?: string
-  nav: { [key: string]: string }[]
+  nav: TypeLinks[]
+}
+export interface TypeLinks {
+  label: string
+  url: string
 }

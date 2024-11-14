@@ -3,7 +3,7 @@ import BannerSection from './BannerSection/BannerSection.tsx'
 import {
   TypeContetnDataApi,
   TypeProposals,
-  TypeSubscription,
+  ExtendedTypeSubscription,
 } from './typeSections'
 
 import ArticleSection from './ArticleSection/ArticleSection.tsx'
@@ -16,32 +16,25 @@ interface PropsSectionsDataApi {
     main: TypeContetnDataApi
     content: TypeContetnDataApi
     proposals: TypeProposals
-    subscription: TypeSubscription
+    subscription: ExtendedTypeSubscription
   }
 }
 const Sections: React.FC<PropsSectionsDataApi> = ({ data }) => {
-  console.log(data)
-
   return (
     <>
       <BannerSection itemsData={data.main.items} />
-
       <RunningStringContainer
         ticker={data.main.ticker}
         AddClassName="article"
         numRepeatWord={11}
       />
-
       <ArticleSection itemsData={data.content.items} />
-
       <RunningStringContainer
         ticker={data.content.ticker}
         AddClassName="webinars"
         numRepeatWord={20}
       />
-
       <WebinarsSection proposals={data.proposals} />
-
       <RunningStringContainer
         ticker={data.proposals.ticker}
         AddClassName="webinars"
@@ -49,7 +42,6 @@ const Sections: React.FC<PropsSectionsDataApi> = ({ data }) => {
       />
 
       <SubscribeSection subscription={data.subscription} />
-
       <RunningStringContainer
         ticker={data.subscription.ticker}
         AddClassName="webinars"

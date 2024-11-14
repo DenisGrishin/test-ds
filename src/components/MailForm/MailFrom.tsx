@@ -10,6 +10,8 @@ interface PropsMailFrom {
   checkboxText?: string
   valueInput: string
   validClass: string
+  classNameBlock: string
+  colorBtn: string
   onSubmit: (e: React.FormEvent<HTMLFormElement>) => void
   onBlur: (e: React.FocusEvent<HTMLInputElement>) => void
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
@@ -21,18 +23,19 @@ const MailFrom: React.FC<PropsMailFrom> = ({
   checkboxText = '',
   valueInput,
   validClass,
+  classNameBlock,
+  colorBtn,
   onSubmit,
   onBlur,
-
   onChange,
 }) => {
   return (
     <form
       onSubmit={(e) => onSubmit(e)}
-      className="section-subscribe__form subscribe-form"
+      className={`${classNameBlock}__form subscribe-form`}
     >
-      <div className="subscribe-form__wrapper-input">
-        <div className={`subscribe-form__wrapper-input ${validClass}`}>
+      <div className={`${classNameBlock}__wrapper-input`}>
+        <div className={`${validClass}`}>
           <Input
             type="text"
             name="email"
@@ -42,7 +45,7 @@ const MailFrom: React.FC<PropsMailFrom> = ({
             onChange={(e) => onChange(e)}
           />
         </div>
-        {validClass && (
+        {validClass === '_error' && (
           <div className="text-error">
             Formato de email inválido, verifique
             <br /> a ortografia
@@ -50,11 +53,15 @@ const MailFrom: React.FC<PropsMailFrom> = ({
         )}
       </div>
 
-      <Button text={submitText} isSubmit colorBtn="btn-coral-dark" />
+      <Button text={submitText} isSubmit colorBtn={colorBtn} />
 
-      <div className="subscribe-form__checkbox">
+      <div className={`${classNameBlock}__checkbox`}>
         {checkboxText && (
-          <Сheckbox checkboxText={checkboxText} name="confirmations" />
+          <Сheckbox
+            onChange={(e) => onChange(e)}
+            checkboxText={checkboxText}
+            name="confirmations"
+          />
         )}
       </div>
     </form>

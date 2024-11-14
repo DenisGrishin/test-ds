@@ -1,5 +1,5 @@
 import React from 'react'
-import { TypeSubscription } from '../typeSections'
+import { ExtendedTypeSubscription } from '../typeSections'
 import ContentSubscribe from './ContentSubscribe.tsx'
 import imgDeskrop from '../../../assets/img/section-subscribe/subscribe-img.svg'
 import imgTablet from '../../../assets/img/section-subscribe/subscribe-tablet-img.svg'
@@ -7,7 +7,7 @@ import imgMobile from '../../../assets/img/section-subscribe/subscribe-mobile-im
 import MailFromContainer from '../../../containers/MailFromContainer.tsx'
 
 interface PropsSubscribeSection {
-  subscription: TypeSubscription
+  subscription: ExtendedTypeSubscription
 }
 
 const SubscribeSection: React.FC<PropsSubscribeSection> = ({
@@ -32,6 +32,8 @@ const SubscribeSection: React.FC<PropsSubscribeSection> = ({
               emailPlaceholder={emailPlaceholder}
               submitText={submitText}
               checkboxText={agreementText}
+              classNameBlock="section-subscribe"
+              colorBtn="btn-coral-dark"
             />
           </div>
           <picture className="section-subscribe__img">

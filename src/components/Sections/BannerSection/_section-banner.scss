@@ -39,6 +39,9 @@
 		}
 		@media (max-width: $mobile) {
 			max-width: 304px;
+			& img {
+				object-position: 0 -95px;
+			}
 		}
 	}
 

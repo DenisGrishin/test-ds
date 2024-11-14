@@ -269,8 +269,6 @@
 	// .bottom-footre__social
 
 	&__social {
-		display: flex;
-
 		@media (max-width: $tablet) {
 			display: none;
 		}
@@ -289,14 +287,18 @@
 
 	&__email {
 	}
-	// .bottom-footre__form-subcribe
+	// .bottom-footre__form
 
-	&__form-subcribe {
+	&__form {
 		display: none;
 		@media (max-width: $mobile) {
 			display: flex;
 			order: 2;
 		}
+	}
+	// .bottom-footre__wrapper-input
+	&__wrapper-input {
+		width: 100%;
 	}
 	// .bottom-footre__conditions
 
@@ -345,17 +347,18 @@
 }
 
 .social-networks {
+	display: flex;
 	column-gap: 24px;
 
 	// .social-networks__icon-link
 	&__icon-link {
 		padding-bottom: 5px;
+		transition: transform 0.5s;
 		@media (max-width: $tablet) {
 			padding-bottom: 0;
 		}
 		@media (any-hover: hover) {
 			&:hover {
-				transition: transform 0.3s;
 				transform: scale(1.1);
 			}
 		}

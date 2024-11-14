@@ -1,7 +1,8 @@
 import React from 'react'
+import { TypeLinks } from './typeHeader'
 
 interface PropsNavHeader {
-  navList: { [key: string]: string }[]
+  navList: TypeLinks[]
 }
 const NavHeader: React.FC<PropsNavHeader> = ({ navList }) => {
   return (

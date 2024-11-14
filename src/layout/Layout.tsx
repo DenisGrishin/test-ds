@@ -1,6 +1,7 @@
 import React, { ReactElement } from 'react'
-import Footer from '../components/Footer/Footer.tsx'
+
 import HeaderContainer from '../containers/HeaderContainer.tsx'
+import FooterContainer from '../containers/FooterContainer.tsx'
 
 type LayoutProps = {
   children: ReactElement
@@ -10,7 +11,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <div className="wrapper">
       <HeaderContainer />
       <main className="page"> {children}</main>
-      <Footer />
+      <FooterContainer />
     </div>
   )
 }
