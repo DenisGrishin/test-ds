@@ -5,7 +5,7 @@ interface PropsContactFooter {
   phone: string
   email: string
 }
-export const ContactFooter: React.FC<PropsContactFooter> = ({
+const ContactFooter: React.FC<PropsContactFooter> = ({
   whatsapp,
   phone,
   email,

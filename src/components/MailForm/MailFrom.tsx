@@ -10,7 +10,8 @@ interface PropsMailFrom {
   checkboxText?: string
   valueInput: string
   validClass: string
-  classNameBlock: string
+
+  formClassName: string
   colorBtn: string
   onSubmit: (e: React.FormEvent<HTMLFormElement>) => void
   onBlur: (e: React.FocusEvent<HTMLInputElement>) => void
@@ -23,18 +24,15 @@ const MailFrom: React.FC<PropsMailFrom> = ({
   checkboxText = '',
   valueInput,
   validClass,
-  classNameBlock,
+  formClassName,
   colorBtn,
   onSubmit,
   onBlur,
   onChange,
 }) => {
   return (
-    <form
-      onSubmit={(e) => onSubmit(e)}
-      className={`${classNameBlock}__form subscribe-form`}
-    >
-      <div className={`${classNameBlock}__wrapper-input`}>
+    <form onSubmit={(e) => onSubmit(e)} className={` ${formClassName}`}>
+      <div className={`${formClassName}__wrapper-input`}>
         <div className={`${validClass}`}>
           <Input
             type="text"
@@ -55,7 +53,7 @@ const MailFrom: React.FC<PropsMailFrom> = ({
 
       <Button text={submitText} isSubmit colorBtn={colorBtn} />
 
-      <div className={`${classNameBlock}__checkbox`}>
+      <div className={`${formClassName}__checkbox`}>
         {checkboxText && (
           <Сheckbox
             onChange={(e) => onChange(e)}

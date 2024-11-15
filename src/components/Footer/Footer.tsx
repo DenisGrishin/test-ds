@@ -2,18 +2,30 @@ import React from 'react'
 import TopFooter from './TopFooter/TopFooter.tsx'
 
 import BottomFooter from './BottomFooter/BottomFooter.tsx'
-import { TypeContacts } from './typeFooter'
+import { TypeContacts, TypeMenuFooter } from './typeFooter'
+import { TypeUseResize } from '../../hooks/useResize.tsx'
 
 interface PropsFooter {
-  data: TypeContacts
+  data: { contacts: TypeContacts; menu: TypeMenuFooter[] }
+  isSizeWindow: TypeUseResize
 }
-const Footer: React.FC<PropsFooter> = ({ data }) => {
-  console.log(data)
+const Footer: React.FC<PropsFooter> = ({ data, isSizeWindow }) => {
+  const { contacts, menu } = data
   return (
     <footer className="footer">
       <div className="footer__container">
-        <TopFooter />
-        <BottomFooter data={data} />
+        <TopFooter
+          menu={menu}
+          subscription={contacts.subscription}
+          isSizeWindow={isSizeWindow}
+          socialLinks={{
+            youtube: contacts.youtube,
+            facebook: contacts.facebook,
+            linkedIn: contacts.linkedin,
+            instagram: contacts.instagram,
+          }}
+        />
+        <BottomFooter contacts={contacts} />
       </div>
     </footer>
   )

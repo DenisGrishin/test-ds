@@ -5,15 +5,16 @@ interface PropsMailFromContainer {
   emailPlaceholder: string
   submitText: string
   checkboxText?: string
-  classNameBlock: string
+
   colorBtn: string
+  formClassName: string
 }
 
 const MailFromContainer: React.FC<PropsMailFromContainer> = ({
   emailPlaceholder,
   submitText,
   checkboxText,
-  classNameBlock,
+  formClassName,
   colorBtn,
 }) => {
   const [formData, setFormData] = useState({
@@ -68,8 +69,8 @@ const MailFromContainer: React.FC<PropsMailFromContainer> = ({
       onChange={(e) => handleChange(e)}
       valueInput={formData.email}
       validClass={validateClass}
-      classNameBlock={classNameBlock}
       colorBtn={colorBtn}
+      formClassName={formClassName}
     />
   )
 }

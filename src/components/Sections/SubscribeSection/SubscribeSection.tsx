@@ -28,13 +28,15 @@ const SubscribeSection: React.FC<PropsSubscribeSection> = ({
           <div className="section-subscribe__content">
             <ContentSubscribe text={text} title={title} />
 
-            <MailFromContainer
-              emailPlaceholder={emailPlaceholder}
-              submitText={submitText}
-              checkboxText={agreementText}
-              classNameBlock="section-subscribe"
-              colorBtn="btn-coral-dark"
-            />
+            <div className="section-subscribe__form">
+              <MailFromContainer
+                emailPlaceholder={emailPlaceholder}
+                submitText={submitText}
+                checkboxText={agreementText}
+                formClassName="subscribe-form"
+                colorBtn="btn-coral-dark"
+              />
+            </div>
           </div>
           <picture className="section-subscribe__img">
             <source srcSet={imgMobile} media="(max-width: 767.98px)" />

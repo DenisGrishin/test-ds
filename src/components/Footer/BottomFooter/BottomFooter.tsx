@@ -1,13 +1,13 @@
 import React from 'react'
 import { TypeContacts } from '../typeFooter'
 import SocialNetworksFooter from './SocialNetworksFooter.tsx'
-import ContactFooter from './ContactFooter.tsx'
 import MailFromContainer from '../../../containers/MailFromContainer.tsx'
+import ContactFooter from './ContactFooter.tsx'
 
 interface PropsBottomFooter {
-  data: TypeContacts
+  contacts: TypeContacts
 }
-const BottomFooter: React.FC<PropsBottomFooter> = ({ data }) => {
+const BottomFooter: React.FC<PropsBottomFooter> = ({ contacts }) => {
   const {
     links,
     facebook,
@@ -18,7 +18,7 @@ const BottomFooter: React.FC<PropsBottomFooter> = ({ data }) => {
     phone,
     email,
     subscription,
-  } = data
+  } = contacts
 
   return (
     <div className="footer__bottom bottom-footre">
@@ -26,22 +26,29 @@ const BottomFooter: React.FC<PropsBottomFooter> = ({ data }) => {
         <ContactFooter whatsapp={whatsapp} phone={phone} email={email} />
         <div className="bottom-footre__social">
           <SocialNetworksFooter
-            facebookLink={facebook}
-            instagramLink={instagram}
-            linkedinLink={linkedin}
-            youtubeLink={youtube}
+            socialLinks={{
+              youtubeLink: youtube,
+              facebookLink: facebook,
+              linkedInLink: linkedin,
+              instagramLink: instagram,
+            }}
           />
         </div>
       </div>
+      {/* это форма по */}
       <MailFromContainer
         emailPlaceholder={subscription['email-placeholder']}
         submitText={subscription['submit-text']}
-        classNameBlock="bottom-footre"
+        formClassName="mobile-form-bottom"
         colorBtn="btn-purple"
       />
       <div className="bottom-footre__conditions">
         {links.map((link) => (
-          <a href={link.url} className="bottom-footre__link _hover-link">
+          <a
+            href={link.url}
+            key={Math.random().toString(36).slice(2, 9)}
+            className="bottom-footre__link _hover-link"
+          >
             <span>{link.label}</span>
           </a>
         ))}

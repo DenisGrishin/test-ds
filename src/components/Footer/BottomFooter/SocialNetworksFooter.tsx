@@ -5,28 +5,31 @@ import FaceBookIcon from '../../../assets/img/icons/iconSocial/faceBook.svg'
 import LinkedInIcon from '../../../assets/img/icons/iconSocial/linkLind.svg'
 
 interface PropsSocialNetworksFooter {
-  youtubeLink: string
-  linkedinLink: string
-  instagramLink: string
-  facebookLink: string
+  socialLinks: {
+    youtubeLink: string
+    facebookLink: string
+    linkedInLink: string
+    instagramLink: string
+  }
 }
 const SocialNetworksFooter: React.FC<PropsSocialNetworksFooter> = ({
-  youtubeLink,
-  linkedinLink,
-  instagramLink,
-  facebookLink,
+  socialLinks,
 }) => {
   const items = [
-    { url: instagramLink, icon: InstagramIcon, alt: 'Instagram' },
-    { url: facebookLink, icon: FaceBookIcon, alt: 'FaceBook' },
-    { url: youtubeLink, icon: YoutubeIcon, alt: 'YouTube' },
-    { url: linkedinLink, icon: LinkedInIcon, alt: 'LinkedIn' },
+    { url: socialLinks.instagramLink, icon: InstagramIcon, alt: 'Instagram' },
+    { url: socialLinks.facebookLink, icon: FaceBookIcon, alt: 'FaceBook' },
+    { url: socialLinks.youtubeLink, icon: YoutubeIcon, alt: 'YouTube' },
+    { url: socialLinks.linkedInLink, icon: LinkedInIcon, alt: 'LinkedIn' },
   ]
 
   return (
     <div className="social-networks">
       {items.map((it) => (
-        <a href={it.url} className="social-networks__icon-link">
+        <a
+          href={it.url}
+          key={Math.random().toString(36).slice(2, 9)}
+          className="social-networks__icon-link"
+        >
           <img src={it.icon} alt={`Come to ${it.alt}`} />
         </a>
       ))}

@@ -12,3 +12,8 @@ export interface TypeContacts {
   subscription: TypeSubscription
   links: TypeLinks[]
 }
+
+export interface TypeMenuFooter {
+  label: string
+  items: TypeLinks[]
+}
