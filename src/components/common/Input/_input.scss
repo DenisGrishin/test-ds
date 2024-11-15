@@ -38,14 +38,14 @@
 	// }
 }
 
-._correct,
-._error {
+._success,
+._error-inpt-text {
 	position: relative;
 	// margin-bottom: 44px;
 }
 
-._correct::before,
-._error::before {
+._success::before,
+._error-inpt-text::before {
 	content: "";
 	width: 27px;
 	height: 27px;
@@ -57,20 +57,17 @@
 	transition: all 0.3s ease 0s;
 	opacity: 0;
 }
-._correct::before {
+._success::before {
 	opacity: 1;
 	visibility: visible;
 	background: url("../img/icons/correctIcon.svg") 0 0 no-repeat;
 }
-._error::before {
+._error-inpt-text::before {
 	opacity: 1;
 	visibility: visible;
 	background: url("../img/icons/errorIcon.svg") 0 0 no-repeat;
 }
 .text-error {
-	// position: absolute;
-	// top: 58px;
-	// left: 36px;
 	margin-top: 8px;
 	font-size: 13px;
 	line-height: 1.2;
@@ -82,12 +79,12 @@
 	}
 }
 
-._correct input,
-._correct input:focus-visible {
+._success input,
+._success input:focus-visible {
 	border: 2px solid var(--grass);
 }
-._error input,
-._error input:focus-visible {
+._error-inpt-text input,
+._error-inpt-text input:focus-visible {
 	border: 2px solid var(--pale);
 }
 
@@ -99,6 +96,12 @@
 	column-gap: 16px;
 	@media (max-width: $tablet) {
 		align-items: center;
+	}
+	&._error-checkbox label::before {
+		border: 2px solid var(--pale);
+	}
+	&._error-checkbox .subscribe-form__сonfirmation-text {
+		color: var(--pale);
 	}
 	// .checkbox__input
 	& input {
@@ -141,9 +144,7 @@
 				background-color: var(--gray5TR20);
 			}
 		}
-		&._error::before {
-			border: 2px solid var(--pale);
-		}
+
 		&::before {
 			content: "";
 			transition: all 0.3s ease 0s;

@@ -18,13 +18,13 @@ const ContactFooter: React.FC<PropsContactFooter> = ({
           href={`https://api.whatsapp.com/send?${whatsapp}`}
           className="_hover-link"
         >
-          {whatsapp}
+          {whatsapp.replace(/^(\d{2})(\d{2})(\d{4})(\d{4})$/, '+$1 $2 $3-$4')}
         </a>
       </div>
       <div className="bottom-footre__tel">
         <div className="bottom-footre__label">Telefone</div>
         <a href={`tel:${phone}`} className="_hover-link">
-          {phone}
+          {phone.replace(/^(\d{2})(\d{2})(\d{4})(\d{4})$/, '+$1 $2 $3-$4')}
         </a>
       </div>
       <div className="bottom-footre__email">

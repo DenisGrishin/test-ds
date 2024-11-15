@@ -13,7 +13,7 @@ interface PropsMailFromContainer {
 const MailFromContainer: React.FC<PropsMailFromContainer> = ({
   emailPlaceholder,
   submitText,
-  checkboxText,
+  checkboxText = '',
   formClassName,
   colorBtn,
 }) => {
@@ -21,20 +21,36 @@ const MailFromContainer: React.FC<PropsMailFromContainer> = ({
     email: '',
     confirmations: false,
   })
-  const [validateClass, setValidateClass] = useState('')
-
+  const [validateClass, setValidateClass] = useState({
+    inputText: '',
+    checkbox: '',
+  })
+  const [isSubmit, setIsSubmit] = useState(false)
   function validateEmail(email: string) {
     const regExtEmail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,8})+$/
-
     return regExtEmail.test(email)
   }
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    if (!formData.email && !formData.confirmations) {
-      setValidateClass('_error')
+    if (!formData.email) {
+      setValidateClass({
+        ...validateClass,
+        inputText: '_error-checkbox',
+      })
     }
+
+    if (checkboxText && !formData.confirmations) {
+      setValidateClass((prev) => {
+        return {
+          ...prev,
+          checkbox: '_error-checkbox',
+        }
+      })
+      return
+    }
+    setIsSubmit(true)
   }
 
   // валидаци по Blur
@@ -42,11 +58,20 @@ const MailFromContainer: React.FC<PropsMailFromContainer> = ({
     const isValidate = validateEmail(e.target.value)
 
     if (!formData.email) {
-      setValidateClass('')
+      setValidateClass({
+        ...validateClass,
+        inputText: '',
+      })
     } else if (isValidate) {
-      setValidateClass('_correct')
+      setValidateClass({
+        ...validateClass,
+        inputText: '_success',
+      })
     } else {
-      setValidateClass('_error')
+      setValidateClass({
+        ...validateClass,
+        inputText: '_error-inpt-text',
+      })
     }
   }
 
@@ -54,13 +79,23 @@ const MailFromContainer: React.FC<PropsMailFromContainer> = ({
     const { value, name, type, checked } = e.target
 
     setFormData({ ...formData, [name]: type === 'checkbox' ? checked : value })
-    if (type === 'text' || 'tel' || 'email') {
-      setValidateClass(validateEmail(value) ? '_correct' : '')
+    if (type === 'text' || type === 'tel' || type === 'email') {
+      setValidateClass({
+        ...validateClass,
+        inputText: validateEmail(value) ? '_success' : '',
+      })
+    }
+    if (type === 'checkbox') {
+      setValidateClass({
+        ...validateClass,
+        checkbox: '',
+      })
     }
   }
 
   return (
     <MailFrom
+      isSubmit={isSubmit}
       emailPlaceholder={emailPlaceholder}
       submitText={submitText}
       checkboxText={checkboxText}

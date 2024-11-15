@@ -5,7 +5,6 @@ const TABLET = 1279.98
 const DESKROP = 1439.98
 
 export interface TypeUseResize {
-  width: number
   mobile: boolean
   talet: boolean
   desktop: boolean
@@ -27,7 +26,6 @@ export const useResize = () => {
   }, [])
 
   return {
-    width,
     mobile: width >= MOBILE,
     talet: width >= TABLET,
     desktop: width >= DESKROP,
