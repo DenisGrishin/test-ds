@@ -11,3 +11,7 @@ npm run dev
 Запуск сервера JSON Server:
 
 npm run json
+
+Для того чтобы отправить POST-запрос, необходимо добавить указанное ниже поле в файл db.json.
+
+"userEmail": []

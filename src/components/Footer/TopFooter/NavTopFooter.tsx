@@ -13,12 +13,16 @@ const NavTopFooter: React.FC<PropsNavTopFooter> = ({ menu, isSizeWindow }) => {
         {menu.map((category) => (
           <details
             open={isSizeWindow.mobile}
+            key={Math.random().toString(36).slice(2, 9)}
             className="nav-footer__details _details-init"
           >
             <summary className="nav-footer__summary">{category.label}</summary>
             <ul className=" nav-footer__list">
               {category.items.map((item) => (
-                <li className="nav-footer__item">
+                <li
+                  key={Math.random().toString(36).slice(2, 9)}
+                  className="nav-footer__item"
+                >
                   <a href={item.url} className="nav-footer__link _hover-link">
                     {item.label}
                   </a>

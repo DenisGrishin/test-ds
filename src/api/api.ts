@@ -1,11 +1,13 @@
+// Для того чтобы отправить POST-запрос, необходимо добавить указанное ниже поле в файл db.json.
 const URL_MAIN = 'http://localhost:3000/'
 
-const getData = (path: string) => {
+const apiJsonServer = (path: string, propMethod: string, body = {}) => {
   return fetch(URL_MAIN + path, {
-    method: 'GET',
+    method: propMethod,
     headers: {
       'Content-Type': 'application/json',
     },
+    body: propMethod !== 'GET' ? JSON.stringify(body) : undefined,
   })
     .then((res) => {
       if (!res.ok) {
@@ -20,11 +22,14 @@ const getData = (path: string) => {
 }
 
 export const getMenuApi = () => {
-  return getData('menu')
+  return apiJsonServer('menu', 'GET')
 }
 export const getSectionsApi = () => {
-  return getData('sections')
+  return apiJsonServer('sections', 'GET')
 }
 export const getContactsApi = () => {
-  return getData('contacts')
+  return apiJsonServer('contacts', 'GET')
+}
+export const postEmailApi = (email: string) => {
+  return apiJsonServer('userEmail', 'POST', { email })
 }

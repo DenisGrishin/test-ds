@@ -1,8 +1,8 @@
 import React from 'react'
-import YoutubeIcon from '../../../assets/img/icons/iconSocial/youTube.svg'
-import InstagramIcon from '../../../assets/img/icons/iconSocial/insta.svg'
-import FaceBookIcon from '../../../assets/img/icons/iconSocial/faceBook.svg'
-import LinkedInIcon from '../../../assets/img/icons/iconSocial/linkLind.svg'
+import YoutubeIcon from '../../assets/img/icons/iconSocial/youTube.svg'
+import InstagramIcon from '../../assets/img/icons/iconSocial/insta.svg'
+import FaceBookIcon from '../../assets/img/icons/iconSocial/faceBook.svg'
+import LinkedInIcon from '../../assets/img/icons/iconSocial/linkLind.svg'
 
 interface PropsSocialNetworksFooter {
   socialLinks: {

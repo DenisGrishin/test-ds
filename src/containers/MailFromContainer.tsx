@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import MailFrom from '../components/MailForm/MailFrom.tsx'
+import { postEmailApi } from '../api/api'
 
 interface PropsMailFromContainer {
   emailPlaceholder: string
@@ -50,7 +51,9 @@ const MailFromContainer: React.FC<PropsMailFromContainer> = ({
       })
       return
     }
-    setIsSubmit(true)
+    postEmailApi(formData.email).then((res) => {
+      setIsSubmit(true)
+    })
   }
 
   // валидаци по Blur
@@ -79,6 +82,7 @@ const MailFromContainer: React.FC<PropsMailFromContainer> = ({
     const { value, name, type, checked } = e.target
 
     setFormData({ ...formData, [name]: type === 'checkbox' ? checked : value })
+
     if (type === 'text' || type === 'tel' || type === 'email') {
       setValidateClass({
         ...validateClass,

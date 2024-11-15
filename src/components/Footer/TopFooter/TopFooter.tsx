@@ -4,7 +4,7 @@ import NavTopFooter from './NavTopFooter.tsx'
 import TopIconsFooter from './TopIconsFooter.tsx'
 import MailFromContainer from '../../../containers/MailFromContainer.tsx'
 import { TypeSubscription } from '../../Sections/typeSections'
-import SocialNetworksFooter from '../BottomFooter/SocialNetworksFooter.tsx'
+import SocialNetworksFooter from '../SocialNetworksFooter.tsx'
 import { TypeUseResize } from '../../../hooks/useResize.tsx'
 
 interface PropsTopFooter {

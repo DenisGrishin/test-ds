@@ -1,6 +1,6 @@
 import React from 'react'
 import { TypeContacts } from '../typeFooter'
-import SocialNetworksFooter from './SocialNetworksFooter.tsx'
+import SocialNetworksFooter from '../SocialNetworksFooter.tsx'
 import MailFromContainer from '../../../containers/MailFromContainer.tsx'
 import ContactFooter from './ContactFooter.tsx'
 
