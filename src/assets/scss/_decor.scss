@@ -61,14 +61,14 @@
 .decor-webinars {
 	&::before {
 		background-image: url(../img/decor-line/webinars-line.svg);
-		background-size: 1392px 1597px;
+		background-size: 1536px 1597px;
 		background-repeat: no-repeat;
 		background-position: top -342px left calc(50% - 65px);
-		width: 1392px;
+		width: 1536px;
 		height: 1597px;
-		top: -225px;
-		left: -120px;
-		z-index: 0;
+		top: -85px;
+		left: -47px;
+		z-index: 1;
 
 		@media (max-width: $tablet) {
 			background-image: url(../img/decor-line/webinars-tablet-line.svg);
@@ -78,7 +78,6 @@
 			height: 1319px;
 			top: -83px;
 			left: -487px;
-			z-index: 1;
 		}
 		@media (max-width: $mobile) {
 			background-image: none;
@@ -86,9 +85,11 @@
 		@media (min-width: 1980px) {
 			background-image: url(../img/decor-line/webinars-4k-line.svg);
 			background-size: 3840px 1000px;
-			background-position: top -13px left calc(50% + -529px);
+			background-position: top -48px left calc(50% - 529px);
 			width: 3840px;
 			height: 1000px;
+			top: -95px;
+			left: calc(50% - 2028px);
 		}
 	}
 }

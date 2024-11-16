@@ -3,7 +3,8 @@
 	padding-top: 200px;
 	padding-bottom: 135px;
 	background-color: var(--gray5);
-
+	position: relative;
+	z-index: 1;
 	@media (max-width: 1440px) {
 		padding-top: 83px;
 	}
@@ -20,14 +21,15 @@
 	// .section-subscribe__container
 
 	&__container {
-		display: flex;
-		justify-content: center;
+		@media (max-width: $mobile) {
+			display: flex;
+			justify-content: center;
+		}
 	}
 
 	// .section-subscribe__wrapper
 
 	&__wrapper {
-		max-width: 320px;
 		mask-image: url("../img/masks/section-subscribe/subscribe-mask.svg");
 		mask-repeat: no-repeat;
 		mask-size: cover;
