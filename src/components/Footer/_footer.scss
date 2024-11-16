@@ -395,6 +395,13 @@
 	order: 2;
 	max-width: 280px;
 	flex: 0 1 280px;
+	border-radius: 8px;
+	position: relative;
+	& .preloader {
+		&::after {
+			background-color: #1b1f2193;
+		}
+	}
 	@media (max-width: $mobile) {
 		display: none;
 	}

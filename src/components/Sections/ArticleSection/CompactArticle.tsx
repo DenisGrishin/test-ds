@@ -1,7 +1,7 @@
 import React from 'react'
 import { TypeItems } from '../typeSections'
-import HeaderArticleItem from '../../ArticleItem/HeaderArticleItem.tsx'
-import FootreArticleItem from '../../ArticleItem/FootreArticleItem.tsx'
+import HeaderArticleItem from '../../common/ArticleItem/HeaderArticleItem.tsx'
+import FootreArticleItem from '../../common/ArticleItem/FootreArticleItem.tsx'
 import ImgContainer from '../../../containers/ImgContainer.tsx'
 
 interface PropsCompactArticle {

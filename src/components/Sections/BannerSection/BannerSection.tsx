@@ -1,7 +1,7 @@
 import React from 'react'
-import HeaderArticleItem from '../../ArticleItem/HeaderArticleItem.tsx'
+import HeaderArticleItem from '../../common/ArticleItem/HeaderArticleItem.tsx'
 import { TypeItems } from '../typeSections'
-import FootreArticleItem from '../../ArticleItem/FootreArticleItem.tsx'
+import FootreArticleItem from '../../common/ArticleItem/FootreArticleItem.tsx'
 import Button from '../../common/Button/Button.tsx'
 
 import ImgContainer from '../../../containers/ImgContainer.tsx'

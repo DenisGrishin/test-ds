@@ -26,7 +26,10 @@ const MailFromContainer: React.FC<PropsMailFromContainer> = ({
     inputText: '',
     checkbox: '',
   })
-  const [isSubmit, setIsSubmit] = useState(false)
+  const [isStateForm, setIsStateForm] = useState({
+    isSubmit: false,
+    isPreloader: false,
+  })
 
   function validateEmail(email: string) {
     const regExtEmail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,8})+$/
@@ -36,11 +39,12 @@ const MailFromContainer: React.FC<PropsMailFromContainer> = ({
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    if (!formData.email) {
+    if (!formData.email || !validateEmail(formData.email)) {
       setValidateClass({
         ...validateClass,
-        inputText: '_error-checkbox',
+        inputText: '_error-inpt-text',
       })
+      return
     }
 
     if (checkboxText && !formData.confirmations) {
@@ -52,9 +56,27 @@ const MailFromContainer: React.FC<PropsMailFromContainer> = ({
       })
       return
     }
-    postEmailApi(formData.email).then(() => {
-      setIsSubmit(true)
+
+    setIsStateForm({
+      ...isStateForm,
+      isPreloader: true,
     })
+    postEmailApi(formData.email)
+      .then(() => {
+        setTimeout(() => {
+          setIsStateForm({
+            isSubmit: true,
+            isPreloader: false,
+          })
+        }, 2000)
+      })
+      .catch((err) => {
+        setIsStateForm({
+          ...isStateForm,
+          isPreloader: false,
+        })
+        console.error(err)
+      })
   }
 
   // валидаци по Blur
@@ -100,7 +122,7 @@ const MailFromContainer: React.FC<PropsMailFromContainer> = ({
 
   return (
     <MailFrom
-      isSubmit={isSubmit}
+      isStateForm={isStateForm}
       emailPlaceholder={emailPlaceholder}
       submitText={submitText}
       checkboxText={checkboxText}

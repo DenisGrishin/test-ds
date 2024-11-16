@@ -1,5 +1,5 @@
 import React from 'react'
-import useIntlDateTimeFormat from '../../hooks/useIntlDateTimeFormat.tsx'
+import useIntlDateTimeFormat from '../../../hooks/useIntlDateTimeFormat.tsx'
 
 interface PropsFootreArticleItem {
   duration: number

@@ -3,7 +3,7 @@ import React from 'react'
 import NavHeader from './NavHeader.tsx'
 import { DataApi } from './typeHeader'
 import HeaderRightBlock from './HeaderRightBlock.tsx'
-import SwitchThemaButton from '../common/Button/switchThemaButton.tsx'
+import SwitchThemaButton from '../common/Button/SwitchThemaButton.tsx'
 
 interface PropsHeader {
   data: DataApi

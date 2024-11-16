@@ -1,8 +1,9 @@
 import React from 'react'
-import Input from '../common/Input/Input.tsx'
 import Сheckbox from '../common/Input/Сheckbox.tsx'
 
 import Button from '../common/Button/Button.tsx'
+import Preloader from '../common/Preloader/Preloader.tsx'
+import InputWithValidation from './InputWithValidation.tsx'
 
 interface PropsMailFrom {
   emailPlaceholder: string
@@ -13,7 +14,11 @@ interface PropsMailFrom {
     inputText: string
     checkbox: string
   }
-  isSubmit: boolean
+  isStateForm: {
+    isSubmit: boolean
+    isPreloader: boolean
+  }
+
   formClassName: string
   colorBtn: string
   onSubmit: (e: React.FormEvent<HTMLFormElement>) => void
@@ -29,7 +34,7 @@ const MailFrom: React.FC<PropsMailFrom> = ({
   validClass,
   formClassName,
   colorBtn,
-  isSubmit,
+  isStateForm,
   onSubmit,
   onBlur,
   onChange,
@@ -37,7 +42,7 @@ const MailFrom: React.FC<PropsMailFrom> = ({
   return (
     /* eslint-disable react/jsx-no-useless-fragment */
     <>
-      {isSubmit ? (
+      {isStateForm.isSubmit ? (
         <div
           className={`${checkboxText ? 'finish-form' : 'finish-form_no-chckBox'}`}
         >
@@ -45,28 +50,18 @@ const MailFrom: React.FC<PropsMailFrom> = ({
           <br /> La primera carta
         </div>
       ) : (
-        <form onSubmit={(e) => onSubmit(e)} className={` ${formClassName}`}>
-          <div className={`${formClassName}__wrapper-input`}>
-            <div className={`${validClass.inputText}`}>
-              <Input
-                type="text"
-                name="email"
-                emailPlaceholder={emailPlaceholder}
-                value={valueInput}
-                onBlur={(e) => onBlur(e)}
-                onChange={(e) => onChange(e)}
-              />
-            </div>
-            {validClass.inputText === '_error' && (
-              <div className="text-error">
-                Formato de email inválido, verifique
-                <br /> a ortografia
-              </div>
-            )}
-          </div>
+        <form onSubmit={(e) => onSubmit(e)} className={`${formClassName}`}>
+          {isStateForm.isPreloader && <Preloader />}
 
+          <InputWithValidation
+            formClassName={formClassName}
+            validClass={validClass.inputText}
+            emailPlaceholder={emailPlaceholder}
+            valueInput={valueInput}
+            onBlur={(e) => onBlur(e)}
+            onChange={(e) => onChange(e)}
+          />
           <Button text={submitText} isSubmit colorBtn={colorBtn} />
-
           {checkboxText && (
             <div className={`${formClassName}__checkbox`}>
               <Сheckbox

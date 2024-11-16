@@ -1,6 +1,6 @@
 import ImgContainer from '../../../containers/ImgContainer.tsx'
-import FootreArticleItem from '../../ArticleItem/FootreArticleItem.tsx'
-import HeaderArticleItem from '../../ArticleItem/HeaderArticleItem.tsx'
+import FootreArticleItem from '../../common/ArticleItem/FootreArticleItem.tsx'
+import HeaderArticleItem from '../../common/ArticleItem/HeaderArticleItem.tsx'
 import { TypeItems } from '../typeSections'
 
 interface PropsFullImageArticle {

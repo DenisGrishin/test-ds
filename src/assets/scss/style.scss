@@ -5,9 +5,11 @@
 @use "base/null";
 // Подключение стилей общих элементов проекта
 @use "common";
+@use "../../components/common/Preloader/preloader";
+
 @use "../../components/common/Button/button";
 @use "../../components/common/Input/input";
-@use "../../components/ArticleItem/article-components";
+@use "../../components/common/ArticleItem/article-components";
 
 // Подключение стилей отдельных блоков
 @use "../../components/Header/header";

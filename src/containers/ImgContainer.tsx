@@ -1,6 +1,6 @@
 import React from 'react'
 import withMask from '../hoc/withMask.tsx'
-import ImgArticleItem from '../components/ArticleItem/ImgArticleItem.tsx'
+import ImgArticleItem from '../components/common/ArticleItem/ImgArticleItem.tsx'
 
 interface PropsWrapperImg {
   classNameBlock: string

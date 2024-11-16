@@ -121,7 +121,12 @@
           "duration": 10,
           "browse-text": "Leer el artículo",
           "size": "full-size",
-          "tags": ["Gaming", "Artículo", "Niños", "Proyecto"],
+          "tags": [
+            "Gaming",
+            "Artículo",
+            "Niños",
+            "Proyecto"
+          ],
           "img": {
             "url": "/src/assets/img/section-banner/section-banner-img.webp",
             "shape": "arch"
@@ -147,7 +152,12 @@
           "date": "02.06.2022",
           "duration": 10,
           "size": "compact",
-          "tags": ["Fashion", "Artículo", "Niños", "Proyecto"],
+          "tags": [
+            "Fashion",
+            "Artículo",
+            "Niños",
+            "Proyecto"
+          ],
           "img": {
             "url": "/src/assets/img/section-articles/article-img-one.webp",
             "shape": "semi-squared-rounded"
@@ -165,7 +175,12 @@
           "date": "02.06.2022",
           "duration": 10,
           "size": "compact",
-          "tags": ["Diseño", "Artículo", "Niños", "Proyecto"],
+          "tags": [
+            "Diseño",
+            "Artículo",
+            "Niños",
+            "Proyecto"
+          ],
           "img": {
             "url": "/src/assets/img/section-articles/article-img-two.webp",
             "shape": "semi-squared-cloud"
@@ -183,7 +198,12 @@
           "date": "02.06.2022",
           "duration": 10,
           "size": "full-image",
-          "tags": ["Diseño", "Artículo", "Niños", "Proyecto"],
+          "tags": [
+            "Diseño",
+            "Artículo",
+            "Niños",
+            "Proyecto"
+          ],
           "img": {
             "url": "/src/assets/img/section-articles/section-wide-articles-img.webp",
             "shape": "cloud"
@@ -201,7 +221,12 @@
           "date": "02.06.2022",
           "duration": 10,
           "size": "compact",
-          "tags": ["Marketing", "Artículo", "Niños", "Proyecto"],
+          "tags": [
+            "Marketing",
+            "Artículo",
+            "Niños",
+            "Proyecto"
+          ],
           "img": {
             "url": "/src/assets/img/section-articles/article-img-three.webp",
             "shape": "corner-squared-cloud"
@@ -219,7 +244,12 @@
           "date": "02.06.2022",
           "duration": 10,
           "size": "compact",
-          "tags": ["Software", "Artículo", "Niños", "Proyecto"],
+          "tags": [
+            "Software",
+            "Artículo",
+            "Niños",
+            "Proyecto"
+          ],
           "img": {
             "url": "/src/assets/img/section-articles/article-img-four.webp",
             "shape": "corner-squared-rounded"
@@ -248,7 +278,10 @@
             "position": "Programador, consultor"
           },
           "text": "Cómo iniciar el calendario de publicaciones de tu marca",
-          "tags": ["Próximamente", "Webinar"],
+          "tags": [
+            "Próximamente",
+            "Webinar"
+          ],
           "date_from": "01.06.2024",
           "date_to": "02.06.2024",
           "time": "19:00"
@@ -261,7 +294,10 @@
             "position": "Programador, consultor"
           },
           "text": "Cómo iniciar el calendario de publicaciones de tu marca",
-          "tags": ["Próximamente", "Webinar"],
+          "tags": [
+            "Próximamente",
+            "Webinar"
+          ],
           "date_from": "31.05.2024",
           "date_to": "02.06.2024",
           "time": "19:00"
@@ -274,7 +310,10 @@
             "position": "Empresario graduado de la Universidad de Harvard"
           },
           "text": "Ilustración Digital: 3 diferentes estilos de diseño",
-          "tags": ["Próximamente", "Demonstração"],
+          "tags": [
+            "Próximamente",
+            "Demonstração"
+          ],
           "date_from": "01.06.2024",
           "date_to": "02.06.2024",
           "time": "19:00"
@@ -335,6 +374,74 @@
     },
     {
       "id": "4418",
+      "email": "22@22.re"
+    },
+    {
+      "id": "785f",
+      "email": "22@22.re"
+    },
+    {
+      "id": "b04a",
+      "email": "22@22.re"
+    },
+    {
+      "id": "5f91",
+      "email": "22@22.re"
+    },
+    {
+      "id": "4ca9",
+      "email": "22"
+    },
+    {
+      "id": "7240",
+      "email": "22"
+    },
+    {
+      "id": "777b",
+      "email": "22@22.re"
+    },
+    {
+      "id": "3251",
+      "email": "22@22.re"
+    },
+    {
+      "id": "b0eb",
+      "email": "22"
+    },
+    {
+      "id": "d446",
+      "email": "22"
+    },
+    {
+      "id": "be56",
+      "email": "22"
+    },
+    {
+      "id": "47cb",
+      "email": "22@22.re"
+    },
+    {
+      "id": "c578",
+      "email": "22@22.re"
+    },
+    {
+      "id": "8707",
+      "email": "22@22.re"
+    },
+    {
+      "id": "9ff2",
+      "email": "22@22.re"
+    },
+    {
+      "id": "81a2",
+      "email": "22@22.re"
+    },
+    {
+      "id": "d4be",
+      "email": "22@22.re"
+    },
+    {
+      "id": "3279",
       "email": "22@22.re"
     }
   ]
