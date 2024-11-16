@@ -3,6 +3,7 @@ import React from 'react'
 import NavHeader from './NavHeader.tsx'
 import { DataApi } from './typeHeader'
 import HeaderRightBlock from './HeaderRightBlock.tsx'
+import SwitchThemaButton from '../common/Button/switchThemaButton.tsx'
 
 interface PropsHeader {
   data: DataApi
@@ -11,15 +12,18 @@ interface PropsHeader {
 
 const Header: React.FC<PropsHeader> = ({ data, isScroll }) => {
   return (
-    <header className={`header ${isScroll}`}>
-      <div className="header__container">
-        <a href="#" className="header__logo">
-          <img src={data.logo} alt="Лого сайта" />
-        </a>
-        <NavHeader navList={data.nav} />
-        <HeaderRightBlock />
-      </div>
-    </header>
+    <>
+      <SwitchThemaButton />
+      <header className={`header ${isScroll}`}>
+        <div className="header__container">
+          <a href="#" className="header__logo">
+            <img src={data.logo} alt="Лого сайта" />
+          </a>
+          <NavHeader navList={data.nav} />
+          <HeaderRightBlock />
+        </div>
+      </header>
+    </>
   )
 }
 

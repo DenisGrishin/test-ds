@@ -35,7 +35,7 @@ const BottomFooter: React.FC<PropsBottomFooter> = ({ contacts }) => {
           />
         </div>
       </div>
-      {/* это форма по */}
+      {/* это форма появляется на мобилке */}
       <MailFromContainer
         emailPlaceholder={subscription['email-placeholder']}
         submitText={subscription['submit-text']}

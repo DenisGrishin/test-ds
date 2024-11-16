@@ -27,6 +27,7 @@ const MailFromContainer: React.FC<PropsMailFromContainer> = ({
     checkbox: '',
   })
   const [isSubmit, setIsSubmit] = useState(false)
+
   function validateEmail(email: string) {
     const regExtEmail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,8})+$/
     return regExtEmail.test(email)
@@ -51,7 +52,7 @@ const MailFromContainer: React.FC<PropsMailFromContainer> = ({
       })
       return
     }
-    postEmailApi(formData.email).then((res) => {
+    postEmailApi(formData.email).then(() => {
       setIsSubmit(true)
     })
   }

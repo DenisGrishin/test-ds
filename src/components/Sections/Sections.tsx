@@ -28,23 +28,28 @@ const Sections: React.FC<PropsSectionsDataApi> = ({ data }) => {
         AddClassName="article"
         numRepeatWord={11}
       />
+
       <ArticleSection itemsData={data.content.items} />
+
       <RunningStringContainer
         ticker={data.content.ticker}
         AddClassName="webinars"
         numRepeatWord={20}
       />
+
       <WebinarsSection proposals={data.proposals} />
+
       <RunningStringContainer
         ticker={data.proposals.ticker}
-        AddClassName="webinars"
+        AddClassName="subscribe"
         numRepeatWord={17}
       />
 
       <SubscribeSection subscription={data.subscription} />
+
       <RunningStringContainer
         ticker={data.subscription.ticker}
-        AddClassName="webinars"
+        AddClassName="discount"
         numRepeatWord={17}
       />
     </>

@@ -11,33 +11,31 @@ const FullImageArticle: React.FC<PropsFullImageArticle> = ({ article }) => {
   const { title, tags, accent, text, date, duration, img, stamp, size } =
     article
   return (
-    <div className={`section-wide-article ${size}`}>
-      <div className="section-wide-article__container decor-line-bottom">
-        <ImgContainer
+    <div className={`section-wide-article ${size} decor-line-bottom`}>
+      <ImgContainer
+        classNameBlock="section-wide-article"
+        propImg={img}
+        stamp={stamp}
+      />
+      <article className="section-wide-article__article article-wide-item">
+        <HeaderArticleItem
+          title={title}
+          tags={tags}
+          accent={accent}
           classNameBlock="section-wide-article"
-          propImg={img}
-          stamp={stamp}
+          sizetitle="big-title"
         />
-        <article className="section-wide-article__article article-wide-item">
-          <HeaderArticleItem
-            title={title}
-            tags={tags}
-            accent={accent}
+        <div className="section-wide-article__body">
+          <p className="section-wide-article__description description-article">
+            {text}
+          </p>
+          <FootreArticleItem
             classNameBlock="section-wide-article"
-            sizetitle="big-title"
+            date={date}
+            duration={duration}
           />
-          <div className="section-wide-article__body">
-            <p className="section-wide-article__description description-article">
-              {text}
-            </p>
-            <FootreArticleItem
-              classNameBlock="section-wide-article"
-              date={date}
-              duration={duration}
-            />
-          </div>
-        </article>
-      </div>
+        </div>
+      </article>
     </div>
   )
 }

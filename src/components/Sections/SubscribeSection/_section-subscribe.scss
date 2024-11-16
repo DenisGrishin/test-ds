@@ -1,11 +1,11 @@
-@use "../main" as *;
+@use "../../../assets/scss/_main.scss" as *;
 .section-subscribe {
 	padding-top: 200px;
 	padding-bottom: 135px;
 	background-color: var(--gray5);
 
 	@media (max-width: 1440px) {
-		padding-top: 87px;
+		padding-top: 83px;
 	}
 	@media (max-width: $tablet) {
 		padding-top: 56px;

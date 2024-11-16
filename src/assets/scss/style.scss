@@ -7,7 +7,7 @@
 @use "common";
 @use "../../components/common/Button/button";
 @use "../../components/common/Input/input";
-@use "section-page/article-components";
+@use "../../components/ArticleItem/article-components";
 
 // Подключение стилей отдельных блоков
 @use "../../components/Header/header";
@@ -17,5 +17,5 @@
 @use "../../components/RunningString/running-string";
 @use "../../components/Sections/ArticleSection/section-articles";
 @use "../../components/Sections/WebinarsSection/section-webinars";
-@use "section-page/section-subscribe";
+@use "../../components/Sections/SubscribeSection/section-subscribe";
 @use "../../components/Footer/footer";

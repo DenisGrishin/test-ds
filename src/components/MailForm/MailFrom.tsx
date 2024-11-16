@@ -35,7 +35,8 @@ const MailFrom: React.FC<PropsMailFrom> = ({
   onChange,
 }) => {
   return (
-    <div>
+    /* eslint-disable react/jsx-no-useless-fragment */
+    <>
       {isSubmit ? (
         <div
           className={`${checkboxText ? 'finish-form' : 'finish-form_no-chckBox'}`}
@@ -78,7 +79,7 @@ const MailFrom: React.FC<PropsMailFrom> = ({
           </div>
         </form>
       )}
-    </div>
+    </>
   )
 }
 

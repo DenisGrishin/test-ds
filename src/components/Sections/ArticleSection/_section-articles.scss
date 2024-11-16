@@ -1,6 +1,6 @@
 @use "../../../assets/scss/_main.scss" as *;
 .section-articles {
-	padding-top: 153px;
+	padding-top: 149px;
 	// padding-bottom: 136px;
 	padding-bottom: 117px;
 	@media (max-width: $tablet) {
@@ -177,7 +177,7 @@
 	&__nav {
 		flex-direction: column;
 		flex: 0 0 376px;
-		transform: translate(0px, 10px);
+		transform: translate(0px, 19px);
 
 		@media (max-width: $tablet) {
 			flex: 0 0 219px;
