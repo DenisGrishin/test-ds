@@ -67,16 +67,16 @@ const MailFrom: React.FC<PropsMailFrom> = ({
 
           <Button text={submitText} isSubmit colorBtn={colorBtn} />
 
-          <div className={`${formClassName}__checkbox`}>
-            {checkboxText && (
+          {checkboxText && (
+            <div className={`${formClassName}__checkbox`}>
               <Сheckbox
                 onChange={(e) => onChange(e)}
                 checkboxText={checkboxText}
                 name="confirmations"
                 validClass={validClass.checkbox}
               />
-            )}
-          </div>
+            </div>
+          )}
         </form>
       )}
     </>

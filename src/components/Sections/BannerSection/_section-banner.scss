@@ -119,6 +119,7 @@
 		}
 		@media (max-width: $mobile) {
 			justify-content: stretch;
+			padding: 0;
 			flex: none;
 			width: 100%;
 			ul {
@@ -158,7 +159,7 @@
 		@media (max-width: $mobile) {
 			max-width: 100%;
 			flex: none;
-			margin-bottom: 16px;
+			margin-bottom: 14px;
 		}
 	}
 
@@ -180,6 +181,11 @@
 		@media (max-width: $mobile) {
 			flex-direction: row;
 			flex: none;
+			transform: translate(0px, 0px);
+			& .footer-article__time-read,
+			& .footer-article__date {
+				flex-direction: row;
+			}
 		}
 	}
 	// .content-block__btn

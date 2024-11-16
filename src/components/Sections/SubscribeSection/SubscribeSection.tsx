@@ -3,7 +3,7 @@ import { ExtendedTypeSubscription } from '../typeSections'
 import ContentSubscribe from './ContentSubscribe.tsx'
 import imgDeskrop from '../../../assets/img/section-subscribe/subscribe-img.svg'
 import imgTablet from '../../../assets/img/section-subscribe/subscribe-tablet-img.svg'
-import imgMobile from '../../../assets/img/section-subscribe/subscribe-mobile-img.svg'
+import imgMobile from '../../../assets/img/section-subscribe/mail-mobile-img.svg'
 import MailFromContainer from '../../../containers/MailFromContainer.tsx'
 
 interface PropsSubscribeSection {

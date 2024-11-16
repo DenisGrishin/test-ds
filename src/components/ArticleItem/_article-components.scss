@@ -224,7 +224,7 @@
 			mask-image: url("../img/masks/section-articles-mask/mask-six-mobile.svg");
 		}
 		@media (max-width: $mobileSmall) {
-			object-position: -14px -4px;
+			object-position: -14px 0px;
 		}
 	}
 }
@@ -238,7 +238,7 @@
 			mask-image: url("../img/masks/section-articles-mask/mask-four-mobile.svg");
 		}
 		@media (max-width: $mobileSmall) {
-			object-position: -111px -5px;
+			object-position: -111px 1px;
 		}
 	}
 }

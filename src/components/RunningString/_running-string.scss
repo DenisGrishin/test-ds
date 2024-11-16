@@ -66,6 +66,11 @@
 			transform: rotate(-2.9deg) translate(-20px, 16px);
 		}
 	}
+	@media (max-width: $mobile) {
+		& .running-string__wrapper {
+			transform: rotate(-3.9deg) translate(-20px, 7px);
+		}
+	}
 }
 .webinars {
 	height: 197px;
@@ -77,6 +82,11 @@
 		height: 129px;
 		& .running-string__wrapper {
 			transform: rotate(-2.9deg) translate(-20px, 55px);
+		}
+	}
+	@media (max-width: $mobile) {
+		& .running-string__wrapper {
+			transform: rotate(-3.9deg) translate(-20px, 11px);
 		}
 	}
 }
@@ -104,6 +114,11 @@
 		}
 		& .running-string__wrapper {
 			transform: rotate(3.1deg) translate(-20px, 41px);
+		}
+	}
+	@media (max-width: $mobile) {
+		& .running-string__wrapper {
+			transform: rotate(3.8deg) translate(-20px, 11px);
 		}
 	}
 }

@@ -1,31 +1,16 @@
 @use "../../../assets/scss/_main.scss" as *;
 .section-articles {
 	padding-top: 149px;
-	// padding-bottom: 136px;
 	padding-bottom: 117px;
 	@media (max-width: $tablet) {
 		padding-top: 159px;
 		padding-bottom: 160px;
-		// padding-bottom: 104px;
 	}
 	@media (max-width: $mobile) {
-		padding-top: 147px;
+		padding-top: 131px;
 		padding-bottom: 64px;
 	}
-	// .section-articles_py
 
-	// &_py {
-	// 	padding-top: 136px;
-	// padding-bottom: 117px;
-	// 	@media (max-width: $tablet) {
-	// 		padding-top: 89px;
-	// padding-bottom: 160px;
-	// 	}
-	// 	@media (max-width: $mobile) {
-	// 		padding-top: 102px;
-	// padding-bottom: 64px;
-	// 	}
-	// }
 	// .section-articles__container
 
 	&__container {
@@ -59,7 +44,7 @@
 		row-gap: 24px;
 	}
 	@media (max-width: $mobile) {
-		row-gap: 18px;
+		row-gap: 22px;
 	}
 	// .article-item__link-img
 	&__link-img {
