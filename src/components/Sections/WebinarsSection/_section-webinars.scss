@@ -13,7 +13,7 @@
 		padding-top: 0px;
 	}
 
-	&::before {
+	&::after {
 		content: "";
 		background-color: var(--black);
 		clip-path: polygon(0 97%, 0 7%, 100% 0, 100% 100%);
@@ -334,6 +334,7 @@
 
 	&__bottom {
 		margin-bottom: 0;
+		justify-content: space-between;
 	}
 
 	// .footre-card__date

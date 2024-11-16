@@ -39,15 +39,15 @@
 	&::before {
 		width: 3016px;
 		height: 2741px;
-		top: -922px;
-		left: -789px;
+		top: -160px;
+		left: -754px;
 		background: url("../img/decor-line/bottom-line.svg") 0 0 no-repeat;
 		@media (max-width: $tablet) {
 			background-image: url("../img/decor-line/bottom-tablet-line.svg");
 			width: 3064px;
 			height: 2811px;
-			top: -1053px;
-			left: -1284px;
+			top: -390px;
+			left: -1279px;
 		}
 		@media (max-width: $mobile) {
 			background-image: url("../img/decor-line/bottom-line-mobile.svg");
@@ -72,8 +72,13 @@
 
 		@media (max-width: $tablet) {
 			background-image: url(../img/decor-line/webinars-tablet-line.svg);
-			background-size: 1698px 1363px;
+			background-size: 1694px 1319px;
 			background-position: top -54px left calc(50% + 39px);
+			width: 1729px;
+			height: 1319px;
+			top: -83px;
+			left: -487px;
+			z-index: 1;
 		}
 		@media (max-width: $mobile) {
 			background-image: none;

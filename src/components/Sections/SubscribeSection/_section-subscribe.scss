@@ -8,7 +8,7 @@
 		padding-top: 83px;
 	}
 	@media (max-width: $tablet) {
-		padding-top: 56px;
+		padding-top: 118px;
 		padding-bottom: 108px;
 	}
 	@media (max-width: $mobile) {
@@ -154,9 +154,7 @@
 	flex-wrap: wrap;
 	gap: 16px;
 	max-width: 576px;
-	@media (max-width: $tablet) {
-		padding-bottom: 5px;
-	}
+
 	@media (max-width: $mobile) {
 		max-width: 100%;
 		padding-bottom: 0;

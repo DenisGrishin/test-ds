@@ -11,6 +11,9 @@
 		padding-top: 27px;
 		padding-bottom: 23px;
 		width: 110vw;
+		@media (max-width: $tablet) {
+			padding: 20px 0;
+		}
 	}
 
 	// .running-string__item
@@ -38,6 +41,9 @@
 		.start-animation & {
 			animation: running-string 5s linear infinite;
 		}
+		@media (max-width: $tablet) {
+			font-size: 30px;
+		}
 	}
 }
 @keyframes running-string {
@@ -54,22 +60,30 @@
 	& .running-string__wrapper {
 		transform: rotate(-3.9deg) translate(-20px, 47px);
 	}
+	@media (max-width: $tablet) {
+		height: 122px;
+		& .running-string__wrapper {
+			transform: rotate(-2.9deg) translate(-20px, 16px);
+		}
+	}
 }
 .webinars {
 	height: 197px;
-	@media (max-width: $tablet) {
-		height: 129px;
-	}
+
 	& .running-string__wrapper {
 		transform: rotate(-2.9deg) translate(-20px, 35px);
+	}
+	@media (max-width: $tablet) {
+		height: 129px;
+		& .running-string__wrapper {
+			transform: rotate(-2.9deg) translate(-20px, 55px);
+		}
 	}
 }
 .subscribe {
 	height: 197px;
 	position: relative;
-	@media (max-width: $tablet) {
-		height: 129px;
-	}
+
 	&::after {
 		content: "";
 		position: absolute;
@@ -83,11 +97,20 @@
 	& .running-string__wrapper {
 		transform: rotate(2.1deg) translate(-20px, 31px);
 	}
+	@media (max-width: $tablet) {
+		height: 120px;
+		&::after {
+			height: 41%;
+		}
+		& .running-string__wrapper {
+			transform: rotate(3.1deg) translate(-20px, 41px);
+		}
+	}
 }
 .discount {
 	height: 120px;
 	@media (max-width: $tablet) {
-		height: 129px;
+		height: 80px;
 	}
 	& .running-string__wrapper {
 	}

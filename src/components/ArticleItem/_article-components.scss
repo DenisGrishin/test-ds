@@ -108,6 +108,11 @@
 			background-repeat: no-repeat;
 
 			background-size: 15px 16px;
+			@media (max-width: $tablet) {
+				background-size: 17px 17px;
+				width: 17px;
+				height: 17px;
+			}
 		}
 	}
 

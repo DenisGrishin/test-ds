@@ -9,7 +9,7 @@ interface PropsArticleSection {
 const ArticleSection: React.FC<PropsArticleSection> = ({ itemsData }) => {
   return (
     <div className="section-articles">
-      <div className="section-articles__container">
+      <div className="section-articles__container decor-line-bottom">
         {itemsData.map((article) => {
           if (article.size === 'compact') {
             return (

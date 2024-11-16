@@ -11,7 +11,7 @@ const FullImageArticle: React.FC<PropsFullImageArticle> = ({ article }) => {
   const { title, tags, accent, text, date, duration, img, stamp, size } =
     article
   return (
-    <div className={`section-wide-article ${size} decor-line-bottom`}>
+    <div className={`section-wide-article ${size} `}>
       <ImgContainer
         classNameBlock="section-wide-article"
         propImg={img}

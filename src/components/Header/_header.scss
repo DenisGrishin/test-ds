@@ -86,6 +86,8 @@
 	&__nav {
 		order: 2;
 		@media (max-width: $tablet) {
+			width: 100%;
+
 			order: 3;
 		}
 		@media (max-width: $mobile) {
@@ -136,10 +138,9 @@
 
 	&__list {
 		display: flex;
-
-		@media (max-width: $mobile) {
-			column-gap: 0;
+		@media (max-width: $tablet) {
 			justify-content: space-between;
+			column-gap: 0;
 		}
 	}
 

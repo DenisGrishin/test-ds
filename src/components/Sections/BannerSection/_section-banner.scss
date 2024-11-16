@@ -102,6 +102,8 @@
 
 		@media (max-width: $tablet) {
 			flex: 0 0 219px;
+			padding-top: 4px;
+			padding-right: 4px;
 			justify-content: flex-end;
 			ul {
 				display: grid;
@@ -169,6 +171,11 @@
 			row-gap: 8px;
 			align-items: flex-end;
 			flex: 0 0 200px;
+			transform: translate(-5px, -10px);
+			& .footer-article__time-read,
+			& .footer-article__date {
+				flex-direction: row-reverse;
+			}
 		}
 		@media (max-width: $mobile) {
 			flex-direction: row;

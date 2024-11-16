@@ -42,7 +42,7 @@
 		row-gap: 88px;
 	}
 	@media (max-width: $tablet) {
-		row-gap: 64px;
+		row-gap: 89px;
 	}
 	// .top-footer__subscribe
 
@@ -388,11 +388,15 @@
 .form-top {
 	order: 2;
 	max-width: 280px;
+	flex: 0 1 280px;
 	@media (max-width: $mobile) {
 		display: none;
 	}
 	&__wrapper-input {
 		margin-bottom: 8px;
+		@media (max-width: $tablet) {
+			margin-bottom: 16px;
+		}
 	}
 }
 .form-top,
