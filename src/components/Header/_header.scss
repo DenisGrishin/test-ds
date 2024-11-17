@@ -4,6 +4,8 @@
 	font-size: 15px;
 	line-height: 1.4;
 	transition: all 0.3s ease 0s;
+	position: relative;
+	z-index: 2;
 	&._header-scroll + .page {
 		&::before {
 			content: "";
@@ -41,6 +43,7 @@
 		min-width: 72px;
 		padding-top: 16px;
 		padding-bottom: 16px;
+
 		@media (max-width: $tablet) {
 			flex-wrap: wrap;
 			align-content: center;

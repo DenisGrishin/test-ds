@@ -42,6 +42,7 @@
 		top: -160px;
 		left: -754px;
 		background: url("../img/decor-line/bottom-line.svg") 0 0 no-repeat;
+		z-index: 0;
 		@media (max-width: $tablet) {
 			background-image: url("../img/decor-line/bottom-tablet-line.svg");
 			width: 3064px;

@@ -3,6 +3,8 @@
 
 @use "./fonts/fonts";
 @use "base/null";
+@use "base/darkTheme";
+
 // Подключение стилей общих элементов проекта
 @use "common";
 @use "../../components/common/Preloader/preloader";

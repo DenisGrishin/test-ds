@@ -2,11 +2,24 @@ import React from 'react'
 import moonIcon from '../../../assets/img/icons/moonIcon.svg'
 import sunIcon from '../../../assets/img/icons/sunIcon.svg'
 
-interface PropsSwitchThemaButton {}
+interface PropsSwitchThemaButton {
+  toggleTheme: () => void
+  isDark: boolean
+}
 
-const SwitchThemaButton: React.FC<PropsSwitchThemaButton> = () => {
+const SwitchThemaButton: React.FC<PropsSwitchThemaButton> = ({
+  toggleTheme,
+  isDark,
+}) => {
   return (
-    <button type="button" className="switch-thema-btn">
+    <button
+      onClick={() => {
+        toggleTheme()
+        localStorage.setItem('theme', isDark ? 'light' : 'dark')
+      }}
+      type="button"
+      className="switch-thema-btn"
+    >
       <img
         className="switch-thema-btn__sun"
         src={sunIcon}

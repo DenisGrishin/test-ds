@@ -49,6 +49,8 @@
 
 	&__block {
 		flex: 0 1 688px;
+		position: relative;
+		z-index: 1;
 		@media (max-width: $tablet) {
 			flex: none;
 		}
@@ -191,6 +193,9 @@
 	// .content-block__btn
 
 	& button {
+		span {
+			padding: 9px 50px;
+		}
 		@media (max-width: $tablet) {
 			transform: translateX(11px);
 		}

@@ -48,9 +48,9 @@ const MailFromContainer: React.FC<PropsMailFromContainer> = ({
     }
 
     if (checkboxText && !formData.confirmations) {
-      setValidateClass((prev) => {
+      setValidateClass((cur) => {
         return {
-          ...prev,
+          ...cur,
           checkbox: '_error-checkbox',
         }
       })

@@ -1,19 +1,26 @@
 import React from 'react'
 
 import NavHeader from './NavHeader.tsx'
-import { DataApi } from './typeHeader'
+import { TypeHeaderApi } from './typeHeader'
 import HeaderRightBlock from './HeaderRightBlock.tsx'
 import SwitchThemaButton from '../common/Button/SwitchThemaButton.tsx'
 
 interface PropsHeader {
-  data: DataApi
+  data: TypeHeaderApi
   isScroll: string
+  toggleTheme: () => void
+  isDark: boolean
 }
 
-const Header: React.FC<PropsHeader> = ({ data, isScroll }) => {
+const Header: React.FC<PropsHeader> = ({
+  data,
+  isScroll,
+  toggleTheme,
+  isDark,
+}) => {
   return (
     <>
-      <SwitchThemaButton />
+      <SwitchThemaButton toggleTheme={toggleTheme} isDark={isDark} />
       <header className={`header ${isScroll}`}>
         <div className="header__container">
           <a href="#" className="header__logo">

@@ -89,6 +89,7 @@
 		z-index: 1;
 		display: flex;
 		justify-content: flex-end;
+		right: -1px;
 
 		@media (max-width: $mobile) {
 			justify-content: center;

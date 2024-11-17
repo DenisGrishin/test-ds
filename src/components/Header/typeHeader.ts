@@ -1,4 +1,4 @@
-export interface DataApi {
+export interface TypeHeaderApi {
   logo?: string
   nav: TypeLinks[]
 }

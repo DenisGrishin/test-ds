@@ -18,11 +18,12 @@ interface PropsSectionsDataApi {
     proposals: TypeProposals
     subscription: ExtendedTypeSubscription
   }
+  isDark: boolean
 }
-const Sections: React.FC<PropsSectionsDataApi> = ({ data }) => {
+const Sections: React.FC<PropsSectionsDataApi> = ({ data, isDark }) => {
   return (
     <>
-      <BannerSection itemsData={data.main.items} />
+      <BannerSection itemsData={data.main.items} isDark={isDark} />
       <RunningStringContainer
         ticker={data.main.ticker}
         AddClassName="article"

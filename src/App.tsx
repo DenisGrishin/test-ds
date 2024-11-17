@@ -1,11 +1,14 @@
 import SectionsContainer from './containers/SectionContainer.tsx'
 import Layout from './layout/Layout.tsx'
+import { ThemeProvider } from './context/ThemeContext.tsx'
 
 function App() {
   return (
-    <Layout>
-      <SectionsContainer />
-    </Layout>
+    <ThemeProvider>
+      <Layout>
+        <SectionsContainer />
+      </Layout>
+    </ThemeProvider>
   )
 }
 

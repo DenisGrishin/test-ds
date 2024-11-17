@@ -8,9 +8,10 @@ import ImgContainer from '../../../containers/ImgContainer.tsx'
 
 interface PropsBannerSection {
   itemsData: TypeItems[]
+  isDark: boolean
 }
 
-const BannerSection: React.FC<PropsBannerSection> = ({ itemsData }) => {
+const BannerSection: React.FC<PropsBannerSection> = ({ itemsData, isDark }) => {
   return (
     <div className="section-banner">
       <div className="section-banner__container decor-line-top ">
@@ -44,7 +45,10 @@ const BannerSection: React.FC<PropsBannerSection> = ({ itemsData }) => {
                       duration={it.duration}
                     />
                   </div>
-                  <Button text={it['browse-text']} colorBtn="btn-grass" />
+                  <Button
+                    text={it['browse-text']}
+                    colorBtn={` ${isDark ? 'btn-purple' : 'btn-grass'} `}
+                  />
                 </article>
               </div>
             )

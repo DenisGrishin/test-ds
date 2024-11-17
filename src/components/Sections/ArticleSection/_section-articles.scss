@@ -2,6 +2,7 @@
 .section-articles {
 	padding-top: 149px;
 	padding-bottom: 117px;
+
 	@media (max-width: $tablet) {
 		padding-top: 159px;
 		padding-bottom: 160px;
@@ -18,14 +19,13 @@
 		grid-template-columns: 1fr 1fr;
 		row-gap: 136px;
 		column-gap: 40px;
+
 		@media (max-width: $tablet) {
 			column-gap: 24px;
 			row-gap: 104px;
 		}
 		@media (max-width: $mobile) {
 			grid-template-columns: 1fr;
-			// flex-direction: column;
-			// row-gap: 104px;
 		}
 	}
 
@@ -39,7 +39,8 @@
 	row-gap: 32px;
 	display: flex;
 	flex-direction: column;
-
+	position: relative;
+	z-index: 1;
 	@media (max-width: $tablet) {
 		row-gap: 24px;
 	}
@@ -110,7 +111,7 @@
 
 .section-wide-article {
 	position: relative;
-
+	z-index: 1;
 	// .section-wide-article__container
 
 	&__container {
