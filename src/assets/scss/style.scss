@@ -1,0 +1,25 @@
+// @use "base/mixins";
+@use "main";
+
+@use "./fonts/fonts";
+@use "base/null";
+@use "base/darkTheme";
+
+// Подключение стилей общих элементов проекта
+@use "common";
+@use "../../components/common/Preloader/preloader";
+
+@use "../../components/common/Button/button";
+@use "../../components/common/Input/input";
+@use "../../components/common/ArticleItem/article-components";
+
+// Подключение стилей отдельных блоков
+@use "../../components/Header/header";
+@use "decor";
+@use "_stamp";
+@use "../../components/Sections/BannerSection/section-banner";
+@use "../../components/RunningString/running-string";
+@use "../../components/Sections/ArticleSection/section-articles";
+@use "../../components/Sections/WebinarsSection/section-webinars";
+@use "../../components/Sections/SubscribeSection/section-subscribe";
+@use "../../components/Footer/footer";

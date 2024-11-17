@@ -1,0 +1,91 @@
+@use "main" as *;
+
+.big-title {
+	font-size: 36px;
+	line-height: 1.2;
+	@media (max-width: $tablet) {
+		font-size: 26px;
+	}
+}
+.middle-title {
+	font-size: 30px;
+	line-height: 1.2;
+	@media (max-width: $tablet) {
+		font-size: 24px;
+	}
+}
+
+.finish-step_no-chckBox,
+.finish-step {
+	// display: none;
+	color: var(--turquoise-dark);
+	background-color: var(--white);
+	font-weight: 700;
+	padding: 10px 24px;
+	border-radius: 88px;
+	position: relative;
+	max-width: 576px;
+	@media (max-width: $tablet) {
+		padding: 28px 24px;
+		border-radius: 24px;
+		max-width: 280px;
+	}
+	@media (max-width: $tablet) {
+		max-width: 100%;
+	}
+	&::before {
+		content: "";
+		position: absolute;
+		width: 120px;
+		height: 120px;
+		top: -59px;
+		right: 64px;
+		background: url("../img/sticker/finish.svg") 0 0 / cover no-repeat;
+		@media (max-width: $tablet) {
+			width: 104px;
+			height: 104px;
+			top: -32px;
+			right: -23px;
+		}
+		@media (max-width: $tablet) {
+			top: -31px;
+			right: -21px;
+		}
+	}
+	br {
+		display: none;
+		@media (max-width: $tablet) {
+			display: inline-block;
+		}
+		@media (max-width: $mobile) {
+			display: none;
+		}
+		@media (max-width: 480px) {
+			display: inline-block;
+		}
+	}
+}
+.finish-step_no-chckBox {
+	@media (max-width: $tablet) {
+		order: 2;
+		max-width: 280px;
+		flex: 0 1 280px;
+	}
+	@media (max-width: $mobile) {
+		max-width: 100%;
+		flex: none;
+	}
+	&::before {
+		content: "";
+		right: 20px;
+		@media (max-width: $tablet) {
+			right: -10px;
+		}
+		@media (max-width: $mobile) {
+			right: 10px;
+		}
+	}
+	br {
+		display: inline-block;
+	}
+}

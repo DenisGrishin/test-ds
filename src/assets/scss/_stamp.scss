@@ -1,0 +1,275 @@
+@use "main" as *;
+.donut,
+.signboard,
+.cookie,
+.star,
+.circle {
+	&::before {
+		content: "";
+		position: absolute;
+		background-repeat: no-repeat;
+		background-size: cover;
+		z-index: 1;
+		transition: all 0.3s ease 0s;
+		// ===========
+		width: 180px;
+		height: 180px;
+		@media (max-width: $tablet) {
+			width: 120px;
+			height: 120px;
+		}
+		@media (max-width: $mobile) {
+			width: 104px;
+			height: 104px;
+		}
+	}
+}
+
+.circle {
+	&::before {
+		top: 0;
+		right: 0;
+		background-image: url("../img/sticker/gaming.svg");
+		width: 180px;
+		height: 180px;
+		@media (max-width: $tablet) {
+			width: 120px;
+			height: 120px;
+		}
+		@media (max-width: $mobile) {
+			width: 104px;
+			height: 104px;
+		}
+	}
+}
+.star {
+	&::before {
+		background-image: url("../img/sticker/fashion.svg");
+
+		@media (max-width: $tablet) {
+			width: 104px;
+			height: 104px;
+		}
+		@media (max-width: $mobile) {
+			width: 120px;
+			height: 120px;
+		}
+	}
+	@media (any-hover: hover) {
+		.section-wide-article:hover &,
+		.article-item:hover & {
+			&::before {
+				transform: scale(1);
+				animation: 3s scale reverse ease-out;
+			}
+		}
+	}
+}
+.cookie {
+	&::before {
+		background-image: url("../img/sticker/diseno.svg");
+
+		@media (max-width: $tablet) {
+			width: 104px;
+			height: 104px;
+		}
+		@media (max-width: $mobile) {
+			width: 120px;
+			height: 120px;
+		}
+	}
+	&.section-wide-article__img {
+		&::before {
+			@media (max-width: $tablet) {
+				width: 120px;
+				height: 120px;
+			}
+		}
+	}
+	@media (any-hover: hover) {
+		.section-wide-article:hover &,
+		.article-item:hover & {
+			&::before {
+				transform: rotate(180deg);
+				animation: 5s rotation linear;
+			}
+		}
+	}
+}
+.signboard {
+	&::before {
+		background-image: url("../img/sticker/marketing.svg");
+		background-position: center;
+
+		width: 270px;
+		height: 148px;
+
+		@media (max-width: $tablet) {
+			width: 162px;
+			height: 93px;
+			transform: rotate(15deg);
+		}
+		@media (max-width: $mobile) {
+			width: 174px;
+			height: 100px;
+		}
+	}
+	@media (any-hover: hover) {
+		.section-wide-article:hover &,
+		.article-item:hover & {
+			&::before {
+				transform: rotate(15deg) translate(0px, 0px);
+				animation: 1s translateAnimate linear;
+			}
+		}
+	}
+}
+.donut {
+	&::before {
+		content: "";
+		background-image: url("../img/sticker/Software.svg");
+
+		@media (max-width: $tablet) {
+			top: 8px;
+			right: 8px;
+			width: 104px;
+			height: 104px;
+		}
+		@media (max-width: $mobile) {
+			top: 8px;
+			left: 8px;
+			right: auto;
+			width: 120px;
+			height: 120px;
+		}
+	}
+	@media (any-hover: hover) {
+		.section-wide-article:hover &,
+		.article-item:hover & {
+			&::before {
+				transform: rotate(180deg);
+				animation: 5s rotation linear;
+			}
+		}
+	}
+}
+.top-right {
+	&.donut {
+		&::before {
+			right: -39px;
+			top: -48px;
+			@media (max-width: $tablet) {
+				top: 8px;
+				right: 8px;
+			}
+			@media (max-width: $mobile) {
+				top: 8px;
+				left: 8px;
+				right: auto;
+			}
+		}
+	}
+	&.cookie {
+		&::before {
+			right: -36px;
+			top: -48px;
+			@media (max-width: $tablet) {
+				top: 8px;
+				right: 8px;
+			}
+			@media (max-width: $mobile) {
+				top: 8px;
+			}
+		}
+	}
+	&.section-wide-article__img {
+		@media (max-width: $mobile) {
+			&::before {
+				top: 8px;
+				left: 11px;
+				right: auto;
+			}
+		}
+	}
+	&::before {
+		top: 0;
+		right: 0;
+		@media (max-width: $tablet) {
+			top: 5px;
+			right: 7px;
+		}
+		@media (max-width: $mobile) {
+			top: 8px;
+			right: 8px;
+		}
+	}
+}
+.top-left {
+	&.signboard {
+		&::before {
+			left: -55px;
+			top: -49px;
+			@media (max-width: $tablet) {
+				top: 8px;
+				left: auto;
+				right: -1px;
+			}
+			@media (max-width: $mobile) {
+				top: 6px;
+				right: 0;
+			}
+		}
+	}
+	&::before {
+		top: -48px;
+		left: -36px;
+		@media (max-width: $tablet) {
+			left: auto;
+			top: 8px;
+			right: 8px;
+		}
+		@media (max-width: $mobile) {
+			top: 10px;
+			left: 9px;
+			right: auto;
+		}
+	}
+}
+// Анимация стикров ==========================================================================================================================================================================================================================
+
+@keyframes rotation {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+@keyframes scale {
+	0% {
+		transform: scale(1);
+	}
+	25% {
+		transform: scale(1.2);
+	}
+	50% {
+		transform: scale(1);
+	}
+	75% {
+		transform: scale(1.2);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+@keyframes translateAnimate {
+	0% {
+		transform: rotate(-40deg) translate(0px, 0px);
+	}
+	50% {
+		transform: rotate(-20deg) translate(0px, 40px);
+	}
+	100% {
+		transform: rotate(15deg) translate(0px, 0px);
+	}
+}

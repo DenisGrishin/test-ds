@@ -1,0 +1,241 @@
+@use "../../../assets/scss/_main.scss" as *;
+.nav-article {
+	display: flex;
+	align-items: center;
+	font-size: 15px;
+	line-height: 1.4;
+
+	// .nav-article__list_color-grass
+	&_color-grass {
+		.nav-article__link {
+			color: var(--grass-dark);
+		}
+	}
+	// .nav-article__list_color-marine
+	&_color-marine {
+		.nav-article__item {
+			&._active {
+				background-color: var(--marine);
+			}
+		}
+		.nav-article__link {
+			color: var(--marine-dark);
+		}
+	}
+	// .nav-article__listcolor-pink
+	&_color-pink {
+		.nav-article__item {
+			&._active {
+				background-color: var(--pink);
+			}
+		}
+		.nav-article__link {
+			color: var(--pink-dark);
+		}
+	}
+	&_color-pale {
+		.nav-article__item {
+			&._active {
+				background-color: var(--pale);
+			}
+		}
+		.nav-article__link {
+			color: var(--tangerine-dark);
+		}
+	}
+	&_color-tangerine {
+		.nav-article__item {
+			&._active {
+				background-color: var(--tangerine);
+			}
+		}
+		.nav-article__link {
+			color: var(--turquoise-dark);
+		}
+	}
+	// .nav-article__item
+
+	&__item {
+		&:not(:last-child) {
+			margin-right: 10px;
+		}
+
+		&._active {
+			color: var(--black);
+			font-weight: 500;
+			border-radius: 20px;
+			margin-right: 16px;
+			.nav-article__link {
+				padding: 8px 18px;
+				color: var(--black);
+			}
+		}
+	}
+
+	// .nav-article__link
+
+	&__link {
+		filter: contrast(0.7);
+		display: inline-block;
+		border-radius: 20px;
+	}
+}
+
+.description-article {
+	color: var(--gray70);
+	max-width: 480px;
+	@media (max-width: $mobile) {
+		max-width: 100%;
+	}
+}
+
+.footer-article {
+	font-size: 15px;
+	line-height: 1.4;
+	color: var(--gray35);
+	display: flex;
+	column-gap: 24px;
+	// .footer-article__date
+	&__time-read,
+	&__date {
+		display: flex;
+		align-items: center;
+		column-gap: 8px;
+		&::before {
+			content: "";
+
+			background-repeat: no-repeat;
+
+			background-size: 17px 17px;
+			width: 17px;
+			height: 17px;
+			transform: translateY(-2px);
+		}
+	}
+
+	&__date {
+		&::before {
+			background-image: url("../img/icons/dateIcon.svg");
+		}
+	}
+
+	&__time-read {
+		&::before {
+			background-image: url("../img/icons/timeIcon.svg");
+		}
+	}
+}
+.full-image {
+	grid-column: 1/3;
+	@media (max-width: $mobile) {
+		grid-column: auto;
+	}
+}
+
+// Маски ========================================================================================================================================================================================================================================================================================================================================================================
+.arch,
+.corner-squared-cloud,
+.semi-squared-cloud,
+.corner-squared-rounded,
+.semi-squared-rounded,
+.cloud {
+	position: relative;
+
+	img {
+		height: 100%;
+		width: 100%;
+		max-width: 100%;
+		mask-size: 100% 100%;
+		mask-repeat: no-repeat;
+		object-fit: cover;
+	}
+}
+
+.arch {
+	img {
+		height: 560px;
+		mask-image: url("../img/masks/section-banner-mask/arch-deskrop.svg");
+		object-position: bottom;
+		mask-position: bottom;
+		@media (max-width: $tablet) {
+			mask-image: url("../img/masks/section-banner-mask/arch-tablet.svg");
+			height: 320px;
+			object-position: 50%;
+		}
+		@media (max-width: $mobile) {
+			mask-image: url("../img/masks/section-banner-mask/arch-mobile.svg");
+			height: 352px;
+			width: 304px;
+		}
+	}
+}
+.semi-squared-rounded {
+	img {
+		mask-image: url("../img/masks/section-articles-mask/semi-squared-rounded-desktop.svg");
+
+		@media (max-width: $tablet) {
+			mask-image: url("../img/masks/section-articles-mask/semi-squared-rounded-tablet.svg");
+		}
+
+		@media (max-width: $mobile) {
+			mask-image: url("../img/masks/section-articles-mask/semi-squared-rounded-mobile.svg");
+		}
+	}
+}
+.semi-squared-cloud {
+	img {
+		mask-image: url("../img/masks/section-articles-mask/semi-squared-cloud-desktop.svg");
+		@media (max-width: $tablet) {
+			mask-image: url("../img/masks/section-articles-mask/semi-squared-cloud-tablet.svg");
+		}
+		@media (max-width: $mobile) {
+			mask-image: url("../img/masks/section-articles-mask/semi-squared-cloud-mobile.svg");
+		}
+		@media (max-width: $mobileSmall) {
+			object-position: -50px 0;
+		}
+	}
+}
+.corner-squared-cloud {
+	img {
+		mask-image: url("../img/masks/section-articles-mask/corner-squared-cloud-desktop.svg");
+		@media (max-width: $tablet) {
+			mask-image: url("../img/masks/section-articles-mask/corner-squared-cloud-tablet.svg");
+		}
+		@media (max-width: $mobile) {
+			mask-image: url("../img/masks/section-articles-mask/corner-squared-cloud-mobile.svg");
+		}
+		@media (max-width: $mobileSmall) {
+			object-position: -111px 0;
+		}
+	}
+}
+
+.corner-squared-rounded {
+	img {
+		mask-image: url("../img/masks/section-articles-mask/corner-squared-rounded-desktop.svg");
+		@media (max-width: $tablet) {
+			mask-image: url("../img/masks/section-articles-mask/corner-squared-rounded-tablet.svg");
+		}
+		@media (max-width: $mobile) {
+			mask-image: url("../img/masks/section-articles-mask/corner-squared-rounded-mobile.svg");
+		}
+		@media (max-width: $mobileSmall) {
+			object-position: -14px 0px;
+		}
+	}
+}
+.cloud {
+	img {
+		mask-image: url("../img/masks/section-articles-mask/cloud-desktop.svg");
+		@media (max-width: $tablet) {
+			mask-image: url("../img/masks/section-articles-mask/cloud-tablet.svg");
+		}
+		@media (max-width: $mobile) {
+			mask-image: url("../img/masks/section-articles-mask/cloud-mobile.svg");
+		}
+		@media (max-width: $mobileSmall) {
+			object-position: -111px 1px;
+		}
+	}
+}
