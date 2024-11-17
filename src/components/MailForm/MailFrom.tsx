@@ -3,7 +3,9 @@ import Сheckbox from '../common/Input/Сheckbox.tsx'
 
 import Button from '../common/Button/Button.tsx'
 import Preloader from '../common/Preloader/Preloader.tsx'
-import InputWithValidation from './InputWithValidation.tsx'
+import WrapperInputValidation from './WrapperInputValidation.tsx'
+import Input from '../common/Input/Input.tsx'
+import FinishStepFrom from './FinishStepFrom.tsx'
 
 interface PropsMailFrom {
   emailPlaceholder: string
@@ -39,42 +41,40 @@ const MailFrom: React.FC<PropsMailFrom> = ({
   onBlur,
   onChange,
 }) => {
-  return (
-    /* eslint-disable react/jsx-no-useless-fragment */
-    <>
-      {isStateForm.isSubmit ? (
-        <div
-          className={`${checkboxText ? 'finish-form' : 'finish-form_no-chckBox'}`}
-        >
-          Fantástico! Espera
-          <br /> La primera carta
-        </div>
-      ) : (
-        <form onSubmit={(e) => onSubmit(e)} className={`${formClassName}`}>
-          {isStateForm.isPreloader && <Preloader />}
+  if (isStateForm.isSubmit) {
+    return <FinishStepFrom checkboxText={checkboxText} />
+  }
 
-          <InputWithValidation
-            formClassName={formClassName}
-            validClass={validClass.inputText}
-            emailPlaceholder={emailPlaceholder}
-            valueInput={valueInput}
-            onBlur={(e) => onBlur(e)}
+  return (
+    <form onSubmit={(e) => onSubmit(e)} className={`${formClassName}`}>
+      {isStateForm.isPreloader && <Preloader />}
+
+      <WrapperInputValidation
+        formClassName={formClassName}
+        validClass={validClass.inputText}
+      >
+        <Input
+          type="email"
+          name="email"
+          emailPlaceholder={emailPlaceholder}
+          value={valueInput}
+          onBlur={(e) => onBlur(e)}
+          onChange={(e) => onChange(e)}
+        />
+      </WrapperInputValidation>
+
+      <Button text={submitText} isSubmit colorBtn={colorBtn} />
+      {checkboxText && (
+        <div className={`${formClassName}__checkbox`}>
+          <Сheckbox
             onChange={(e) => onChange(e)}
+            checkboxText={checkboxText}
+            name="confirmations"
+            validClass={validClass.checkbox}
           />
-          <Button text={submitText} isSubmit colorBtn={colorBtn} />
-          {checkboxText && (
-            <div className={`${formClassName}__checkbox`}>
-              <Сheckbox
-                onChange={(e) => onChange(e)}
-                checkboxText={checkboxText}
-                name="confirmations"
-                validClass={validClass.checkbox}
-              />
-            </div>
-          )}
-        </form>
+        </div>
       )}
-    </>
+    </form>
   )
 }
 

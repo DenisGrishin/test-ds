@@ -136,10 +136,8 @@
 	}
 }
 .discount {
-	height: 120px;
-	@media (max-width: $tablet) {
-		height: 80px;
-	}
+	height: auto;
+
 	& .running-string__wrapper {
 	}
 	& .running-string__item {

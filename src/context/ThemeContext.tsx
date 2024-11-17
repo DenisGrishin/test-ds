@@ -12,6 +12,7 @@ export const ThemeContext = createContext<PropsThemeContext | undefined>(
 interface PropsThemeProvider {
   children: ReactNode
 }
+
 export const ThemeProvider: React.FC<PropsThemeProvider> = ({ children }) => {
   const themeLocalStorage = localStorage.getItem('theme')
 

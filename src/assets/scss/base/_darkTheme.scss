@@ -65,3 +65,13 @@
 		filter: brightness(20%) contrast(100%);
 	}
 }
+.dark .switch-thema-btn {
+	background-color: #ef9700;
+
+	&__sun {
+		opacity: 1;
+	}
+	&__moon {
+		opacity: 0;
+	}
+}

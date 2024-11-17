@@ -10,6 +10,7 @@ const HeaderContainer: React.FC = () => {
   const [isScroll, setIsScroll] = useState('')
   const [lastScroll, setLastScroll] = useState(0)
   const { isDark, toggleTheme } = useTheme()
+
   useLayoutEffect(() => {
     const handleScroll = () => {
       const currnetScroll = window.scrollY
