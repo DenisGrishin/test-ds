@@ -19,14 +19,20 @@ const FooterCardWebinars: React.FC<PropsFooterCardWebinars> = ({
   return (
     <div className="item-card__footer footre-card">
       <div className="footre-card__top">
-        {tags.map((tag) => (
-          <span key={Math.random().toString(36).slice(2, 9)}>{tag}</span>
+        {tags.map((tag, indx) => (
+          <span key={indx}>{tag}</span>
         ))}
       </div>
       <div className="footre-card__bottom">
         <span className="footre-card__date">
           <span>
-            {newDateFrom}, {newDateTo}
+            <time dateTime={dateFrom.split('.').reverse().join('-')}>
+              {newDateFrom}
+            </time>
+            ,{' '}
+            <time dateTime={dateTo.split('.').reverse().join('-')}>
+              {newDateTo}
+            </time>
           </span>
         </span>
         <span className="footre-card__time">

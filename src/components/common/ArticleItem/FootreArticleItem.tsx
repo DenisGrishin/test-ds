@@ -16,9 +16,12 @@ const FootreArticleItem: React.FC<PropsFootreArticleItem> = ({
 
   return (
     <footer className={`${classNameBlock}__footer  footer-article`}>
-      <span className="footer-article__date">
+      <time
+        dateTime={date.split('.').reverse().join('-')}
+        className="footer-article__date"
+      >
         <span>{newDate}</span>
-      </span>
+      </time>
       <span className="footer-article__time-read">
         <span>{duration} min</span>
       </span>

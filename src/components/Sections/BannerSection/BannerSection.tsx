@@ -15,13 +15,10 @@ const BannerSection: React.FC<PropsBannerSection> = ({ itemsData, isDark }) => {
   return (
     <div className="section-banner">
       <div className="section-banner__container decor-line-top ">
-        {itemsData.map((it) => {
+        {itemsData.map((it, indx) => {
           if (it.size === 'full-size') {
             return (
-              <div
-                key={Math.random().toString(36).slice(2, 9)}
-                className="section-banner__wpapper"
-              >
+              <div key={indx} className="section-banner__wpapper">
                 <ImgContainer
                   classNameBlock="section-banner"
                   propImg={it.img}

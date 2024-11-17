@@ -20,12 +20,16 @@ const SectionsContainer: React.FC = () => {
   const { isDark } = useTheme()
 
   useEffect(() => {
-    getSectionsApi().then((res) => {
-      setData(res)
-    })
+    getSectionsApi()
+      .then((res) => {
+        setData(res)
+      })
+      .catch(() => {
+        console.error('Ошибка при запросе "getSectionsApi" ')
+      })
   }, [])
 
-  if (!data) return undefined
+  if (!data) return null
 
   return <Sections data={data} isDark={isDark} />
 }

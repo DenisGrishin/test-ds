@@ -30,10 +30,14 @@ const HeaderContainer: React.FC = () => {
   }, [lastScroll])
 
   useEffect(() => {
-    getMenuApi().then((res) => setData({ nav: res.header, logo: res.logo }))
+    getMenuApi()
+      .then((res) => setData({ nav: res.header, logo: res.logo }))
+      .catch(() => {
+        console.error('Ошибка при запросе "getMenuApi" ')
+      })
   }, [])
 
-  if (!data) return undefined
+  if (!data) return null
 
   return (
     <Header

@@ -25,7 +25,7 @@ const HeaderArticleItem: React.FC<PropsHeaderArticle> = ({
             if (indx === 0) {
               return (
                 <li
-                  key={Math.random().toString(36).slice(2, 9)}
+                  key={indx}
                   className="nav-article__item _active"
                   style={{ backgroundColor: accent }}
                 >
@@ -36,7 +36,7 @@ const HeaderArticleItem: React.FC<PropsHeaderArticle> = ({
 
             return (
               <li
-                key={Math.random().toString(36).slice(2, 9)}
+                key={indx}
                 className="nav-article__item "
                 style={{ color: accent }}
               >

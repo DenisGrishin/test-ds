@@ -24,12 +24,8 @@ const SocialNetworksFooter: React.FC<PropsSocialNetworksFooter> = ({
 
   return (
     <div className="social-networks">
-      {items.map((it) => (
-        <a
-          href={it.url}
-          key={Math.random().toString(36).slice(2, 9)}
-          className="social-networks__icon-link"
-        >
+      {items.map((it, indx) => (
+        <a href={it.url} key={indx} className="social-networks__icon-link">
           <img src={it.icon} alt={`Come to ${it.alt}`} />
         </a>
       ))}

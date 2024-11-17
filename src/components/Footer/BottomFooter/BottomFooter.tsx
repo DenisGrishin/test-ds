@@ -43,10 +43,10 @@ const BottomFooter: React.FC<PropsBottomFooter> = ({ contacts }) => {
         colorBtn="btn-purple"
       />
       <div className="bottom-footre__conditions">
-        {links.map((link) => (
+        {links.map((link, indx) => (
           <a
             href={link.url}
-            key={Math.random().toString(36).slice(2, 9)}
+            key={indx}
             className="bottom-footre__link _hover-link"
           >
             <span>{link.label}</span>

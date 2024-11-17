@@ -14,15 +14,19 @@ const FooterContainer: React.FC = () => {
   const isSizeWindow = useResize()
 
   useEffect(() => {
-    Promise.all([getMenuApi(), getContactsApi()]).then((res) => {
-      setData({
-        menu: res[0].footer,
-        contacts: res[1],
+    Promise.all([getMenuApi(), getContactsApi()])
+      .then((res) => {
+        setData({
+          menu: res[0].footer,
+          contacts: res[1],
+        })
       })
-    })
+      .catch(() => {
+        console.error('Ошибка при запросе "getMenuApi" ,"getContactsApi"')
+      })
   }, [])
 
-  if (!data) return undefined
+  if (!data) return null
 
   return <Footer data={data} isSizeWindow={isSizeWindow} />
 }

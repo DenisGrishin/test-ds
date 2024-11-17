@@ -103,16 +103,13 @@
 		column-gap: 8px;
 		&::before {
 			content: "";
-			width: 15px;
-			height: 16px;
+
 			background-repeat: no-repeat;
 
-			background-size: 15px 16px;
-			@media (max-width: $tablet) {
-				background-size: 17px 17px;
-				width: 17px;
-				height: 17px;
-			}
+			background-size: 17px 17px;
+			width: 17px;
+			height: 17px;
+			transform: translateY(-2px);
 		}
 	}
 
@@ -157,16 +154,16 @@
 .arch {
 	img {
 		height: 560px;
-		mask-image: url("../img/masks/section-banner-mask/mask-one-deskrop.svg");
+		mask-image: url("../img/masks/section-banner-mask/arch-deskrop.svg");
 		object-position: bottom;
 		mask-position: bottom;
 		@media (max-width: $tablet) {
-			mask-image: url("../img/masks/section-banner-mask/mask-one-tablet.svg");
+			mask-image: url("../img/masks/section-banner-mask/arch-tablet.svg");
 			height: 320px;
 			object-position: 50%;
 		}
 		@media (max-width: $mobile) {
-			mask-image: url("../img/masks/section-banner-mask/mask-one-mobile.svg");
+			mask-image: url("../img/masks/section-banner-mask/arch-mobile.svg");
 			height: 352px;
 			width: 304px;
 		}
@@ -174,25 +171,25 @@
 }
 .semi-squared-rounded {
 	img {
-		mask-image: url("../img/masks/section-articles-mask/mask-two-desktop.svg");
+		mask-image: url("../img/masks/section-articles-mask/semi-squared-rounded-desktop.svg");
 
 		@media (max-width: $tablet) {
-			mask-image: url("../img/masks/section-articles-mask/mask-two-tablet.svg");
+			mask-image: url("../img/masks/section-articles-mask/semi-squared-rounded-tablet.svg");
 		}
 
 		@media (max-width: $mobile) {
-			mask-image: url("../img/masks/section-articles-mask/mask-two-mobile.svg");
+			mask-image: url("../img/masks/section-articles-mask/semi-squared-rounded-mobile.svg");
 		}
 	}
 }
 .semi-squared-cloud {
 	img {
-		mask-image: url("../img/masks/section-articles-mask/mask-three-desktop.svg");
+		mask-image: url("../img/masks/section-articles-mask/semi-squared-cloud-desktop.svg");
 		@media (max-width: $tablet) {
-			mask-image: url("../img/masks/section-articles-mask/mask-three-tablet.svg");
+			mask-image: url("../img/masks/section-articles-mask/semi-squared-cloud-tablet.svg");
 		}
 		@media (max-width: $mobile) {
-			mask-image: url("../img/masks/section-articles-mask/mask-three-mobile.svg");
+			mask-image: url("../img/masks/section-articles-mask/semi-squared-cloud-mobile.svg");
 		}
 		@media (max-width: $mobileSmall) {
 			object-position: -50px 0;
@@ -201,12 +198,12 @@
 }
 .corner-squared-cloud {
 	img {
-		mask-image: url("../img/masks/section-articles-mask/mask-five-desktop.svg");
+		mask-image: url("../img/masks/section-articles-mask/corner-squared-cloud-desktop.svg");
 		@media (max-width: $tablet) {
-			mask-image: url("../img/masks/section-articles-mask/mask-five-tablet.svg");
+			mask-image: url("../img/masks/section-articles-mask/corner-squared-cloud-tablet.svg");
 		}
 		@media (max-width: $mobile) {
-			mask-image: url("../img/masks/section-articles-mask/mask-five-mobile.svg");
+			mask-image: url("../img/masks/section-articles-mask/corner-squared-cloud-mobile.svg");
 		}
 		@media (max-width: $mobileSmall) {
 			object-position: -111px 0;
@@ -216,12 +213,12 @@
 
 .corner-squared-rounded {
 	img {
-		mask-image: url("../img/masks/section-articles-mask/mask-six-desktop.svg");
+		mask-image: url("../img/masks/section-articles-mask/corner-squared-rounded-desktop.svg");
 		@media (max-width: $tablet) {
-			mask-image: url("../img/masks/section-articles-mask/mask-six-tablet.svg");
+			mask-image: url("../img/masks/section-articles-mask/corner-squared-rounded-tablet.svg");
 		}
 		@media (max-width: $mobile) {
-			mask-image: url("../img/masks/section-articles-mask/mask-six-mobile.svg");
+			mask-image: url("../img/masks/section-articles-mask/corner-squared-rounded-mobile.svg");
 		}
 		@media (max-width: $mobileSmall) {
 			object-position: -14px 0px;
@@ -230,12 +227,12 @@
 }
 .cloud {
 	img {
-		mask-image: url("../img/masks/section-articles-mask/mask-four-desktop.svg");
+		mask-image: url("../img/masks/section-articles-mask/cloud-desktop.svg");
 		@media (max-width: $tablet) {
-			mask-image: url("../img/masks/section-articles-mask/mask-four-tablet.svg");
+			mask-image: url("../img/masks/section-articles-mask/cloud-tablet.svg");
 		}
 		@media (max-width: $mobile) {
-			mask-image: url("../img/masks/section-articles-mask/mask-four-mobile.svg");
+			mask-image: url("../img/masks/section-articles-mask/cloud-mobile.svg");
 		}
 		@media (max-width: $mobileSmall) {
 			object-position: -111px 1px;

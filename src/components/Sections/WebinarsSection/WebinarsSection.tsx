@@ -17,11 +17,8 @@ const WebinarsSection: React.FC<PropsWebinarsSection> = ({ proposals }) => {
         <Button colorBtn="btn-purple" text={proposals['browse-all-text']} />
 
         <div className="section-webinars__items item-card">
-          {items.map((card) => (
-            <CardWebinars
-              key={Math.random().toString(36).slice(2, 9)}
-              card={card}
-            />
+          {items.map((card, indx) => (
+            <CardWebinars key={indx} card={card} />
           ))}
         </div>
       </div>

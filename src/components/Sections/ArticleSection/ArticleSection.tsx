@@ -10,22 +10,12 @@ const ArticleSection: React.FC<PropsArticleSection> = ({ itemsData }) => {
   return (
     <div className="section-articles">
       <div className="section-articles__container decor-line-bottom">
-        {itemsData.map((article) => {
+        {itemsData.map((article, indx) => {
           if (article.size === 'compact') {
-            return (
-              <CompactArticle
-                article={article}
-                key={Math.random().toString(36).slice(2, 9)}
-              />
-            )
+            return <CompactArticle article={article} key={indx} />
           }
           if (article.size === 'full-image') {
-            return (
-              <FullImageArticle
-                article={article}
-                key={Math.random().toString(36).slice(2, 9)}
-              />
-            )
+            return <FullImageArticle article={article} key={indx} />
           }
           return undefined
         })}
