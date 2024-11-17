@@ -18,8 +18,8 @@ const NavTopFooter: React.FC<PropsNavTopFooter> = ({ menu, isSizeWindow }) => {
           >
             <summary className="nav-footer__summary">{category.label}</summary>
             <ul className=" nav-footer__list">
-              {category.items.map((item) => (
-                <li key={indx} className="nav-footer__item">
+              {category.items.map((item, i) => (
+                <li key={i} className="nav-footer__item">
                   <a href={item.url} className="nav-footer__link _hover-link">
                     {item.label}
                   </a>

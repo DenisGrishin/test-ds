@@ -22,7 +22,13 @@ const Сheckbox: React.FC<PropsСheckbox> = ({
       />
       <label htmlFor="chk-сonfirmation" className="checkbox__label ">
         <span className="subscribe-form__сonfirmation-text">
-          {checkboxText}
+          {checkboxText
+            .split(' ')
+            .slice(0, checkboxText.length - 3)
+            .join(' ')}{' '}
+          <a href="#" className="checkbox__сonfirmation-link">
+            {checkboxText.split(' ').slice(-3).join(' ')}
+          </a>
         </span>
       </label>
     </div>
