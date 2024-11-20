@@ -43,6 +43,7 @@ module.exports = {
     "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
     "react/no-array-index-key": "off",
     "no-nested-ternary": "off",
+
     "prettier/prettier": [
       "error",
       {

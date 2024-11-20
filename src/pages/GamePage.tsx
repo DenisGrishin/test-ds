@@ -1,6 +1,6 @@
-import React from "react";
+import GameBordContainer from "../container/GameBordContainer.tsx";
 
 const GamePage = () => {
-  return <div>GamePage</div>;
+  return <GameBordContainer />;
 };
 export default GamePage;
