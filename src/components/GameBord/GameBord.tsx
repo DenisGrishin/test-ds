@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { CatsArray } from "./typeGamebord";
-import QuestionIcon from "../../assets/img/icons/questionIcon.svg?react";
+import Card from "./Card.tsx";
 
 interface PropsGameBord {
   catsArray: CatsArray[];
@@ -40,20 +40,12 @@ const GameBord: React.FC<PropsGameBord> = ({ catsArray }) => {
           if (openCards.includes(indx)) isFlip = true;
           if (foundCard.includes(card._id)) isFlip = true;
           return (
-            <div
-              onClick={() => flipCard(indx)}
-              className={`card ${isFlip && "_flip"}`}
-              key={card._id}
-            >
-              <div className="card__wrapper">
-                <div className="card__front">
-                  <img src={`https://cataas.com/cat/${card._id}`} alt="" />
-                </div>
-                <div className="card__back">
-                  <QuestionIcon className="card__question-icon" />
-                </div>
-              </div>
-            </div>
+            <Card
+              isFlip={isFlip}
+              id={card._id}
+              indx={indx}
+              flipCard={(id) => flipCard(id)}
+            />
           );
         })}
       </div>
