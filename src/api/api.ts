@@ -20,7 +20,7 @@
 
 // export default apiCats;
 const getCatsApi = () => {
-  return fetch("https://cataas.com/api/cats?limit=40&skip=10", {
+  return fetch("https://cataas.com/api/cats?limit=6&skip=6", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
