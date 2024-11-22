@@ -1,6 +1,10 @@
+// export interface CatsArray {
+//   mimetype: string;
+//   size: number;
+//   _id: string;
+//   tags: string[];
+// }
 export interface CatsArray {
-  mimetype: string;
-  size: number;
-  _id: string;
-  tags: string[];
+  id: string;
+  url: string;
 }

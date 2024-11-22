@@ -17,7 +17,7 @@
 	justify-content: space-between;
 	background-color: var(--interface);
 	padding: 20px;
-	border-radius: 8px;
+	border-radius: 12px;
 	// .nav__link
 
 	&__link {
@@ -34,12 +34,12 @@
 		transition: all 0.4s ease 0s;
 		&._active {
 			background-color: var(--background);
-			border-radius: 8px;
+			border-radius: 12px;
 		}
 		@media (any-hover: hover) {
 			&:hover {
 				background-color: var(--background);
-				border-radius: 8px;
+				border-radius: 12px;
 			}
 		}
 	}
