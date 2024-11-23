@@ -24,6 +24,11 @@
 			top: 0;
 			left: 0;
 			background-color: #021b2a9a;
+			transition: all 0.5s ease 0s;
+		}
+		&._start-game::after {
+			opacity: 0;
+			visibility: hidden;
 		}
 	}
 	&__start-btn {
@@ -37,11 +42,15 @@
 		background-color: var(--orange);
 		border-radius: 8px;
 		z-index: 2;
-		transition: all 0.3s ease 0s;
+		transition: all 0.5s ease 0s;
 		@media (any-hover: hover) {
 			&:hover {
 				background-color: #ff7610;
 			}
+		}
+		._start-game & {
+			opacity: 0;
+			visibility: hidden;
 		}
 	}
 }

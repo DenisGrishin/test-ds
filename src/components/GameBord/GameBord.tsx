@@ -1,99 +1,72 @@
 import React, { useEffect, useState } from "react";
-import { CatsArray } from "./typeGamebord";
+
 import Card from "./Card.tsx";
+import {
+  TypeStateGame,
+  TypeCards,
+} from "../../container/GameBordContainer/typeGameBordContainer.type";
+import WrapperGameBord from "./WrapperGameBord.tsx";
+import CardContainer from "../../container/GameBordContainer/CardContainer.tsx";
 
 interface PropsGameBord {
-  catsArray: CatsArray[];
-  sizeCard: number;
-  numCards: number;
+  cards: TypeCards[];
+  stateGame: TypeStateGame;
   startGame: () => void;
 }
-const GameBord: React.FC<PropsGameBord> = ({
-  catsArray,
-  sizeCard,
-  numCards,
-  startGame,
-}) => {
-  const [cards, setCards] = useState<CatsArray[]>([]);
+const GameBord: React.FC<PropsGameBord> = ({ cards, stateGame, startGame }) => {
+  // const [cards, setCards] = useState<TypeCards[]>([]);
 
-  const [foundCard, setFoundCard] = useState<string[]>([]);
-  const [openCards, setOpenCards] = useState<number[]>([]);
+  // const [foundCard, setFoundCard] = useState<string[]>([]);
+  // const [openCards, setOpenCards] = useState<number[]>([]);
 
-  const flipCard = (indx: number, isCurrentOpen: boolean) => {
-    if (isCurrentOpen) return;
+  // const flipCard = (indx: number, isCurrentOpen: boolean) => {
+  //   if (isCurrentOpen) return;
 
-    setOpenCards((opened) => [...opened, indx]);
-  };
+  //   setOpenCards((opened) => [...opened, indx]);
+  // };
 
-  useEffect(() => {
-    const shuffleArray = (array: CatsArray[]): void => {
-      if (!array || array.length === 0) return;
-      const shuffledArray = [...array, ...array];
+  // useEffect(() => {
+  //   const shuffleArray = (array: TypeCards[]): void => {
+  //     if (!array || array.length === 0) return;
+  //     const shuffledArray = [...array, ...array];
 
-      let m = shuffledArray.length;
+  //     let m = shuffledArray.length;
 
-      while (m > 1) {
-        const i = Math.floor(Math.random() * m);
-        m -= 1;
+  //     while (m > 1) {
+  //       const i = Math.floor(Math.random() * m);
+  //       m -= 1;
 
-        const t = shuffledArray[m];
-        shuffledArray[m] = shuffledArray[i];
-        shuffledArray[i] = t;
-      }
+  //       const t = shuffledArray[m];
+  //       shuffledArray[m] = shuffledArray[i];
+  //       shuffledArray[i] = t;
+  //     }
 
-      setCards(shuffledArray);
-    };
-    shuffleArray(catsArray);
-  }, [catsArray]);
+  //     setCards(shuffledArray);
+  //   };
+  //   shuffleArray(imgArray);
+  // }, [imgArray]);
 
-  useEffect(() => {
-    if (openCards.length < 2) return;
-    const firstCard = cards[openCards[0]];
-    const secondCard = cards[openCards[1]];
+  // useEffect(() => {
+  //   if (openCards.length < 2) return;
+  //   const firstCard = cards[openCards[0]];
+  //   const secondCard = cards[openCards[1]];
 
-    if (secondCard && firstCard.id === secondCard.id) {
-      setFoundCard([...foundCard, firstCard.id]);
-    }
+  //   if (secondCard && firstCard.id === secondCard.id) {
+  //     setFoundCard([...foundCard, firstCard.id]);
+  //   }
 
-    if (openCards.length === 2) {
-      setTimeout(() => {
-        setOpenCards([]);
-      }, 500);
-    }
-  }, [openCards, foundCard, cards]);
+  //   if (openCards.length === 2) {
+  //     setTimeout(() => {
+  //       setOpenCards([]);
+  //     }, 500);
+  //   }
+  // }, [openCards, foundCard, cards]);
 
   return (
     <div className="game-bord">
-      <div
-        className="game-bord__cards"
-        style={{
-          gridTemplate: `repeat(${numCards / 2},${sizeCard}px) / repeat(${numCards},${sizeCard}px)`,
-        }}
-      >
-        {cards.map((card, indx) => {
-          let isFlip = false;
-
-          if (openCards.includes(indx)) isFlip = true;
-          if (foundCard.includes(card.id)) isFlip = true;
-
-          return (
-            <Card
-              key={indx}
-              isFlip={isFlip}
-              urlImg={card.url}
-              indx={indx}
-              flipCard={(id, isCurrentOpen) => flipCard(id, isCurrentOpen)}
-            />
-          );
-        })}
-        <button
-          type="button"
-          onClick={() => startGame()}
-          className="game-bord__start-btn"
-        >
-          Начать игру
-        </button>
-      </div>
+      <WrapperGameBord stateGame={stateGame} startGame={() => startGame()}>
+        <CardContainer cards={cards} />
+      </WrapperGameBord>
     </div>
   );
 };
