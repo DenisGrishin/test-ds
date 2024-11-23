@@ -1,18 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { TypeCards } from "./index.type";
 import Card from "../../components/GameBord/Card/Card.tsx";
+import { Context } from "../../context/ContextProvider.tsx";
 
 interface PropsCardContainer {
   cards: TypeCards[];
 }
 const CardContainer: React.FC<PropsCardContainer> = ({ cards }) => {
   const [shufflCards, setShufflCards] = useState<TypeCards[]>([]);
-
+  const { state, dispatch } = useContext(Context);
   const [foundCard, setFoundCard] = useState<string[]>([]);
   const [openCards, setOpenCards] = useState<number[]>([]);
 
   const flipCard = (indx: number, isCurrentOpen: boolean) => {
-    if (isCurrentOpen) return;
+    if (isCurrentOpen || openCards.length === 2) return;
 
     setOpenCards((opened) => [...opened, indx]);
   };
@@ -42,16 +43,31 @@ const CardContainer: React.FC<PropsCardContainer> = ({ cards }) => {
     if (openCards.length < 2) return;
     const firstCard = shufflCards[openCards[0]];
     const secondCard = shufflCards[openCards[1]];
+
     if (secondCard && firstCard.id === secondCard.id) {
-      setFoundCard([...foundCard, firstCard.id]);
+      setFoundCard((prevFoundCards) => [...prevFoundCards, firstCard.id]);
+      dispatch({
+        type: "addCountPoint",
+        point: state.stateSessionGame.countPoint + 1,
+      });
+    } else {
+      dispatch({
+        type: "subtractCountErrorPoint",
+        errorPoint: 1,
+      });
+    }
+
+    if (foundCard.length + 1 === shufflCards.length / 2) {
+      debugger;
     }
 
     if (openCards.length === 2) {
       setTimeout(() => {
         setOpenCards([]);
-      }, 500);
+      }, 300);
     }
-  }, [openCards, foundCard, shufflCards]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [openCards]);
 
   return shufflCards.map((card, indx) => {
     let isFlip = false;

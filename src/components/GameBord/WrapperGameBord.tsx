@@ -3,12 +3,12 @@ import { TypeStateGame } from "../../container/GameBordContainer/index.type";
 
 interface PropsWrapperGameBord {
   children: ReactNode;
-  startGame: () => void;
+  handleStartGame: () => void;
   stateGame: TypeStateGame;
 }
 const WrapperGameBord: React.FC<PropsWrapperGameBord> = ({
   children,
-  startGame,
+  handleStartGame,
   stateGame,
 }) => {
   const { isStart, setting } = stateGame;
@@ -22,7 +22,7 @@ const WrapperGameBord: React.FC<PropsWrapperGameBord> = ({
       {children}
       <button
         type="button"
-        onClick={() => startGame()}
+        onClick={() => handleStartGame()}
         className="game-bord__start-btn"
       >
         Начать игру

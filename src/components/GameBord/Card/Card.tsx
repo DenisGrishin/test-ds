@@ -1,5 +1,5 @@
 import React from "react";
-import QuestionIcon from "../../assets/img/icons/questionIcon.svg?react";
+import QuestionIcon from "../../../assets/img/icons/questionIcon.svg?react";
 
 interface PropsCard {
   flipCard: (indx: number, isCurrentOpen: boolean) => void;

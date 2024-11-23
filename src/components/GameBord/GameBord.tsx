@@ -6,16 +6,25 @@ import {
 } from "../../container/GameBordContainer/index.type";
 import WrapperGameBord from "./WrapperGameBord.tsx";
 import CardContainer from "../../container/GameBordContainer/CardContainer.tsx";
+import InfoPanelGameBordContainer from "../../container/GameBordContainer/InfoPanelGameBordContainer/InfoPanelGameBordContainer.tsx";
 
 interface PropsGameBord {
   cards: TypeCards[];
   stateGame: TypeStateGame;
-  startGame: () => void;
+  handleStartGame: () => void;
 }
-const GameBord: React.FC<PropsGameBord> = ({ cards, stateGame, startGame }) => {
+const GameBord: React.FC<PropsGameBord> = ({
+  cards,
+  stateGame,
+  handleStartGame,
+}) => {
   return (
     <div className="game-bord">
-      <WrapperGameBord stateGame={stateGame} startGame={() => startGame()}>
+      <InfoPanelGameBordContainer />
+      <WrapperGameBord
+        stateGame={stateGame}
+        handleStartGame={() => handleStartGame()}
+      >
         <CardContainer cards={cards} />
       </WrapperGameBord>
     </div>

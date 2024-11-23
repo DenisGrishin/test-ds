@@ -1,6 +1,7 @@
 import { ReactNode, useMemo, useReducer } from "react";
 import { createContext, type Dispatch } from "react";
-import { Action, newState, reducer, State } from "./store/store";
+import { newState, reducer } from "./store/store";
+import { Action, State } from "./store/index.type";
 
 interface PropsContextProvider {
   children: ReactNode;

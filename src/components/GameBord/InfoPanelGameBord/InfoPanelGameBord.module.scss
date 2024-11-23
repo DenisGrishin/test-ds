@@ -1,0 +1,31 @@
+.infoPanel {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 30px;
+	flex-wrap: wrap;
+	row-gap: 20px;
+
+	li {
+		font-size: 16px;
+		font-weight: 700;
+		padding: 10px 15px;
+		background-color: var(--background);
+		border-radius: 8px;
+		display: flex;
+		column-gap: 10px;
+	}
+}
+.infoPanel .progressRow {
+	flex: 0 1 100%;
+	padding: 0;
+	height: 15px;
+	span {
+		width: 0%;
+		transition: width 0.3s ease 0s;
+		display: inline-block;
+		background-color: var(--green);
+		height: 100%;
+		border-radius: 8px;
+		transition: all 0.3s ease 0s;
+	}
+}

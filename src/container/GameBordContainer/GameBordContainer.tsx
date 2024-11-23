@@ -5,12 +5,12 @@ import { Context } from "../../context/ContextProvider.tsx";
 import { TypeStateGame, TypeCards } from "./index.type";
 
 const GameBordContainer = () => {
-  const [stateGame, setStateGame] = useState<TypeStateGame>({
-    setting: { numCards: 4, sizeCard: 200, typeCard: 3 },
-    isStart: false,
-  });
-
   const { state, dispatch } = useContext(Context);
+
+  const [stateGame, setStateGame] = useState<TypeStateGame>({
+    setting: state.setting,
+    isStart: state.isStartGame,
+  });
 
   const cards: TypeCards[] = useMemo(() => {
     const arrayUrls = [];
@@ -25,19 +25,21 @@ const GameBordContainer = () => {
     return arrayUrls;
   }, [stateGame]);
 
-  const startGame = () => {
-    dispatch({
-      type: "getSetting",
-      prop: { numCards: 4, sizeCard: 200, typeCard: 3 },
+  const handleStartGame = () => {
+    dispatch({ type: "startGame", isStartGame: true });
+    setStateGame((prev) => {
+      return {
+        ...prev,
+        isStart: true,
+      };
     });
-    setStateGame({ isStart: true, setting: state.setting });
   };
 
   return (
     <GameBord
       cards={cards}
       stateGame={stateGame}
-      startGame={() => startGame()}
+      handleStartGame={() => handleStartGame()}
     />
   );
 };
