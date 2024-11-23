@@ -1,4 +1,4 @@
-import { useContext, useMemo, useState } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 import GameBord from "../components/GameBord/GameBord.tsx";
 import { CatsArray } from "../components/GameBord/typeGamebord";
 import { Context } from "../context/ContextProvider.tsx";
@@ -25,13 +25,13 @@ const GameBordContainer = () => {
     return arrayUrls;
   }, [setting.numCards, setting.sizeCard, setting.typeCard]);
 
+  useEffect(() => setSetting(state.setting), [state.setting]);
   const startGame = () => {
     dispatch({
       type: "getSetting",
       prop: { numCards: 1, sizeCard: 100, typeCard: 3 },
     });
   };
-  console.log(state.setting);
 
   return (
     <GameBord

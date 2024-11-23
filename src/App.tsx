@@ -7,15 +7,15 @@ import Layout from "./Layout/Layout.tsx";
 
 const App = () => {
   return (
-    <Layout>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
         <Route path="/game" element={<GamePage />} />
         <Route path="/setting" element={<SettingPage />} />
         <Route path="/result" element={<ResultPage />} />
-        <Route path="*" element={<div>404</div>} />
-      </Routes>
-    </Layout>
+        <Route path="*" element={<div>404 - Стрнациа не найдена </div>} />
+      </Route>
+    </Routes>
   );
 };
 

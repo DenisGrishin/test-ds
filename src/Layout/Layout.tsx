@@ -1,15 +1,11 @@
-import React, { ReactNode } from "react";
+import { Outlet } from "react-router-dom";
+import Header from "./Header/Header.tsx";
 
-import Header from "../components/Header/Header.tsx";
-
-interface PropsLayout {
-  children: ReactNode;
-}
-const Layout: React.FC<PropsLayout> = ({ children }) => {
+const Layout = () => {
   return (
     <div className="wrapper wrapper__container">
       <Header />
-      {children}
+      <Outlet />
     </div>
   );
 };
