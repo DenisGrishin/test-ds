@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { TypeStateGame } from "../../container/GameBordContainer/typeGameBordContainer.type";
+import { TypeStateGame } from "../../container/GameBordContainer/index.type";
 
 interface PropsWrapperGameBord {
   children: ReactNode;

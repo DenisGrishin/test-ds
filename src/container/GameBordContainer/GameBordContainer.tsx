@@ -2,7 +2,7 @@ import { useContext, useMemo, useState } from "react";
 import GameBord from "../../components/GameBord/GameBord.tsx";
 
 import { Context } from "../../context/ContextProvider.tsx";
-import { TypeStateGame, TypeCards } from "./typeGameBordContainer.type";
+import { TypeStateGame, TypeCards } from "./index.type";
 
 const GameBordContainer = () => {
   const [stateGame, setStateGame] = useState<TypeStateGame>({

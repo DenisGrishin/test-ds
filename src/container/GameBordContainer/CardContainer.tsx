@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { TypeCards } from "./typeGameBordContainer.type";
-import Card from "../../components/GameBord/Card.tsx";
+import { TypeCards } from "./index.type";
+import Card from "../../components/GameBord/Card/Card.tsx";
 
 interface PropsCardContainer {
   cards: TypeCards[];
@@ -32,7 +32,6 @@ const CardContainer: React.FC<PropsCardContainer> = ({ cards }) => {
         shuffledArray[m] = shuffledArray[i];
         shuffledArray[i] = t;
       }
-
       setShufflCards(shuffledArray);
     };
 
@@ -41,9 +40,8 @@ const CardContainer: React.FC<PropsCardContainer> = ({ cards }) => {
 
   useEffect(() => {
     if (openCards.length < 2) return;
-    const firstCard = cards[openCards[0]];
-    const secondCard = cards[openCards[1]];
-
+    const firstCard = shufflCards[openCards[0]];
+    const secondCard = shufflCards[openCards[1]];
     if (secondCard && firstCard.id === secondCard.id) {
       setFoundCard([...foundCard, firstCard.id]);
     }
@@ -53,7 +51,7 @@ const CardContainer: React.FC<PropsCardContainer> = ({ cards }) => {
         setOpenCards([]);
       }, 500);
     }
-  }, [openCards, foundCard, cards]);
+  }, [openCards, foundCard, shufflCards]);
 
   return shufflCards.map((card, indx) => {
     let isFlip = false;
