@@ -26,7 +26,7 @@ const GameBordContainer = () => {
   }, [stateGame]);
 
   const handleStartGame = () => {
-    dispatch({ type: "startStopGame", isStartGame: true });
+    dispatch({ type: "startStopGame", isToogleGame: true });
     setStateGame((prev) => {
       return {
         ...prev,

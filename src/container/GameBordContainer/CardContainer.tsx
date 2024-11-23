@@ -11,11 +11,15 @@ const CardContainer: React.FC<PropsCardContainer> = ({ cards }) => {
   const { state, dispatch } = useContext(Context);
   const [foundCard, setFoundCard] = useState<string[]>([]);
   const [openCards, setOpenCards] = useState<number[]>([]);
-
+  const { stateSessionGame } = state;
   const flipCard = (indx: number, isCurrentOpen: boolean) => {
-    if (isCurrentOpen || openCards.length === 2) return;
+    if (!state.isStartGame || isCurrentOpen || openCards.length === 2) return;
 
     setOpenCards((opened) => [...opened, indx]);
+  };
+
+  const stopGame = () => {
+    dispatch({ type: "startStopGame", isToogleGame: false });
   };
 
   useEffect(() => {
@@ -41,6 +45,15 @@ const CardContainer: React.FC<PropsCardContainer> = ({ cards }) => {
 
   useEffect(() => {
     if (openCards.length < 2) return;
+    if (!state.isStartGame) {
+      stopGame();
+      return;
+    }
+    if (!stateSessionGame.errorPoint) {
+      stopGame();
+      return;
+    }
+
     const firstCard = shufflCards[openCards[0]];
     const secondCard = shufflCards[openCards[1]];
 
@@ -48,9 +61,11 @@ const CardContainer: React.FC<PropsCardContainer> = ({ cards }) => {
       setFoundCard((prevFoundCards) => [...prevFoundCards, firstCard.id]);
       dispatch({
         type: "addCountPoint",
-        point: state.stateSessionGame.countPoint + 1,
+        point: 1,
       });
-    } else {
+    }
+
+    if (secondCard && firstCard.id !== secondCard.id) {
       dispatch({
         type: "subtractCountErrorPoint",
         errorPoint: 1,
@@ -58,7 +73,7 @@ const CardContainer: React.FC<PropsCardContainer> = ({ cards }) => {
     }
 
     if (foundCard.length + 1 === shufflCards.length / 2) {
-      dispatch({ type: "startStopGame", isStartGame: false });
+      stopGame();
     }
 
     if (openCards.length === 2) {
@@ -66,14 +81,15 @@ const CardContainer: React.FC<PropsCardContainer> = ({ cards }) => {
         setOpenCards([]);
       }, 300);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [openCards]);
+    //  eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [openCards, state.isStartGame]);
 
   return shufflCards.map((card, indx) => {
     let isFlip = false;
 
     if (openCards.includes(indx)) isFlip = true;
     if (foundCard.includes(card.id)) isFlip = true;
+    //  if (!state.isStartGame) isFlip = false;
 
     return (
       <Card

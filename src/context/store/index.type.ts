@@ -1,7 +1,7 @@
 export type Action =
   | {
       type: "startStopGame";
-      isStartGame: boolean;
+      isToogleGame: boolean;
     }
   | {
       type: "subtractCountErrorPoint";

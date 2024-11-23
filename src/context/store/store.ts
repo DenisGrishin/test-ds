@@ -15,7 +15,7 @@ export const newState = (): State => {
     },
     stateSessionGame: {
       countPoint: 0,
-      errorPoint: 5,
+      errorPoint: 10,
       countGame: 0,
       recordGame: 0,
     },
@@ -32,7 +32,7 @@ export const reducer = (state: State, action: Action): State => {
         ...state,
         stateSessionGame: {
           ...state.stateSessionGame,
-          countPoint: state.stateSessionGame.countGame + action.point,
+          countPoint: state.stateSessionGame.countPoint + action.point,
         },
       };
     case "subtractCountErrorPoint":
@@ -49,7 +49,7 @@ export const reducer = (state: State, action: Action): State => {
     case "startStopGame":
       return {
         ...state,
-        isStartGame: action.isStartGame,
+        isStartGame: action.isToogleGame,
       };
     default:
       return state;

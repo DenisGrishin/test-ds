@@ -7,10 +7,10 @@ interface PropsTimerContainer {
   seconds: number;
 }
 const TimerContainer: React.FC<PropsTimerContainer> = ({
-  minutes = 1,
-  seconds = 30,
+  minutes,
+  seconds,
 }) => {
-  const { state } = useContext(Context);
+  const { state, dispatch } = useContext(Context);
 
   const [over, setOver] = useState(false);
   const [[m, s], setTime] = useState([minutes, seconds]);
@@ -18,19 +18,23 @@ const TimerContainer: React.FC<PropsTimerContainer> = ({
   const tick = useCallback(() => {
     if (!over) return;
 
-    if (m === 0 && s === 0) {
+    if (m === 0 && s === 1) {
+      setTime([0, 0]);
       setOver(false);
+      dispatch({ type: "startStopGame", isToogleGame: false });
     } else if (s === 0) {
       setTime([m - 1, 59]);
     } else {
       setTime([m, s - 1]);
     }
-  }, [m, s, over]);
+  }, [m, s, over, dispatch]);
 
   useEffect(() => {
+    if (!over) return;
     const timerID = setInterval(tick, 1000);
+    /* eslint-disable-next-line consistent-return */
     return () => clearInterval(timerID);
-  }, [over, tick]);
+  }, [tick, over]);
 
   useEffect(() => {
     setOver(state.isStartGame);
