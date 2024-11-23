@@ -58,7 +58,7 @@ const CardContainer: React.FC<PropsCardContainer> = ({ cards }) => {
     }
 
     if (foundCard.length + 1 === shufflCards.length / 2) {
-      debugger;
+      dispatch({ type: "startStopGame", isStartGame: false });
     }
 
     if (openCards.length === 2) {

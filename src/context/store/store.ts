@@ -46,7 +46,7 @@ export const reducer = (state: State, action: Action): State => {
           ),
         },
       };
-    case "startGame":
+    case "startStopGame":
       return {
         ...state,
         isStartGame: action.isStartGame,

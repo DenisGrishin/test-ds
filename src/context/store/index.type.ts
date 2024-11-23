@@ -1,6 +1,6 @@
 export type Action =
   | {
-      type: "startGame";
+      type: "startStopGame";
       isStartGame: boolean;
     }
   | {

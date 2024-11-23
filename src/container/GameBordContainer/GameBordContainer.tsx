@@ -26,7 +26,7 @@ const GameBordContainer = () => {
   }, [stateGame]);
 
   const handleStartGame = () => {
-    dispatch({ type: "startGame", isStartGame: true });
+    dispatch({ type: "startStopGame", isStartGame: true });
     setStateGame((prev) => {
       return {
         ...prev,
