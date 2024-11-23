@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CatsArray } from "./typeGamebord";
 import Card from "./Card.tsx";
 
@@ -6,11 +6,13 @@ interface PropsGameBord {
   catsArray: CatsArray[];
   sizeCard: number;
   numCards: number;
+  startGame: () => void;
 }
 const GameBord: React.FC<PropsGameBord> = ({
   catsArray,
   sizeCard,
   numCards,
+  startGame,
 }) => {
   const [cards, setCards] = useState<CatsArray[]>([]);
 
@@ -22,20 +24,6 @@ const GameBord: React.FC<PropsGameBord> = ({
 
     setOpenCards((opened) => [...opened, indx]);
   };
-
-  // const shuffleArray = () => {
-  //   const arr: number[] = [];
-
-  //   while (true) {
-  //     if (arr.length === cards.length) break;
-
-  //     const randomNum = Math.floor(Math.random() * cards.length) + 1;
-
-  //     if (!arr.includes(randomNum)) {
-  //       arr.push(randomNum);
-  //     }
-  //   }
-  // };
 
   useEffect(() => {
     const shuffleArray = (array: CatsArray[]): void => {
@@ -98,7 +86,13 @@ const GameBord: React.FC<PropsGameBord> = ({
             />
           );
         })}
-        {/* <button className="game-bord__start-btn">Начать игру</button> */}
+        <button
+          type="button"
+          onClick={() => startGame()}
+          className="game-bord__start-btn"
+        >
+          Начать игру
+        </button>
       </div>
     </div>
   );
