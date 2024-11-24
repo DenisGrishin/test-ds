@@ -23,7 +23,7 @@ const CardContainer: React.FC<PropsCardContainer> = ({ cards }) => {
   const stopGame = () => {
     dispatch({ type: "startStopGame", isToogleGame: false });
   };
-
+  // перемешиваем массив с картинками
   useEffect(() => {
     const shuffleArray = (array: TypeCards[]): void => {
       if (!array || array.length === 0) return;
@@ -44,14 +44,19 @@ const CardContainer: React.FC<PropsCardContainer> = ({ cards }) => {
 
     shuffleArray(cards);
   }, [cards]);
-
+  //  устанавливаем игру когда закончился лимит ошибок или открыли все карточки
   useEffect(() => {
-    if (openCards.length < 2) return;
-
     if (!stateSessionGame.errorPoint) {
       stopGame();
-      return;
     }
+    if (foundCard.length === shufflCards.length / 2) {
+      stopGame();
+    }
+    //  eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [stateSessionGame.errorPoint, foundCard]);
+  //  действия с карточкой
+  useEffect(() => {
+    if (openCards.length < 2) return;
 
     const firstCard = shufflCards[openCards[0]];
     const secondCard = shufflCards[openCards[1]];
@@ -71,17 +76,13 @@ const CardContainer: React.FC<PropsCardContainer> = ({ cards }) => {
       });
     }
 
-    if (foundCard.length + 1 === shufflCards.length / 2) {
-      stopGame();
-    }
-
     if (openCards.length === 2) {
       setTimeout(() => {
         setOpenCards([]);
       }, 300);
     }
     //  eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [openCards, state.isStartGame]);
+  }, [openCards]);
 
   return shufflCards.map((card, indx) => {
     let isFlip = false;
