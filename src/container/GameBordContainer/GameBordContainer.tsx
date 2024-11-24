@@ -11,7 +11,9 @@ const GameBordContainer = () => {
   const [stateGame, setStateGame] = useState<TypeStateGame>({
     setting: state.setting,
     isStart: state.isStartGame,
+    isLoading: false,
   });
+
   const [cards, setCards] = useState<TypeCards[]>([]);
 
   useEffect(() => {
@@ -22,17 +24,29 @@ const GameBordContainer = () => {
         .toString(36)
         .slice(2, stateGame.setting.numCards + 5);
 
-      const avatarUrl = `https://robohash.org/${randomStr}?set=set${stateGame.setting.typeImg}&size=${stateGame.setting.sizeCard}x${stateGame.setting.sizeCard}`;
+      const avatarUrl = stateGame.isStart
+        ? `https://robohash.org/${randomStr}?set=set${stateGame.setting.typeImg}&size=${stateGame.setting.sizeCard}x${stateGame.setting.sizeCard}`
+        : ``;
       arrayImg.push({ url: avatarUrl, id: randomStr });
     }
 
-    getImageApi(arrayImg)
-      .then(() => {
-        setCards(arrayImg);
-      })
-      .catch((error) => {
-        console.error("Ошибка при загрузке изображений:", error);
-      });
+    if (stateGame.isStart) {
+      getImageApi(arrayImg)
+        .then(() => {
+          setCards(arrayImg);
+          setStateGame((prev) => {
+            return {
+              ...prev,
+              isLoading: false,
+            };
+          });
+        })
+        .catch((error) => {
+          console.error("Ошибка при загрузке изображений:", error);
+        });
+    } else {
+      setCards(arrayImg);
+    }
   }, [stateGame]);
 
   const handleStartGame = () => {
@@ -40,6 +54,7 @@ const GameBordContainer = () => {
     setStateGame({
       setting: state.setting,
       isStart: true,
+      isLoading: true,
     });
   };
 

@@ -36,8 +36,8 @@ const OptionSetting: React.FC<PropsOptionSetting> = ({
       <div className={style.titleRadio}>{nameOption}</div>
       <div className={style.wrapperRadio}>
         {[...arrSetting[keyObj]].map((input) => (
-          <div className={style.warpperLabel}>
-            <label key={input.id} className={style.label} htmlFor={input.id}>
+          <div key={input.id} className={style.warpperLabel}>
+            <label className={style.label} htmlFor={input.id}>
               <input
                 hidden
                 className={style.input}

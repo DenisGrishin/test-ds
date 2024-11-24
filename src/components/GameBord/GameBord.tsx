@@ -7,6 +7,7 @@ import {
 import WrapperGameBord from "./WrapperGameBord.tsx";
 import CardContainer from "../../container/GameBordContainer/CardContainer.tsx";
 import InfoPanelGameBordContainer from "../../container/GameBordContainer/InfoPanelGBContainer/InfoPanelGBContainer.tsx";
+import Preloader from "../Preloader/Preloader.tsx";
 
 interface PropsGameBord {
   cards: TypeCards[];
@@ -25,6 +26,7 @@ const GameBord: React.FC<PropsGameBord> = ({
         stateGame={stateGame}
         handleStartGame={() => handleStartGame()}
       >
+        {stateGame.isLoading && <Preloader />}
         <CardContainer cards={cards} />
       </WrapperGameBord>
     </div>

@@ -28,8 +28,7 @@
 			border-radius: 12px;
 		}
 		&._start-game::after {
-			opacity: 0;
-			visibility: hidden;
+			display: none;
 		}
 	}
 	&__start-btn {
@@ -50,8 +49,7 @@
 			}
 		}
 		._start-game & {
-			opacity: 0;
-			visibility: hidden;
+			display: none;
 		}
 	}
 }
