@@ -1,18 +1,18 @@
 import React, { ReactNode } from "react";
-import { TypeStateGame } from "../../container/GameBordContainer/index.type";
+import { TypeSetting } from "../../context/store/index.type";
 
 interface PropsWrapperGameBord {
   children: ReactNode;
   handleStartGame: () => void;
-  stateGame: TypeStateGame;
+  setting: TypeSetting;
+  isStart: boolean;
 }
 const WrapperGameBord: React.FC<PropsWrapperGameBord> = ({
   children,
   handleStartGame,
-  stateGame,
+  setting,
+  isStart,
 }) => {
-  const { isStart, setting } = stateGame;
-
   return (
     <div
       className={`game-bord__cards ${isStart ? "_start-game" : ""}`}

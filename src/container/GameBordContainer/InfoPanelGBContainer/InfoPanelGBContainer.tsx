@@ -3,14 +3,14 @@ import { useContext, useLayoutEffect, useState } from "react";
 import { Context } from "../../../context/ContextProvider.tsx";
 import InfoPanelGameBord from "../../../components/GameBord/InfoPanelGB/InfoPanelGB.tsx";
 
-const InfoPanelGameBordContainer = () => {
+const InfoPanelGBContainer = () => {
   const { state } = useContext(Context);
 
   const [progressWidth, setProgressWidth] = useState(0);
 
   useLayoutEffect(() => {
     setProgressWidth(
-      (100 / state.setting.numCards) * state.stateSessionGame.countPoint,
+      (100 / (state.setting.numCards * 2)) * state.stateSessionGame.countPoint,
     );
   }, [state.setting.numCards, state.stateSessionGame.countPoint]);
 
@@ -24,4 +24,4 @@ const InfoPanelGameBordContainer = () => {
   );
 };
 
-export default InfoPanelGameBordContainer;
+export default InfoPanelGBContainer;

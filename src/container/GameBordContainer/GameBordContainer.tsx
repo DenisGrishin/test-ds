@@ -7,10 +7,9 @@ import getImageApi from "../../api/api";
 
 const GameBordContainer = () => {
   const { state, dispatch } = useContext(Context);
-
+  const [isStart, setIsStart] = useState(state.isStartGame);
   const [stateGame, setStateGame] = useState<TypeStateGame>({
     setting: state.setting,
-    isStart: state.isStartGame,
     isLoading: false,
   });
 
@@ -24,13 +23,13 @@ const GameBordContainer = () => {
         .toString(36)
         .slice(2, stateGame.setting.numCards + 5);
 
-      const avatarUrl = stateGame.isStart
+      const avatarUrl = isStart
         ? `https://robohash.org/${randomStr}?set=set${stateGame.setting.typeImg}&size=${stateGame.setting.sizeCard}x${stateGame.setting.sizeCard}`
         : ``;
       arrayImg.push({ url: avatarUrl, id: randomStr });
     }
 
-    if (stateGame.isStart) {
+    if (isStart) {
       getImageApi(arrayImg)
         .then(() => {
           setCards(arrayImg);
@@ -47,21 +46,23 @@ const GameBordContainer = () => {
     } else {
       setCards(arrayImg);
     }
-  }, [stateGame]);
+    //  eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isStart]);
 
   const handleStartGame = () => {
     dispatch({ type: "startStopGame", isToogleGame: true });
     setStateGame({
       setting: state.setting,
-      isStart: true,
       isLoading: true,
     });
+    setIsStart(true);
   };
 
   return (
     <GameBord
       cards={cards}
       stateGame={stateGame}
+      isStart={isStart}
       handleStartGame={() => handleStartGame()}
     />
   );
