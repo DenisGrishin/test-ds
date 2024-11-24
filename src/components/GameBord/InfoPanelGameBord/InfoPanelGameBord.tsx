@@ -17,7 +17,7 @@ const InfoPanelGameBord: React.FC<PropsInfoPanelGameBord> = ({
     <ul className={style.infoPanel}>
       <li>
         <span>Таймер:</span>
-        <TimerContainer seconds={3} minutes={0} />
+        <TimerContainer seconds={0} minutes={2} />
       </li>
       <li>
         <span>Лимит ошибок:</span>

@@ -3,8 +3,8 @@ import { Action, State } from "./index.type";
 export const newState = (): State => {
   return {
     setting: {
-      numCards: 4,
-      sizeCard: 200,
+      numCards: 3,
+      sizeCard: 125,
       typeCard: 4,
     },
     userInfo: {
@@ -50,6 +50,14 @@ export const reducer = (state: State, action: Action): State => {
       return {
         ...state,
         isStartGame: action.isToogleGame,
+      };
+    case "updateSetting":
+      return {
+        ...state,
+        setting: {
+          ...state.setting,
+          [action.option]: action.payload,
+        },
       };
     default:
       return state;

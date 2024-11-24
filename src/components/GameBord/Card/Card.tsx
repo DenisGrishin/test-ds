@@ -6,13 +6,21 @@ interface PropsCard {
   indx: number;
   isFlip: boolean;
   urlImg: string;
+  sizeCard: number;
 }
 
-const Card: React.FC<PropsCard> = ({ flipCard, indx, urlImg, isFlip }) => {
+const Card: React.FC<PropsCard> = ({
+  flipCard,
+  indx,
+  urlImg,
+  isFlip,
+  sizeCard,
+}) => {
   return (
     <div
       onClick={() => flipCard(indx, isFlip)}
       className={`card ${isFlip ? "_flip" : ""}`}
+      style={{ width: `${sizeCard}px`, height: `${sizeCard}px` }}
     >
       <div className="card__wrapper">
         <div className="card__front">

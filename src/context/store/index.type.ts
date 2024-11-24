@@ -1,5 +1,10 @@
 export type Action =
   | {
+      type: "updateSetting";
+      payload: number;
+      option: string;
+    }
+  | {
       type: "startStopGame";
       isToogleGame: boolean;
     }

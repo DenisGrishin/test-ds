@@ -11,7 +11,9 @@ const CardContainer: React.FC<PropsCardContainer> = ({ cards }) => {
   const { state, dispatch } = useContext(Context);
   const [foundCard, setFoundCard] = useState<string[]>([]);
   const [openCards, setOpenCards] = useState<number[]>([]);
-  const { stateSessionGame } = state;
+
+  const { stateSessionGame, setting } = state;
+
   const flipCard = (indx: number, isCurrentOpen: boolean) => {
     if (!state.isStartGame || isCurrentOpen || openCards.length === 2) return;
 
@@ -93,6 +95,7 @@ const CardContainer: React.FC<PropsCardContainer> = ({ cards }) => {
         urlImg={card.url}
         indx={indx}
         flipCard={(id, isCurrentOpen) => flipCard(id, isCurrentOpen)}
+        sizeCard={setting.sizeCard}
       />
     );
   });
