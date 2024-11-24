@@ -1,6 +1,7 @@
 import React from "react";
+import SettingContainer from "../container/SettingContainer/SettingContainer.tsx";
 
 const SettingPage = () => {
-  return <div>Setting</div>;
+  return <SettingContainer />;
 };
 export default SettingPage;

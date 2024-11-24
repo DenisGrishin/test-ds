@@ -45,10 +45,7 @@ const CardContainer: React.FC<PropsCardContainer> = ({ cards }) => {
 
   useEffect(() => {
     if (openCards.length < 2) return;
-    if (!state.isStartGame) {
-      stopGame();
-      return;
-    }
+
     if (!stateSessionGame.errorPoint) {
       stopGame();
       return;
@@ -89,8 +86,6 @@ const CardContainer: React.FC<PropsCardContainer> = ({ cards }) => {
 
     if (openCards.includes(indx)) isFlip = true;
     if (foundCard.includes(card.id)) isFlip = true;
-    //  if (!state.isStartGame) isFlip = false;
-
     return (
       <Card
         key={indx}
