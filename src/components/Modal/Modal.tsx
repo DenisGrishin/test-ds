@@ -3,7 +3,7 @@ import style from "./modal.module.scss";
 
 interface PropModal {
   iShow: boolean;
-  setIsShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsShowModal: () => void;
   children: ReactNode;
 }
 
@@ -11,7 +11,7 @@ const Modal: React.FC<PropModal> = ({ iShow, setIsShowModal, children }) => {
   return (
     <div
       className={`${style.modal} ${iShow ? style.show : ""}`}
-      onClick={() => setIsShowModal(false)}
+      onClick={() => setIsShowModal()}
     >
       <div className={style.contetn} onClick={(e) => e.stopPropagation()}>
         {children}

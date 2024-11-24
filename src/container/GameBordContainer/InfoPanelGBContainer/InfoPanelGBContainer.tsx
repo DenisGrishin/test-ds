@@ -10,9 +10,9 @@ const InfoPanelGBContainer = () => {
 
   useLayoutEffect(() => {
     setProgressWidth(
-      (100 / (state.setting.numCards * 2)) * state.stateSessionGame.countPoint,
+      (100 / (state.setting.numCards * 2)) * state.stateSessionGame.scorePoint,
     );
-  }, [state.setting.numCards, state.stateSessionGame.countPoint]);
+  }, [state.setting.numCards, state.stateSessionGame.scorePoint]);
 
   return (
     <InfoPanelGameBord

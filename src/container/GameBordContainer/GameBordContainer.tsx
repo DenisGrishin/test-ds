@@ -15,10 +15,15 @@ const GameBordContainer = () => {
   });
 
   const [cards, setCards] = useState<TypeCards[]>([]);
-
+  useEffect(() => {
+    setIsShowModal(state.isWin);
+  }, [state.isWin]);
+  useEffect(() => {
+    setIsShowModal(state.isLose);
+  }, [state.isLose]);
   useEffect(() => {
     const arrayImg: TypeCards[] = [];
-
+    // создаем массив с объектами картинок
     for (let i = 0; i < stateGame.setting.numCards * 2; i += 1) {
       const randomStr = Math.random()
         .toString(36)
@@ -31,6 +36,7 @@ const GameBordContainer = () => {
     }
 
     if (isStart) {
+      // некое подобие апи
       getImageApi(arrayImg)
         .then(() => {
           setCards(arrayImg);
@@ -64,9 +70,11 @@ const GameBordContainer = () => {
       cards={cards}
       stateGame={stateGame}
       isStart={isStart}
-      isShowModal={isShowModal}
+      isWin={state.isWin}
+      isLose={state.isLose}
       handleStartGame={() => handleStartGame()}
-      setIsShowModal={setIsShowModal}
+      setIsShowModal={() => setIsShowModal(false)}
+      isShowModal={isShowModal}
     />
   );
 };

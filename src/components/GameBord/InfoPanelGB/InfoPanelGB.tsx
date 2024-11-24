@@ -29,11 +29,11 @@ const InfoPanelGameBord: React.FC<PropsInfoPanelGB> = ({
       </li>
       <li>
         <span>Кол-во очков:</span>
-        {stateSessionGame.countPoint}
+        {stateSessionGame.scorePoint}
       </li>
       <li>
         <span>Лучший счёт:</span>
-        {stateSessionGame.recordGame}
+        {stateSessionGame.scoreRecordGame}
       </li>
       <li>
         <span>Сыгранные игры:</span>

@@ -7,8 +7,8 @@ interface PropsCardContainer {
   cards: TypeCards[];
 }
 const CardContainer: React.FC<PropsCardContainer> = ({ cards }) => {
-  const [shufflCards, setShufflCards] = useState<TypeCards[]>([]);
   const { state, dispatch } = useContext(Context);
+  const [shufflCards, setShufflCards] = useState<TypeCards[]>([]);
   const [foundCard, setFoundCard] = useState<string[]>([]);
   const [openCards, setOpenCards] = useState<number[]>([]);
 
@@ -48,10 +48,13 @@ const CardContainer: React.FC<PropsCardContainer> = ({ cards }) => {
   useEffect(() => {
     if (!setting.errorPoint) {
       stopGame();
+      dispatch({ type: "setLose", payload: true });
     }
-    if (foundCard.length === shufflCards.length / 2) {
+    if (foundCard.length !== 0 && foundCard.length === shufflCards.length / 2) {
       stopGame();
+      dispatch({ type: "setWin", payload: true });
     }
+
     //  eslint-disable-next-line react-hooks/exhaustive-deps
   }, [setting.errorPoint, foundCard]);
   //  действия с карточкой

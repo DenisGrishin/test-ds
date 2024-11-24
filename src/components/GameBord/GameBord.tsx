@@ -14,8 +14,10 @@ interface PropsGameBord {
   cards: TypeCards[];
   stateGame: TypeStateGame;
   handleStartGame: () => void;
-  setIsShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsShowModal: () => void;
   isStart: boolean;
+  isWin: boolean;
+  isLose: boolean;
   isShowModal: boolean;
 }
 const GameBord: React.FC<PropsGameBord> = ({
@@ -24,6 +26,8 @@ const GameBord: React.FC<PropsGameBord> = ({
   handleStartGame,
   setIsShowModal,
   isStart,
+  isWin,
+  isLose,
   isShowModal,
 }) => {
   return (
@@ -37,8 +41,9 @@ const GameBord: React.FC<PropsGameBord> = ({
         {stateGame.isLoading && <Preloader />}
         <CardContainer cards={cards} />
       </WrapperGameBord>
-      <Modal iShow={isShowModal} setIsShowModal={setIsShowModal}>
-        ssdas
+      <Modal iShow={isShowModal} setIsShowModal={() => setIsShowModal()}>
+        {isWin && <div>🎉 Поздравляем! Вы выиграли! 🎉</div>}
+        {isLose && <div>😢 К сожалению, вы проиграли. 😢</div>}
       </Modal>
     </div>
   );

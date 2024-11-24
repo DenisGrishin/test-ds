@@ -20,6 +20,7 @@ const TimerContainer: React.FC<PropsTimerContainer> = ({ time }) => {
       setTime([0, 0]);
       setOver(false);
       dispatch({ type: "startStopGame", isToogleGame: false });
+      dispatch({ type: "setLose", payload: true });
     } else if (s === 0) {
       setTime([m - 1, 59]);
     } else {

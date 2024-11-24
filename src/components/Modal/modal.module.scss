@@ -21,7 +21,8 @@
 	padding: 20px;
 	border-radius: 12px;
 	background-color: var(--interface);
-	max-width: 300px;
+	max-width: 500px;
+	text-align: center;
 	transform: scale(0.5);
 	transition: transform 0.4s ease 0s;
 	.show & {

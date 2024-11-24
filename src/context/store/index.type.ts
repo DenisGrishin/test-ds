@@ -1,5 +1,13 @@
 export type Action =
   | {
+      type: "setLose";
+      payload: boolean;
+    }
+  | {
+      type: "setWin";
+      payload: boolean;
+    }
+  | {
       type: "updateSetting";
       payload: number;
       option: string;
@@ -22,6 +30,8 @@ export type State = {
   userInfo: TypeUserInfo;
   stateSessionGame: TypeStateSessionGame;
   isStartGame: boolean;
+  isWin: boolean;
+  isLose: boolean;
 };
 
 export interface TypeUserInfo {
@@ -38,7 +48,7 @@ export interface TypeSetting {
   typeImg: number;
 }
 export interface TypeStateSessionGame {
-  countPoint: number;
+  scorePoint: number;
   countGame: number;
-  recordGame: number;
+  scoreRecordGame: number;
 }

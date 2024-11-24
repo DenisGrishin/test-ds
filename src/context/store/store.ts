@@ -18,11 +18,13 @@ export const newState = (): State => {
       countGamesAll: 0,
     },
     stateSessionGame: {
-      countPoint: 0,
+      scorePoint: 0,
       countGame: 0,
-      recordGame: 0,
+      scoreRecordGame: 0,
     },
     isStartGame: false,
+    isWin: false,
+    isLose: false,
   };
 };
 
@@ -35,7 +37,7 @@ export const reducer = (state: State, action: Action): State => {
         ...state,
         stateSessionGame: {
           ...state.stateSessionGame,
-          countPoint: state.stateSessionGame.countPoint + action.point,
+          scorePoint: state.stateSessionGame.scorePoint + action.point,
         },
       };
     case "subtractCountErrorPoint":
@@ -58,6 +60,16 @@ export const reducer = (state: State, action: Action): State => {
           ...state.setting,
           [action.option]: action.payload,
         },
+      };
+    case "setWin":
+      return {
+        ...state,
+        isWin: action.payload,
+      };
+    case "setLose":
+      return {
+        ...state,
+        isLose: action.payload,
       };
     default:
       return state;
