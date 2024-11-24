@@ -8,6 +8,7 @@ import getImageApi from "../../api/api";
 const GameBordContainer = () => {
   const { state, dispatch } = useContext(Context);
   const [isStart, setIsStart] = useState(state.isStartGame);
+  const [isShowModal, setIsShowModal] = useState(false);
   const [stateGame, setStateGame] = useState<TypeStateGame>({
     setting: state.setting,
     isLoading: false,
@@ -63,7 +64,9 @@ const GameBordContainer = () => {
       cards={cards}
       stateGame={stateGame}
       isStart={isStart}
+      isShowModal={isShowModal}
       handleStartGame={() => handleStartGame()}
+      setIsShowModal={setIsShowModal}
     />
   );
 };
