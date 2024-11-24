@@ -22,7 +22,7 @@ const GameBordContainer = () => {
         .toString(36)
         .slice(2, stateGame.setting.numCards + 5);
 
-      const avatarUrl = `https://robohash.org/${randomStr}?set=set${stateGame.setting.typeCard}&size=${stateGame.setting.sizeCard}x${stateGame.setting.sizeCard}`;
+      const avatarUrl = `https://robohash.org/${randomStr}?set=set${stateGame.setting.typeImg}&size=${stateGame.setting.sizeCard}x${stateGame.setting.sizeCard}`;
       arrayImg.push({ url: avatarUrl, id: randomStr });
     }
 
@@ -33,15 +33,13 @@ const GameBordContainer = () => {
       .catch((error) => {
         console.error("Ошибка при загрузке изображений:", error);
       });
-  }, [stateGame, state.setting]);
+  }, [stateGame]);
 
   const handleStartGame = () => {
     dispatch({ type: "startStopGame", isToogleGame: true });
-    setStateGame((prev) => {
-      return {
-        ...prev,
-        isStart: true,
-      };
+    setStateGame({
+      setting: state.setting,
+      isStart: true,
     });
   };
 

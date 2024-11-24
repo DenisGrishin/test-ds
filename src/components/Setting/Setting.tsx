@@ -1,29 +1,49 @@
 import React from "react";
 import style from "./setting.module.scss";
-import FieldSizeOption from "./components/FieldSizeOption.tsx";
+import OptionSetting from "./components/OptionSetting/OptionSetting.tsx";
+import { TypeSelectedSetting } from "../../container/SettingContainer/indx.type";
 
 interface PropsSetting {
-  selectedValue: number;
+  selectedSetting: TypeSelectedSetting;
   setSelectedValue: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const Setting: React.FC<PropsSetting> = ({
-  selectedValue,
+  selectedSetting,
   setSelectedValue,
 }) => {
   return (
     <div className={style.wrapper}>
-      <ul className={style.list}>
-        <FieldSizeOption
+      <ul>
+        <OptionSetting
           setSelectedValue={(e) => setSelectedValue(e)}
-          selectedValue={selectedValue}
+          selectedSetting={selectedSetting.numCards}
+          nameOption="Размер поля:"
+          keyObj="size"
+          nameRadio="numCards"
         />
-        <li className={style.item}>
-          <span>Лимит времени:</span>
-        </li>
-        <li className={style.item}>
-          <span>Лимит ошибок:</span>
-        </li>
+        <OptionSetting
+          setSelectedValue={(e) => setSelectedValue(e)}
+          selectedSetting={selectedSetting.time}
+          nameOption="Лимит времени в минутах:"
+          keyObj="time"
+          nameRadio="time"
+        />
+        <OptionSetting
+          setSelectedValue={(e) => setSelectedValue(e)}
+          selectedSetting={selectedSetting.errorPoint}
+          nameOption="Лимит ошибок:"
+          keyObj="error"
+          nameRadio="errorPoint"
+        />
+        <OptionSetting
+          setSelectedValue={(e) => setSelectedValue(e)}
+          selectedSetting={selectedSetting.typeImg}
+          nameOption="Выберите картинку для карточек:"
+          keyObj="img"
+          nameRadio="typeImg"
+          isImg
+        />
       </ul>
     </div>
   );

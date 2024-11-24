@@ -6,7 +6,7 @@ import {
 } from "../../container/GameBordContainer/index.type";
 import WrapperGameBord from "./WrapperGameBord.tsx";
 import CardContainer from "../../container/GameBordContainer/CardContainer.tsx";
-import InfoPanelGameBordContainer from "../../container/GameBordContainer/InfoPanelGameBordContainer/InfoPanelGameBordContainer.tsx";
+import InfoPanelGameBordContainer from "../../container/GameBordContainer/InfoPanelGBContainer/InfoPanelGBContainer.tsx";
 
 interface PropsGameBord {
   cards: TypeCards[];

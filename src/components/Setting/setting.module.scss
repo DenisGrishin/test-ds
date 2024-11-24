@@ -3,8 +3,7 @@
 	border-radius: 12px;
 	padding: 30px;
 }
-.list {
-}
+
 .item {
 	background-color: var(--background);
 	border-radius: 12px;
@@ -18,11 +17,18 @@
 	}
 	.titleRadio {
 		text-wrap: nowrap;
+		flex: 0 1 30%;
 	}
 	.wrapperRadio {
+		flex: 0 1 70%;
 		width: 100%;
 		display: flex;
 		justify-content: space-evenly;
+	}
+	.warpperLabel {
+		flex: 0 1 25%;
+		display: flex;
+		justify-content: center;
 	}
 }
 
@@ -35,9 +41,6 @@
 	border-radius: 4px;
 
 	.input {
-		position: absolute;
-		opacity: 0; /* Скрываем радио-кнопку */
-
 		&:checked + span::before {
 			opacity: 1;
 			visibility: visible;

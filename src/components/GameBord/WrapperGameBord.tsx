@@ -17,7 +17,7 @@ const WrapperGameBord: React.FC<PropsWrapperGameBord> = ({
     <div
       className={`game-bord__cards ${isStart ? "_start-game" : ""}`}
       style={{
-        gridTemplate: `repeat(${setting.numCards === 3 ? 3 : 4},${setting.sizeCard}px) / repeat(${setting.numCards === 6 ? 6 : setting.numCards === 5 ? 5 : 4} ,${setting.sizeCard}px)`,
+        gridTemplate: `repeat(${setting.numCards === 3 ? 3 : 4},${setting.sizeCard}px) / repeat(${setting.numCards === 6 ? 6 : setting.numCards === 5 ? 5 : setting.numCards === 8 ? 8 : 4} ,${setting.sizeCard}px)`,
       }}
     >
       {children}

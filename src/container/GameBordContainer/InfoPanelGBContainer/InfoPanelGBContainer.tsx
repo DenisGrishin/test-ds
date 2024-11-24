@@ -1,6 +1,7 @@
 import { useContext, useLayoutEffect, useState } from "react";
-import InfoPanelGameBord from "../../../components/GameBord/InfoPanelGameBord/InfoPanelGameBord.tsx";
+
 import { Context } from "../../../context/ContextProvider.tsx";
+import InfoPanelGameBord from "../../../components/GameBord/InfoPanelGB/InfoPanelGB.tsx";
 
 const InfoPanelGameBordContainer = () => {
   const { state } = useContext(Context);
@@ -17,6 +18,8 @@ const InfoPanelGameBordContainer = () => {
     <InfoPanelGameBord
       stateSessionGame={state.stateSessionGame}
       progressWidth={progressWidth}
+      time={state.setting.time}
+      errorPoint={state.setting.errorPoint}
     />
   );
 };

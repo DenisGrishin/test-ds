@@ -33,11 +33,12 @@ export interface TypeUserInfo {
 export interface TypeSetting {
   numCards: number;
   sizeCard: number;
-  typeCard: number;
+  time: number;
+  errorPoint: number;
+  typeImg: number;
 }
 export interface TypeStateSessionGame {
   countPoint: number;
-  errorPoint: number;
   countGame: number;
   recordGame: number;
 }

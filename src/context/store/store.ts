@@ -5,8 +5,12 @@ export const newState = (): State => {
     setting: {
       numCards: 3,
       sizeCard: 125,
-      typeCard: 4,
+
+      time: 150,
+      errorPoint: 15,
+      typeImg: 4,
     },
+    // не успел, сделать юезров
     userInfo: {
       avatar: "https://robohash.org/sdzxc123ad?set=set4&size=100x100",
       name: "Denis",
@@ -15,7 +19,6 @@ export const newState = (): State => {
     },
     stateSessionGame: {
       countPoint: 0,
-      errorPoint: 10,
       countGame: 0,
       recordGame: 0,
     },
@@ -38,12 +41,9 @@ export const reducer = (state: State, action: Action): State => {
     case "subtractCountErrorPoint":
       return {
         ...state,
-        stateSessionGame: {
-          ...state.stateSessionGame,
-          errorPoint: Math.max(
-            state.stateSessionGame.errorPoint - action.errorPoint,
-            0,
-          ),
+        setting: {
+          ...state.setting,
+          errorPoint: Math.max(state.setting.errorPoint - action.errorPoint, 0),
         },
       };
     case "startStopGame":

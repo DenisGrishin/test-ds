@@ -12,7 +12,7 @@ const CardContainer: React.FC<PropsCardContainer> = ({ cards }) => {
   const [foundCard, setFoundCard] = useState<string[]>([]);
   const [openCards, setOpenCards] = useState<number[]>([]);
 
-  const { stateSessionGame, setting } = state;
+  const { setting } = state;
 
   const flipCard = (indx: number, isCurrentOpen: boolean) => {
     if (!state.isStartGame || isCurrentOpen || openCards.length === 2) return;
@@ -46,14 +46,14 @@ const CardContainer: React.FC<PropsCardContainer> = ({ cards }) => {
   }, [cards]);
   //  устанавливаем игру когда закончился лимит ошибок или открыли все карточки
   useEffect(() => {
-    if (!stateSessionGame.errorPoint) {
+    if (!setting.errorPoint) {
       stopGame();
     }
     if (foundCard.length === shufflCards.length / 2) {
       stopGame();
     }
     //  eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [stateSessionGame.errorPoint, foundCard]);
+  }, [setting.errorPoint, foundCard]);
   //  действия с карточкой
   useEffect(() => {
     if (openCards.length < 2) return;

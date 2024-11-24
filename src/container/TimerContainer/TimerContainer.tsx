@@ -3,14 +3,12 @@ import Timer from "../../components/Timer/Timer.tsx";
 import { Context } from "../../context/ContextProvider.tsx";
 
 interface PropsTimerContainer {
-  minutes: number;
-  seconds: number;
+  time: number;
 }
-const TimerContainer: React.FC<PropsTimerContainer> = ({
-  minutes,
-  seconds,
-}) => {
+const TimerContainer: React.FC<PropsTimerContainer> = ({ time }) => {
   const { state, dispatch } = useContext(Context);
+  const minutes = Math.floor(time / 60);
+  const seconds = time % 60;
 
   const [over, setOver] = useState(false);
   const [[m, s], setTime] = useState([minutes, seconds]);
