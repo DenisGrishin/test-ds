@@ -1,12 +1,7 @@
-import React, { ReactNode } from "react";
-import { TypeSetting } from "../../context/store/index.type";
+import React from "react";
 
-interface PropsWrapperGameBord {
-  children: ReactNode;
-  handleStartGame: () => void;
-  setting: TypeSetting;
-  isStart: boolean;
-}
+import { PropsWrapperGameBord } from "./index.type";
+
 const WrapperGameBord: React.FC<PropsWrapperGameBord> = ({
   children,
   handleStartGame,

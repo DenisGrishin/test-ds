@@ -15,20 +15,21 @@
 .nav {
 	display: flex;
 	justify-content: space-between;
+	column-gap: 20px;
 	background-color: var(--interface);
 	padding: 20px;
 	border-radius: 12px;
 	// .nav__link
 
 	&__link {
-		flex: 0 1 calc(25% - 20px);
+		flex: 0 1 33%;
 		font-size: 20px;
 		font-weight: 700;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		text-align: center;
-		column-gap: 14px;
+
 		column-gap: 20px;
 		padding: 13px 0;
 		transition: all 0.4s ease 0s;

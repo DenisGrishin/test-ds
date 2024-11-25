@@ -6,16 +6,8 @@ import {
   arrSizeOption,
   arrTimeOption,
 } from "./dataOption";
-import { TypeArrSetting } from "./index.type";
+import { PropsOptionSetting, TypeArrSetting } from "./index.type";
 
-interface PropsOptionSetting {
-  setSelectedValue: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  selectedSetting: number;
-  nameOption: string;
-  keyObj: "size" | "time" | "error" | "img";
-  nameRadio: string;
-  isImg?: boolean;
-}
 const OptionSetting: React.FC<PropsOptionSetting> = ({
   setSelectedValue,
   selectedSetting,

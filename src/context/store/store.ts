@@ -9,21 +9,19 @@ export const newState = (): State => {
       errorPoint: 15,
       typeImg: 4,
     },
-    // не успел, сделать юезров
-    userInfo: {
-      avatar: "https://robohash.org/sdzxc123ad?set=set4&size=100x100",
-      name: "Denis",
-      record: 0,
-      countGamesAll: 0,
-    },
+
     stateSessionGame: {
+      time: 150,
+      errorPoint: 15,
       scorePoint: 0,
       countGame: 0,
       scoreRecordGame: 0,
     },
     isStartGame: false,
+    isStartTimer: false,
     isWin: false,
     isLose: false,
+    isRestartGame: false,
   };
 };
 
@@ -42,15 +40,18 @@ export const reducer = (state: State, action: Action): State => {
     case "subtractCountErrorPoint":
       return {
         ...state,
-        setting: {
-          ...state.setting,
-          errorPoint: Math.max(state.setting.errorPoint - action.errorPoint, 0),
+        stateSessionGame: {
+          ...state.stateSessionGame,
+          errorPoint: Math.max(
+            state.stateSessionGame.errorPoint - action.errorPoint,
+            0,
+          ),
         },
       };
     case "startStopGame":
       return {
         ...state,
-        isStartGame: action.isToogleGame,
+        isStartGame: action.payload,
       };
     case "updateSetting":
       return {
@@ -68,6 +69,21 @@ export const reducer = (state: State, action: Action): State => {
       return {
         ...state,
         isLose: action.payload,
+      };
+    case "updateStateSession":
+      return {
+        ...state,
+        stateSessionGame: action.payload,
+      };
+    case "togglTimer":
+      return {
+        ...state,
+        isStartTimer: action.payload,
+      };
+    case "setIsRestartGame":
+      return {
+        ...state,
+        isRestartGame: action.payload,
       };
     default:
       return state;

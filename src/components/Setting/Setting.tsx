@@ -1,12 +1,7 @@
 import React from "react";
 import style from "./setting.module.scss";
 import OptionSetting from "./components/OptionSetting/OptionSetting.tsx";
-import { TypeSelectedSetting } from "../../container/SettingContainer/indx.type";
-
-interface PropsSetting {
-  selectedSetting: TypeSelectedSetting;
-  setSelectedValue: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
+import { PropsSetting } from "./index.type";
 
 const Setting: React.FC<PropsSetting> = ({
   selectedSetting,

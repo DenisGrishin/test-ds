@@ -2,7 +2,6 @@ import { NavLink } from "react-router-dom";
 import GameIcon from "../../assets/img/icons/white-gameTwo.svg?react";
 import SettingIcon from "../../assets/img/icons/white-setting.svg?react";
 import ResultIcon from "../../assets/img/icons/white-podium.svg?react";
-import RulesIcon from "../../assets/img/icons/rulesGameIcon.svg?react";
 
 const Navigate = () => {
   return (
@@ -12,15 +11,6 @@ const Navigate = () => {
           return isActive ? "nav__link  _active" : "nav__link";
         }}
         to="/"
-      >
-        <RulesIcon className="nav__icon" />
-        <span>Правила игры</span>
-      </NavLink>
-      <NavLink
-        className={({ isActive }) => {
-          return isActive ? "nav__link  _active" : "nav__link";
-        }}
-        to="/game"
       >
         <GameIcon className="nav__icon" />
         <span>Играть</span>

@@ -1,18 +1,15 @@
-import React, { useContext, useEffect, useState } from "react";
-import { TypeCards } from "./index.type";
-import Card from "../../components/GameBord/Card/Card.tsx";
-import { Context } from "../../context/ContextProvider.tsx";
+import { useContext, useEffect, useState } from "react";
+import Card from "../../../components/GameBord/components/Card/Card.tsx";
+import { Context } from "../../../context/ContextProvider.tsx";
+import { TypeCards } from "../index.type";
 
-interface PropsCardContainer {
-  cards: TypeCards[];
-}
-const CardContainer: React.FC<PropsCardContainer> = ({ cards }) => {
+const CardContainer = ({ cards }: { cards: TypeCards[] }) => {
   const { state, dispatch } = useContext(Context);
   const [shufflCards, setShufflCards] = useState<TypeCards[]>([]);
   const [foundCard, setFoundCard] = useState<string[]>([]);
   const [openCards, setOpenCards] = useState<number[]>([]);
 
-  const { setting } = state;
+  const { setting, stateSessionGame } = state;
 
   const flipCard = (indx: number, isCurrentOpen: boolean) => {
     if (!state.isStartGame || isCurrentOpen || openCards.length === 2) return;
@@ -20,9 +17,6 @@ const CardContainer: React.FC<PropsCardContainer> = ({ cards }) => {
     setOpenCards((opened) => [...opened, indx]);
   };
 
-  const stopGame = () => {
-    dispatch({ type: "startStopGame", isToogleGame: false });
-  };
   // перемешиваем массив с картинками
   useEffect(() => {
     const shuffleArray = (array: TypeCards[]): void => {
@@ -46,17 +40,22 @@ const CardContainer: React.FC<PropsCardContainer> = ({ cards }) => {
   }, [cards]);
   //  устанавливаем игру когда закончился лимит ошибок или открыли все карточки
   useEffect(() => {
-    if (!setting.errorPoint) {
-      stopGame();
+    if (!stateSessionGame.errorPoint) {
       dispatch({ type: "setLose", payload: true });
+      dispatch({ type: "togglTimer", payload: false });
     }
     if (foundCard.length !== 0 && foundCard.length === shufflCards.length / 2) {
-      stopGame();
       dispatch({ type: "setWin", payload: true });
+      dispatch({ type: "togglTimer", payload: false });
     }
 
     //  eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [setting.errorPoint, foundCard]);
+  }, [stateSessionGame.errorPoint, foundCard]);
+  useEffect(() => {
+    if (state.isRestartGame) {
+      setFoundCard([]);
+    }
+  }, [state.isRestartGame]);
   //  действия с карточкой
   useEffect(() => {
     if (openCards.length < 2) return;

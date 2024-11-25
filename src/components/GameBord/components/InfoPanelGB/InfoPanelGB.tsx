@@ -1,31 +1,22 @@
 import React from "react";
 import style from "./InfoPanelGB.module.scss";
 
-import TimerContainer from "../../../container/TimerContainer/TimerContainer.tsx";
-import { TypeStateSessionGame } from "../../../context/store/index.type";
-
-interface PropsInfoPanelGB {
-  stateSessionGame: TypeStateSessionGame;
-  progressWidth: number;
-  time: number;
-  errorPoint: number;
-}
+import TimerContainer from "../../../../container/TimerContainer/TimerContainer.tsx";
+import { PropsInfoPanelGB } from "./index.type";
 
 const InfoPanelGameBord: React.FC<PropsInfoPanelGB> = ({
   stateSessionGame,
   progressWidth,
-  time,
-  errorPoint,
 }) => {
   return (
     <ul className={style.infoPanel}>
       <li>
         <span>Таймер:</span>
-        <TimerContainer time={time} />
+        <TimerContainer />
       </li>
       <li>
         <span>Лимит ошибок:</span>
-        {errorPoint}
+        {stateSessionGame.errorPoint}
       </li>
       <li>
         <span>Кол-во очков:</span>

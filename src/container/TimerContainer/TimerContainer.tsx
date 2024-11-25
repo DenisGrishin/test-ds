@@ -1,14 +1,11 @@
-import React, { useCallback, useContext, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import Timer from "../../components/Timer/Timer.tsx";
 import { Context } from "../../context/ContextProvider.tsx";
 
-interface PropsTimerContainer {
-  time: number;
-}
-const TimerContainer: React.FC<PropsTimerContainer> = ({ time }) => {
+const TimerContainer = () => {
   const { state, dispatch } = useContext(Context);
-  const minutes = Math.floor(time / 60);
-  const seconds = time % 60;
+  const minutes = Math.floor(state.stateSessionGame.time / 60);
+  const seconds = state.stateSessionGame.time % 60;
 
   const [over, setOver] = useState(false);
   const [[m, s], setTime] = useState([minutes, seconds]);
@@ -19,7 +16,7 @@ const TimerContainer: React.FC<PropsTimerContainer> = ({ time }) => {
     if (m === 0 && s === 1) {
       setTime([0, 0]);
       setOver(false);
-      dispatch({ type: "startStopGame", isToogleGame: false });
+      dispatch({ type: "startStopGame", payload: false });
       dispatch({ type: "setLose", payload: true });
     } else if (s === 0) {
       setTime([m - 1, 59]);
@@ -36,9 +33,13 @@ const TimerContainer: React.FC<PropsTimerContainer> = ({ time }) => {
   }, [tick, over]);
 
   useEffect(() => {
-    setOver(state.isStartGame);
-  }, [state.isStartGame]);
+    setOver(state.isStartTimer);
+  }, [state.isStartTimer]);
 
+  useEffect(() => {
+    setTime([minutes, seconds]);
+    //  eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state.isRestartGame]);
   return <Timer minutes={m} seconds={s} />;
 };
 export default TimerContainer;

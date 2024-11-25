@@ -1,5 +1,17 @@
 export type Action =
   | {
+      type: "setIsRestartGame";
+      payload: boolean;
+    }
+  | {
+      type: "togglTimer";
+      payload: boolean;
+    }
+  | {
+      type: "updateStateSession";
+      payload: TypeStateSessionGame;
+    }
+  | {
       type: "setLose";
       payload: boolean;
     }
@@ -13,7 +25,7 @@ export type Action =
     }
   | {
       type: "startStopGame";
-      isToogleGame: boolean;
+      payload: boolean;
     }
   | {
       type: "subtractCountErrorPoint";
@@ -26,19 +38,14 @@ export type Action =
 
 export type State = {
   setting: TypeSetting;
-  userInfo: TypeUserInfo;
   stateSessionGame: TypeStateSessionGame;
   isStartGame: boolean;
   isWin: boolean;
   isLose: boolean;
+  isStartTimer: boolean;
+  isRestartGame: boolean;
 };
 
-export interface TypeUserInfo {
-  avatar: string;
-  name: string;
-  record: number;
-  countGamesAll: number;
-}
 export interface TypeSetting {
   numCards: number;
   sizeCard: number;
@@ -47,6 +54,8 @@ export interface TypeSetting {
   typeImg: number;
 }
 export interface TypeStateSessionGame {
+  time: number;
+  errorPoint: number;
   scorePoint: number;
   countGame: number;
   scoreRecordGame: number;

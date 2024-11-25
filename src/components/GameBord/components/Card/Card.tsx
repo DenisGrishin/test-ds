@@ -1,13 +1,6 @@
 import React from "react";
-import QuestionIcon from "../../../assets/img/icons/questionIcon.svg?react";
-
-interface PropsCard {
-  flipCard: (indx: number, isCurrentOpen: boolean) => void;
-  indx: number;
-  isFlip: boolean;
-  urlImg: string;
-  sizeCard: number;
-}
+import QuestionIcon from "../../../../assets/img/icons/questionIcon.svg?react";
+import { PropsCard } from "./index.type";
 
 const Card: React.FC<PropsCard> = ({
   flipCard,

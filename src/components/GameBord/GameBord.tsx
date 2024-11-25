@@ -1,31 +1,17 @@
 import React from "react";
 
-import {
-  TypeStateGame,
-  TypeCards,
-} from "../../container/GameBordContainer/index.type";
-import WrapperGameBord from "./WrapperGameBord.tsx";
-import CardContainer from "../../container/GameBordContainer/CardContainer.tsx";
+import WrapperGameBord from "./components/WrapperGameBord/WrapperGameBord.tsx";
+import CardContainer from "../../container/GameBordContainer/CardContainer/CardContainer.tsx";
 import InfoPanelGBContainer from "../../container/GameBordContainer/InfoPanelGBContainer/InfoPanelGBContainer.tsx";
 import Preloader from "../Preloader/Preloader.tsx";
 import Modal from "../Modal/Modal.tsx";
+import { PropsGameBord } from "./index.type";
 
-interface PropsGameBord {
-  cards: TypeCards[];
-  stateGame: TypeStateGame;
-  handleStartGame: () => void;
-  setIsShowModal: () => void;
-  handleRestartGame: () => void;
-  isStart: boolean;
-  isWin: boolean;
-  isLose: boolean;
-  isShowModal: boolean;
-}
 const GameBord: React.FC<PropsGameBord> = ({
   cards,
   stateGame,
   handleStartGame,
-  setIsShowModal,
+
   isStart,
   isWin,
   isLose,
@@ -43,7 +29,7 @@ const GameBord: React.FC<PropsGameBord> = ({
         {stateGame.isLoading && <Preloader />}
         <CardContainer cards={cards} />
       </WrapperGameBord>
-      <Modal iShow={isShowModal} setIsShowModal={() => setIsShowModal()}>
+      <Modal iShow={isShowModal}>
         {isWin && (
           <div className="modal">
             <div className="modalTitle">🎉 Поздравляем! Вы выиграли! 🎉</div>
@@ -69,6 +55,7 @@ const GameBord: React.FC<PropsGameBord> = ({
           </div>
         )}
       </Modal>
+      <div />
     </div>
   );
 };

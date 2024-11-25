@@ -1,4 +1,6 @@
+import ResultContainer from "../container/ResultContainer/ResultContainer.tsx";
+
 const ResultPage = () => {
-  return <div>ResultPage</div>;
+  return <ResultContainer />;
 };
 export default ResultPage;

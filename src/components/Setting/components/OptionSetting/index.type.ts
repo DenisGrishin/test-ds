@@ -10,3 +10,11 @@ export interface TypeArrSetting {
   error: TypeDataOption[];
   img: TypeDataOption[];
 }
+export interface PropsOptionSetting {
+  setSelectedValue: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  selectedSetting: number;
+  nameOption: string;
+  keyObj: "size" | "time" | "error" | "img";
+  nameRadio: string;
+  isImg?: boolean;
+}

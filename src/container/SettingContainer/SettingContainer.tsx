@@ -20,10 +20,17 @@ const SettingContainer = () => {
         [name]: Number(value),
       };
     });
+
     dispatch({
       type: "updateSetting",
       payload: { ...state.setting, [name]: Number(value) },
     });
+    if (name === "time" || name === "errorPoint") {
+      dispatch({
+        type: "updateStateSession",
+        payload: { ...state.stateSessionGame, [name]: Number(value) },
+      });
+    }
   };
 
   return (
