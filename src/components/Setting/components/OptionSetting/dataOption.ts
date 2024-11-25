@@ -15,17 +15,17 @@ export const arrSizeOption = [
     id: "num-3",
     value: 5,
 
-    text: "4x5",
+    text: "5x4",
   },
   {
     id: "num-4",
     value: 6,
-    text: "4x6",
+    text: "6x4",
   },
   {
     id: "num-5",
     value: 8,
-    text: "4x8",
+    text: "8x4",
   },
 ];
 export const arrTimeOption = [

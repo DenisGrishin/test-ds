@@ -5,7 +5,6 @@ export const newState = (): State => {
     setting: {
       numCards: 3,
       sizeCard: 125,
-
       time: 150,
       errorPoint: 15,
       typeImg: 4,
@@ -57,8 +56,7 @@ export const reducer = (state: State, action: Action): State => {
       return {
         ...state,
         setting: {
-          ...state.setting,
-          [action.option]: action.payload,
+          ...action.payload,
         },
       };
     case "setWin":

@@ -18,9 +18,11 @@ const GameBordContainer = () => {
   useEffect(() => {
     setIsShowModal(state.isWin);
   }, [state.isWin]);
+
   useEffect(() => {
     setIsShowModal(state.isLose);
   }, [state.isLose]);
+
   useEffect(() => {
     const arrayImg: TypeCards[] = [];
     // создаем массив с объектами картинок
@@ -34,6 +36,7 @@ const GameBordContainer = () => {
         : ``;
       arrayImg.push({ url: avatarUrl, id: randomStr });
     }
+    debugger;
 
     if (isStart) {
       // некое подобие апи
@@ -64,7 +67,19 @@ const GameBordContainer = () => {
     });
     setIsStart(true);
   };
-
+  const handleRestartGame = () => {
+    dispatch({
+      type: "updateSetting",
+      payload: {
+        numCards: state.setting.numCards,
+        sizeCard: state.setting.sizeCard,
+        time: state.setting.numCards,
+        errorPoint: state.setting.errorPoint,
+        typeImg: state.setting.typeImg,
+      },
+    });
+    setIsShowModal(false);
+  };
   return (
     <GameBord
       cards={cards}
@@ -75,6 +90,7 @@ const GameBordContainer = () => {
       handleStartGame={() => handleStartGame()}
       setIsShowModal={() => setIsShowModal(false)}
       isShowModal={isShowModal}
+      handleRestartGame={() => handleRestartGame()}
     />
   );
 };

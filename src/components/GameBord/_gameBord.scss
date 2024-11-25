@@ -31,6 +31,7 @@
 			display: none;
 		}
 	}
+	.modalBtn,
 	&__start-btn {
 		position: absolute;
 		transform: translate(-50%, -50%);
@@ -52,4 +53,15 @@
 			display: none;
 		}
 	}
+}
+.modal {
+}
+.modalTitle {
+	font-size: 24px;
+	font-weight: 700;
+	margin-bottom: 20px;
+}
+.modalBtn {
+	position: static !important;
+	transform: translate(0px, 0px) !important;
 }

@@ -1,5 +1,3 @@
-import React from "react";
-
 import Navigate from "./Navigate.tsx";
 
 const Header = () => {

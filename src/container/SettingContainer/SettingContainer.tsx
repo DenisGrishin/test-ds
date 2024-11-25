@@ -20,7 +20,10 @@ const SettingContainer = () => {
         [name]: Number(value),
       };
     });
-    dispatch({ type: "updateSetting", option: name, payload: Number(value) });
+    dispatch({
+      type: "updateSetting",
+      payload: { ...state.setting, [name]: Number(value) },
+    });
   };
 
   return (

@@ -9,8 +9,7 @@ export type Action =
     }
   | {
       type: "updateSetting";
-      payload: number;
-      option: string;
+      payload: TypeSetting;
     }
   | {
       type: "startStopGame";

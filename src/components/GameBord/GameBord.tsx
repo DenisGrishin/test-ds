@@ -15,6 +15,7 @@ interface PropsGameBord {
   stateGame: TypeStateGame;
   handleStartGame: () => void;
   setIsShowModal: () => void;
+  handleRestartGame: () => void;
   isStart: boolean;
   isWin: boolean;
   isLose: boolean;
@@ -29,6 +30,7 @@ const GameBord: React.FC<PropsGameBord> = ({
   isWin,
   isLose,
   isShowModal,
+  handleRestartGame,
 }) => {
   return (
     <div className="game-bord">
@@ -42,8 +44,30 @@ const GameBord: React.FC<PropsGameBord> = ({
         <CardContainer cards={cards} />
       </WrapperGameBord>
       <Modal iShow={isShowModal} setIsShowModal={() => setIsShowModal()}>
-        {isWin && <div>🎉 Поздравляем! Вы выиграли! 🎉</div>}
-        {isLose && <div>😢 К сожалению, вы проиграли. 😢</div>}
+        {isWin && (
+          <div className="modal">
+            <div className="modalTitle">🎉 Поздравляем! Вы выиграли! 🎉</div>
+            <button
+              onClick={() => handleRestartGame()}
+              type="button"
+              className="modalBtn"
+            >
+              Сыграть еще раз
+            </button>
+          </div>
+        )}
+        {isLose && (
+          <div className="modal">
+            <div className="modalTitle">😢 К сожалению, вы проиграли. 😢</div>
+            <button
+              onClick={() => handleRestartGame()}
+              type="button"
+              className="modalBtn"
+            >
+              Сыграть еще раз
+            </button>
+          </div>
+        )}
       </Modal>
     </div>
   );
