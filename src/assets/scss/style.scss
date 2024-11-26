@@ -1,0 +1,7 @@
+// @use "base/mixins";
+@use "main";
+
+@use "base/null";
+@use "../../Layout/Header/header";
+@use "../../components/GameBord/gameBord";
+@use "../../components/GameBord/components/Card/card.scss";
