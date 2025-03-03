@@ -6,6 +6,7 @@ import InfoPanelGBContainer from "../../container/GameBordContainer/InfoPanelGBC
 import Preloader from "../Preloader/Preloader.tsx";
 import Modal from "../Modal/Modal.tsx";
 import { PropsGameBord } from "./index.type";
+import ContentModal from "../Modal/components/ContentModal.tsx";
 
 const GameBord: React.FC<PropsGameBord> = ({
   cards,
@@ -31,28 +32,18 @@ const GameBord: React.FC<PropsGameBord> = ({
       </WrapperGameBord>
       <Modal iShow={isShowModal}>
         {isWin && (
-          <div className="modal">
-            <div className="modalTitle">🎉 Поздравляем! Вы выиграли! 🎉</div>
-            <button
-              onClick={() => handleRestartGame()}
-              type="button"
-              className="modalBtn"
-            >
-              Сыграть еще раз
-            </button>
-          </div>
+          <ContentModal
+            text="🎉 Поздравляем! Вы выиграли! 🎉"
+            btnText=" Сыграть еще раз"
+            onClick={() => handleRestartGame()}
+          />
         )}
         {isLose && (
-          <div className="modal">
-            <div className="modalTitle">😢 К сожалению, вы проиграли. 😢</div>
-            <button
-              onClick={() => handleRestartGame()}
-              type="button"
-              className="modalBtn"
-            >
-              Сыграть еще раз
-            </button>
-          </div>
+          <ContentModal
+            text="😢 К сожалению, вы проиграли. 😢"
+            btnText=" Сыграть еще раз"
+            onClick={() => handleRestartGame()}
+          />
         )}
       </Modal>
       <div />
